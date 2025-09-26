@@ -1,49 +1,4 @@
 {
-  "6502 Assembly": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "ca65 program.s && ld65 program.o",
-      "source_extensions": [
-        ".s",
-        ".asm",
-        ".a65"
-      ]
-    }
-  ],
-  "8086 Assembly": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "nasm program.asm && link program.obj",
-      "source_extensions": [
-        ".asm",
-        ".inc"
-      ]
-    }
-  ],
-  "ALGOL": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "algol program.alg",
-      "source_extensions": [
-        ".alg",
-        ".a68"
-      ]
-    }
-  ],
-  "APL": [
-    {
-      "dependency_file": "workspace.dws",
-      "install_command": "load workspace",
-      "build_command": "apl script.apl",
-      "source_extensions": [
-        ".apl",
-        ".dyalog"
-      ]
-    }
-  ],
   "ARM Assembly": [
     {
       "dependency_file": "Makefile",
@@ -65,17 +20,6 @@
         ".ada",
         ".adb",
         ".ads"
-      ]
-    }
-  ],
-  "Agda": [
-    {
-      "dependency_file": "*.agda-lib",
-      "install_command": "agda-pkg install",
-      "build_command": "agda --compile",
-      "source_extensions": [
-        ".agda",
-        ".lagda"
       ]
     }
   ],
@@ -134,17 +78,6 @@
       ]
     }
   ],
-  "BASIC": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "basic program.bas",
-      "source_extensions": [
-        ".bas",
-        ".basic"
-      ]
-    }
-  ],
   "Bash": [
     {
       "dependency_file": "requirements.txt",
@@ -155,28 +88,6 @@
         ".bash",
         ".bashrc",
         ".bash_profile"
-      ]
-    }
-  ],
-  "Batch": [
-    {
-      "dependency_file": "requirements.txt",
-      "install_command": "for /f %i in (requirements.txt) do choco install %i",
-      "build_command": "script.bat",
-      "source_extensions": [
-        ".bat",
-        ".cmd"
-      ]
-    }
-  ],
-  "Brainfuck": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "bf program.bf",
-      "source_extensions": [
-        ".bf",
-        ".b"
       ]
     }
   ],
@@ -339,22 +250,6 @@
       ]
     }
   ],
-  "C++/CLI": [
-    {
-      "dependency_file": "*.vcxproj",
-      "install_command": "nuget restore",
-      "build_command": "msbuild",
-      "source_extensions": [
-        ".cpp",
-        ".cxx",
-        ".cc",
-        ".c++",
-        ".hpp",
-        ".hxx",
-        ".h++"
-      ]
-    }
-  ],
   "COBOL": [
     {
       "dependency_file": "Makefile",
@@ -439,16 +334,6 @@
       ]
     }
   ],
-  "ChucK": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "chuck script.ck",
-      "source_extensions": [
-        ".ck"
-      ]
-    }
-  ],
   "CircuitPython": [
     {
       "dependency_file": "requirements.txt",
@@ -526,17 +411,6 @@
         ".l",
         ".cl",
         ".fasl"
-      ]
-    }
-  ],
-  "Coq": [
-    {
-      "dependency_file": "_CoqProject",
-      "install_command": "coq_makefile -f _CoqProject -o Makefile",
-      "build_command": "make",
-      "source_extensions": [
-        ".v",
-        ".coq"
       ]
     }
   ],
@@ -901,71 +775,6 @@
       ]
     }
   ],
-  "INTERCAL": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "ick program.i",
-      "source_extensions": [
-        ".i",
-        ".ic"
-      ]
-    }
-  ],
-  "Idris": [
-    {
-      "dependency_file": "*.ipkg",
-      "install_command": "idris --install",
-      "build_command": "idris --build",
-      "source_extensions": [
-        ".idr",
-        ".lidr"
-      ]
-    }
-  ],
-  "IronPython": [
-    {
-      "dependency_file": "requirements.txt",
-      "install_command": "ipy -X:Frames -m pip install -r requirements.txt",
-      "build_command": "ipy script.py",
-      "source_extensions": [
-        ".py",
-        ".ipy"
-      ]
-    }
-  ],
-  "IronRuby": [
-    {
-      "dependency_file": "Gemfile",
-      "install_command": "igem install bundler && bundle install",
-      "build_command": "ir script.rb",
-      "source_extensions": [
-        ".rb",
-        ".ir"
-      ]
-    }
-  ],
-  "J": [
-    {
-      "dependency_file": "script.ijs",
-      "install_command": ") load 'package'",
-      "build_command": "jconsole script.ijs",
-      "source_extensions": [
-        ".ijs"
-      ]
-    }
-  ],
-  "JRuby": [
-    {
-      "dependency_file": "Gemfile",
-      "install_command": "bundle install",
-      "build_command": "jruby -S rake build",
-      "source_extensions": [
-        ".rb",
-        ".rbw"
-      ]
-    }
-  ],
   "JSON": [
     {
       "dependency_file": "package.json",
@@ -1098,27 +907,6 @@
       ]
     }
   ],
-  "Jython": [
-    {
-      "dependency_file": "requirements.txt",
-      "install_command": "pip install -r requirements.txt",
-      "build_command": "jython script.py",
-      "source_extensions": [
-        ".py",
-        ".jy"
-      ]
-    }
-  ],
-  "K": [
-    {
-      "dependency_file": "script.k",
-      "install_command": "\\l package",
-      "build_command": "k script.k",
-      "source_extensions": [
-        ".k"
-      ]
-    }
-  ],
   "Kotlin": [
     {
       "dependency_file": "build.gradle.kts",
@@ -1127,17 +915,6 @@
       "source_extensions": [
         ".kt",
         ".kts"
-      ]
-    }
-  ],
-  "Lean": [
-    {
-      "dependency_file": "leanpkg.toml",
-      "install_command": "leanpkg build",
-      "build_command": "lean --make",
-      "source_extensions": [
-        ".lean",
-        ".hlean"
       ]
     }
   ],
@@ -1217,30 +994,6 @@
       ]
     }
   ],
-  "Malbolge": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "malbolge program.mal",
-      "source_extensions": [
-        ".mal"
-      ]
-    }
-  ],
-  "Mathematica": [
-    {
-      "dependency_file": "PacletInfo.m",
-      "install_command": "PacletInstall",
-      "build_command": "math -script script.nb",
-      "source_extensions": [
-        ".nb",
-        ".m",
-        ".wl",
-        ".wls",
-        ".mx"
-      ]
-    }
-  ],
   "Matlab": [
     {
       "dependency_file": "*.prj",
@@ -1254,17 +1007,6 @@
       ]
     }
   ],
-  "Max/MSP": [
-    {
-      "dependency_file": "package-info.json",
-      "install_command": "max package install",
-      "build_command": "max patch.maxpat",
-      "source_extensions": [
-        ".maxpat",
-        ".mxo"
-      ]
-    }
-  ],
   "MicroPython": [
     {
       "dependency_file": "requirements.txt",
@@ -1273,32 +1015,6 @@
       "source_extensions": [
         ".py",
         ".mpy"
-      ]
-    }
-  ],
-  "Modula-2": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "gm2 -o program *.mod",
-      "source_extensions": [
-        ".mod",
-        ".def",
-        ".mi",
-        ".md"
-      ]
-    }
-  ],
-  "Modula-3": [
-    {
-      "dependency_file": "m3makefile",
-      "install_command": "m3build",
-      "build_command": "m3build",
-      "source_extensions": [
-        ".m3",
-        ".i3",
-        ".mg",
-        ".ig"
       ]
     }
   ],
@@ -1463,18 +1179,6 @@
       ]
     }
   ],
-  "PL/I": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "pli program.pli",
-      "source_extensions": [
-        ".pl1",
-        ".pli",
-        ".inc"
-      ]
-    }
-  ],
   "PL/SQL": [
     {
       "dependency_file": "requirements.txt",
@@ -1540,17 +1244,6 @@
       ]
     }
   ],
-  "Piet": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "piet program.png",
-      "source_extensions": [
-        ".png",
-        ".gif"
-      ]
-    }
-  ],
   "PostgreSQL": [
     {
       "dependency_file": "requirements.txt",
@@ -1559,18 +1252,6 @@
       "source_extensions": [
         ".sql",
         ".pgsql"
-      ]
-    }
-  ],
-  "PowerPC Assembly": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "powerpc-linux-gnu-as program.s && powerpc-linux-gnu-ld program.o",
-      "source_extensions": [
-        ".s",
-        ".S",
-        ".asm"
       ]
     }
   ],
@@ -1595,17 +1276,6 @@
       "source_extensions": [
         ".pde",
         ".java"
-      ]
-    }
-  ],
-  "Pure Data": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make externals",
-      "build_command": "pd patch.pd",
-      "source_extensions": [
-        ".pd",
-        ".pat"
       ]
     }
   ],
@@ -1681,16 +1351,6 @@
       ]
     }
   ],
-  "Q": [
-    {
-      "dependency_file": "script.q",
-      "install_command": "\\l package",
-      "build_command": "q script.q",
-      "source_extensions": [
-        ".q"
-      ]
-    }
-  ],
   "QML": [
     {
       "dependency_file": "*.pro",
@@ -1699,17 +1359,6 @@
       "source_extensions": [
         ".qml",
         ".qmlproject"
-      ]
-    }
-  ],
-  "QuickBASIC": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "qb64 program.bas",
-      "source_extensions": [
-        ".bas",
-        ".bi"
       ]
     }
   ],
@@ -1784,17 +1433,6 @@
       ]
     }
   ],
-  "Rubinius": [
-    {
-      "dependency_file": "Gemfile",
-      "install_command": "bundle install",
-      "build_command": "rbx script.rb",
-      "source_extensions": [
-        ".rb",
-        ".rbx"
-      ]
-    }
-  ],
   "Ruby": [
     {
       "dependency_file": "Gemfile",
@@ -1830,30 +1468,6 @@
       ]
     }
   ],
-  "S-Plus": [
-    {
-      "dependency_file": "DESCRIPTION",
-      "install_command": "install.packages()",
-      "build_command": "Splus BATCH script.s",
-      "source_extensions": [
-        ".s",
-        ".S",
-        ".q"
-      ]
-    }
-  ],
-  "SAS": [
-    {
-      "dependency_file": "*.sas",
-      "install_command": "proc install",
-      "build_command": "sas script.sas",
-      "source_extensions": [
-        ".sas",
-        ".sas7bdat",
-        ".sas7bcat"
-      ]
-    }
-  ],
   "SCSS": [
     {
       "dependency_file": "package.json",
@@ -1862,30 +1476,6 @@
       "source_extensions": [
         ".scss",
         ".sass"
-      ]
-    }
-  ],
-  "SML": [
-    {
-      "dependency_file": "MLB",
-      "install_command": "mlb",
-      "build_command": "mlton",
-      "source_extensions": [
-        ".sml",
-        ".ml",
-        ".sig"
-      ]
-    }
-  ],
-  "SPSS": [
-    {
-      "dependency_file": "*.sps",
-      "install_command": "EXTENSION INSTALL",
-      "build_command": "spss -f script.sps",
-      "source_extensions": [
-        ".sps",
-        ".spv",
-        ".sav"
       ]
     }
   ],
@@ -1937,40 +1527,6 @@
       ]
     }
   ],
-  "Shell": [
-    {
-      "dependency_file": "requirements.txt",
-      "install_command": "while read req; do apt install $req; done",
-      "build_command": "sh script.sh",
-      "source_extensions": [
-        ".sh",
-        ".bash",
-        ".zsh",
-        ".fish"
-      ]
-    }
-  ],
-  "Simula": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "cim program.sim",
-      "source_extensions": [
-        ".sim"
-      ]
-    }
-  ],
-  "Smalltalk": [
-    {
-      "dependency_file": "package.st",
-      "install_command": "Metacello new load",
-      "build_command": "squeak image.image",
-      "source_extensions": [
-        ".st",
-        ".cs"
-      ]
-    }
-  ],
   "Smarty": [
     {
       "dependency_file": "composer.json",
@@ -2003,18 +1559,6 @@
       ]
     }
   ],
-  "Stata": [
-    {
-      "dependency_file": "*.pkg",
-      "install_command": "net install",
-      "build_command": "stata -b do script.do",
-      "source_extensions": [
-        ".do",
-        ".ado",
-        ".dta"
-      ]
-    }
-  ],
   "Stylus": [
     {
       "dependency_file": "package.json",
@@ -2023,17 +1567,6 @@
       "source_extensions": [
         ".styl",
         ".stylus"
-      ]
-    }
-  ],
-  "SuperCollider": [
-    {
-      "dependency_file": "Quarks",
-      "install_command": "Quarks.install",
-      "build_command": "sclang script.scd",
-      "source_extensions": [
-        ".sc",
-        ".scd"
       ]
     }
   ],
@@ -2079,30 +1612,6 @@
       ]
     }
   ],
-  "Tcl": [
-    {
-      "dependency_file": "pkgIndex.tcl",
-      "install_command": "package require pkg",
-      "build_command": "tclsh script.tcl",
-      "source_extensions": [
-        ".tcl",
-        ".tk",
-        ".itk",
-        ".itcl"
-      ]
-    }
-  ],
-  "Tk": [
-    {
-      "dependency_file": "pkgIndex.tcl",
-      "install_command": "package require Tk",
-      "build_command": "wish script.tk",
-      "source_extensions": [
-        ".tk",
-        ".tcl"
-      ]
-    }
-  ],
   "Twig": [
     {
       "dependency_file": "composer.json",
@@ -2132,16 +1641,6 @@
         ".ts",
         ".tsx",
         ".d.ts"
-      ]
-    }
-  ],
-  "UPC": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "upcc -o program *.upc",
-      "source_extensions": [
-        ".upc"
       ]
     }
   ],
@@ -2236,51 +1735,6 @@
       ]
     }
   ],
-  "Visual Basic 6": [
-    {
-      "dependency_file": "*.vbp",
-      "install_command": "regsvr32 component.dll",
-      "build_command": "vb6 /make project.vbp",
-      "source_extensions": [
-        ".bas",
-        ".frm",
-        ".cls",
-        ".vbp"
-      ]
-    }
-  ],
-  "Whitespace": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "wspace program.ws",
-      "source_extensions": [
-        ".ws"
-      ]
-    }
-  ],
-  "X10": [
-    {
-      "dependency_file": "build.xml",
-      "install_command": "ant resolve",
-      "build_command": "x10c++ program.x10",
-      "source_extensions": [
-        ".x10"
-      ]
-    }
-  ],
-  "Xamarin": [
-    {
-      "dependency_file": "packages.config",
-      "install_command": "nuget restore",
-      "build_command": "msbuild",
-      "source_extensions": [
-        ".cs",
-        ".fs",
-        ".vb"
-      ]
-    }
-  ],
   "YAML": [
     {
       "dependency_file": "requirements.yml",
@@ -2289,17 +1743,6 @@
       "source_extensions": [
         ".yaml",
         ".yml"
-      ]
-    }
-  ],
-  "Z80 Assembly": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "z80asm program.asm",
-      "source_extensions": [
-        ".z80",
-        ".asm"
       ]
     }
   ],
@@ -2332,17 +1775,6 @@
         ".zsh",
         ".zshrc",
         ".zprofile"
-      ]
-    }
-  ],
-  "mruby": [
-    {
-      "dependency_file": "mrbgem.rake",
-      "install_command": "rake",
-      "build_command": "mruby script.rb",
-      "source_extensions": [
-        ".rb",
-        ".mrb"
       ]
     }
   ],
