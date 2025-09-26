@@ -14,11 +14,17 @@ on:
 jobs:
 `
 
-const checkoutTpl = `  checkout:
+const buildTpl = `  build:
     runs-on: ubuntu-latest
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
+      {{ range .Projects }}
+      - name: setup
+        with: {{.setup}}
+      - name: Build project {{.name}}
+        run: {{.cmd}}
+      {{ end }}
 `
 
 // YamlGenerator создаёт YAML и условно добавляет шаг Checkout для CI
