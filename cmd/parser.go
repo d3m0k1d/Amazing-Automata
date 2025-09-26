@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/fs"
-	"io/ioutil"
 	"os"
 	"path/filepath"
+	_ "embed"
 )
 
 type Dependency struct {
@@ -66,14 +66,16 @@ func PathCollectFiles() ([]string, error) {
 	return files, nil
 }
 
-func ParseLangDeps(path string) ([]LangDeps, error) {
-	rawData, err := ioutil.ReadFile(path)
-	if err != nil {
-		return nil, fmt.Errorf("read file: %w", err)
-	}
+//go:embed deps.json
+var depfilesjson []byte
+func ParseLangDeps() ([]LangDeps, error) {
+	// rawData, err := ioutil.ReadFile(path)
+	// if err != nil {
+	// 	return nil, fmt.Errorf("read file: %w", err)
+	// }
 
 	var tmp map[string][]Dependency
-	if err := json.Unmarshal(rawData, &tmp); err != nil {
+	if err := json.Unmarshal(depfilesjson, &tmp); err != nil {
 		return nil, fmt.Errorf("unmarshal JSON: %w", err)
 	}
 
