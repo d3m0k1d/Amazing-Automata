@@ -1,7 +1,6 @@
 package cmd
 
 import (
-	_ "fmt"
 	"os"
 	"text/template"
 )
@@ -15,41 +14,45 @@ on:
 jobs:
 `
 
-func YamlGenerator(filename string, cd bool, ci bool, dryRun bool, appendM bool) error {
+const checkoutTpl = `  checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+`
 
-	f, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0644)
+// YamlGenerator создаёт YAML и условно добавляет шаг Checkout для CI
+func YamlGenerator(filename string, ci, cd, dryRun, appendM bool) error {
+	// 1. Открываем или создаём файл, перезаписываем содержимое
+	f, err := os.OpenFile(filename,
+		os.O_CREATE|os.O_WRONLY|os.O_TRUNC,
+		0o644,
+	)
 	if err != nil {
 		return err
 	}
 	defer f.Close()
 
-	tpl, err := template.New("base").Parse(baseTpl)
+	// 2. Парсим и рендерим базовый шаблон
+	baseTmpl, err := template.New("base").Parse(baseTpl)
 	if err != nil {
 		return err
 	}
-
-	data := map[string]string{
+	if err := baseTmpl.Execute(f, map[string]string{
 		"WorkflowName": "Amazing-Automata CI/CD",
+	}); err != nil {
+		return err
 	}
 
-	return tpl.Execute(f, data)
-
 	if ci {
-		f, err := os.OpenFile(filename, os.O_WRONLY|os.O_TRUNC, 0644)
+		checkoutTmpl, err := template.New("checkout").Parse(checkoutTpl)
 		if err != nil {
 			return err
 		}
-
-		defer f.Close()
+		if err := checkoutTmpl.Execute(f, nil); err != nil {
+			return err
+		}
 	}
-	if cd {
 
-	}
-	if dryRun {
-
-	}
-	if appendM {
-
-	}
 	return nil
 }

@@ -2,13 +2,9 @@ package main
 
 import (
 	"amazing-automata/cmd"
-	"fmt"
+	_ "fmt"
 )
 
 func main() {
-	files, err := cmd.CollectFiles()
-	if err != nil {
-		fmt.Println(err)
-	}
-	fmt.Println(files)
+	cmd.YamlGenerator("workflow.yml", true, false, false, false)
 }
