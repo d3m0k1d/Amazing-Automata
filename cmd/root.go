@@ -1,46 +1,55 @@
-/*
-Copyright © 2025 NAME HERE <EMAIL ADDRESS>
-*/
 package cmd
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/spf13/cobra"
 )
 
-// rootCmd represents the base command when called without any subcommands
+var (
+	ciMode  bool
+	cdMode  bool
+	dryRun  bool
+	appendM bool
+)
+
 var rootCmd = &cobra.Command{
-	Use:   "Amazing-automata",
-	Short: "A brief description of your application",
-	Long: `A longer description that spans multiple lines and likely contains
-examples and usage of using your application. For example:
+	Use:   "amazing-automata [flags] <filename>.yml",
+	Short: "A universal CI/CD pipeline generator for GitHub Actions",
+	Long: `Amazing-Automata is a universal CI/CD pipeline generator for GitHub Actions
+that lets DevOps engineers create and customize workflows in seconds.`,
+	Args: cobra.ExactArgs(1),
+	RunE: func(cmd *cobra.Command, args []string) error {
+		filename := args[0]
+		fmt.Println("File:", filename)
+		if ciMode {
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
-	// Uncomment the following line if your bare application
-	// has an action associated with it:
-	// Run: func(cmd *cobra.Command, args []string) { },
-}
-
-// Execute adds all child commands to the root command and sets flags appropriately.
-// This is called by main.main(). It only needs to happen once to the rootCmd.
-func Execute() {
-	err := rootCmd.Execute()
-	if err != nil {
-		os.Exit(1)
-	}
+		}
+		if cdMode {
+			fmt.Println("– CD mode enabled")
+		}
+		if dryRun {
+			fmt.Println("– Dry run mode enabled")
+		}
+		if appendM {
+			fmt.Println("– Append mode enabled")
+		}
+		return nil
+	},
 }
 
 func init() {
-	// Here you will define your flags and configuration settings.
-	// Cobra supports persistent flags, which, if defined here,
-	// will be global for your application.
+	rootCmd.Flags().BoolVarP(&ciMode, "ci", "c", false, "write a new CI pipeline")
+	rootCmd.Flags().BoolVarP(&cdMode, "cd", "d", false, "write a new CD pipeline")
+	rootCmd.Flags().BoolVarP(&dryRun, "dry-run", "n", false, "stdout pipeline in shell")
+	rootCmd.Flags().BoolVarP(&appendM, "append", "a", false, "append changes to existing pipeline")
 
-	// rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.Amazing-automata.yaml)")
+	rootCmd.Flags().SetInterspersed(false)
+}
 
-	// Cobra also supports local flags, which will only run
-	// when this action is called directly.
-	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+func Execute() {
+	if err := rootCmd.Execute(); err != nil {
+		os.Exit(1)
+	}
 }
