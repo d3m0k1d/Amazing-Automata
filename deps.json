@@ -3,1266 +3,2257 @@
     "language": "JavaScript",
     "dependency_file": "package.json",
     "install_dependencies": "npm install",
-    "build_project": "npm run build"
+    "build_project": "npm run build",
+    "source_file_extensions": [
+      ".js",
+      ".mjs",
+      ".cjs",
+      ".jsx"
+    ]
   },
   "JavaScript:package.json:yarn install:yarn build": {
     "language": "JavaScript",
     "dependency_file": "package.json",
     "install_dependencies": "yarn install",
-    "build_project": "yarn build"
+    "build_project": "yarn build",
+    "source_file_extensions": [
+      ".js",
+      ".mjs",
+      ".cjs",
+      ".jsx"
+    ]
   },
   "JavaScript:package.json:pnpm install:pnpm build": {
     "language": "JavaScript",
     "dependency_file": "package.json",
     "install_dependencies": "pnpm install",
-    "build_project": "pnpm build"
+    "build_project": "pnpm build",
+    "source_file_extensions": [
+      ".js",
+      ".mjs",
+      ".cjs",
+      ".jsx"
+    ]
   },
   "TypeScript:package.json:npm install:tsc && npm run build": {
     "language": "TypeScript",
     "dependency_file": "package.json",
     "install_dependencies": "npm install",
-    "build_project": "tsc && npm run build"
+    "build_project": "tsc && npm run build",
+    "source_file_extensions": [
+      ".ts",
+      ".tsx",
+      ".d.ts"
+    ]
   },
   "TypeScript:tsconfig.json:npm install:tsc": {
     "language": "TypeScript",
     "dependency_file": "tsconfig.json",
     "install_dependencies": "npm install",
-    "build_project": "tsc"
+    "build_project": "tsc",
+    "source_file_extensions": [
+      ".ts",
+      ".tsx",
+      ".d.ts"
+    ]
   },
   "Python:requirements.txt:pip install -r requirements.txt:python -m build": {
     "language": "Python",
     "dependency_file": "requirements.txt",
     "install_dependencies": "pip install -r requirements.txt",
-    "build_project": "python -m build"
+    "build_project": "python -m build",
+    "source_file_extensions": [
+      ".py",
+      ".pyw",
+      ".pyx",
+      ".pyi",
+      ".py3"
+    ]
   },
   "Python:pyproject.toml:poetry install:poetry build": {
     "language": "Python",
     "dependency_file": "pyproject.toml",
     "install_dependencies": "poetry install",
-    "build_project": "poetry build"
+    "build_project": "poetry build",
+    "source_file_extensions": [
+      ".py",
+      ".pyw",
+      ".pyx",
+      ".pyi",
+      ".py3"
+    ]
   },
   "Python:Pipfile:pipenv install:pipenv run python setup.py build": {
     "language": "Python",
     "dependency_file": "Pipfile",
     "install_dependencies": "pipenv install",
-    "build_project": "pipenv run python setup.py build"
+    "build_project": "pipenv run python setup.py build",
+    "source_file_extensions": [
+      ".py",
+      ".pyw",
+      ".pyx",
+      ".pyi",
+      ".py3"
+    ]
   },
   "Python:setup.py:pip install -e .:python setup.py build": {
     "language": "Python",
     "dependency_file": "setup.py",
     "install_dependencies": "pip install -e .",
-    "build_project": "python setup.py build"
+    "build_project": "python setup.py build",
+    "source_file_extensions": [
+      ".py",
+      ".pyw",
+      ".pyx",
+      ".pyi",
+      ".py3"
+    ]
   },
   "Python:conda.yml:conda env create:python -m build": {
     "language": "Python",
     "dependency_file": "conda.yml",
     "install_dependencies": "conda env create",
-    "build_project": "python -m build"
+    "build_project": "python -m build",
+    "source_file_extensions": [
+      ".py",
+      ".pyw",
+      ".pyx",
+      ".pyi",
+      ".py3"
+    ]
   },
   "MicroPython:requirements.txt:upip.install:micropython main.py": {
     "language": "MicroPython",
     "dependency_file": "requirements.txt",
     "install_dependencies": "upip.install",
-    "build_project": "micropython main.py"
+    "build_project": "micropython main.py",
+    "source_file_extensions": [
+      ".py",
+      ".mpy"
+    ]
   },
   "CircuitPython:requirements.txt:circup install:python main.py": {
     "language": "CircuitPython",
     "dependency_file": "requirements.txt",
     "install_dependencies": "circup install",
-    "build_project": "python main.py"
+    "build_project": "python main.py",
+    "source_file_extensions": [
+      ".py"
+    ]
   },
   "Java:pom.xml:mvn install:mvn compile": {
     "language": "Java",
     "dependency_file": "pom.xml",
     "install_dependencies": "mvn install",
-    "build_project": "mvn compile"
+    "build_project": "mvn compile",
+    "source_file_extensions": [
+      ".java",
+      ".class",
+      ".jar"
+    ]
   },
   "Java:build.gradle:gradle dependencies:gradle build": {
     "language": "Java",
     "dependency_file": "build.gradle",
     "install_dependencies": "gradle dependencies",
-    "build_project": "gradle build"
+    "build_project": "gradle build",
+    "source_file_extensions": [
+      ".java",
+      ".class",
+      ".jar"
+    ]
   },
   "Java:build.gradle.kts:gradle dependencies:gradle build": {
     "language": "Java",
     "dependency_file": "build.gradle.kts",
     "install_dependencies": "gradle dependencies",
-    "build_project": "gradle build"
+    "build_project": "gradle build",
+    "source_file_extensions": [
+      ".java",
+      ".class",
+      ".jar"
+    ]
   },
   "Java:ivy.xml:ant resolve:ant compile": {
     "language": "Java",
     "dependency_file": "ivy.xml",
     "install_dependencies": "ant resolve",
-    "build_project": "ant compile"
+    "build_project": "ant compile",
+    "source_file_extensions": [
+      ".java",
+      ".class",
+      ".jar"
+    ]
   },
   "Kotlin:build.gradle.kts:gradle dependencies:gradle build": {
     "language": "Kotlin",
     "dependency_file": "build.gradle.kts",
     "install_dependencies": "gradle dependencies",
-    "build_project": "gradle build"
+    "build_project": "gradle build",
+    "source_file_extensions": [
+      ".kt",
+      ".kts"
+    ]
   },
   "Scala:build.sbt:sbt update:sbt compile": {
     "language": "Scala",
     "dependency_file": "build.sbt",
     "install_dependencies": "sbt update",
-    "build_project": "sbt compile"
+    "build_project": "sbt compile",
+    "source_file_extensions": [
+      ".scala",
+      ".sc"
+    ]
   },
   "Clojure:project.clj:lein deps:lein compile": {
     "language": "Clojure",
     "dependency_file": "project.clj",
     "install_dependencies": "lein deps",
-    "build_project": "lein compile"
+    "build_project": "lein compile",
+    "source_file_extensions": [
+      ".clj",
+      ".cljs",
+      ".cljc",
+      ".edn"
+    ]
   },
   "Clojure:build.boot:boot install:boot build": {
     "language": "Clojure",
     "dependency_file": "build.boot",
     "install_dependencies": "boot install",
-    "build_project": "boot build"
+    "build_project": "boot build",
+    "source_file_extensions": [
+      ".clj",
+      ".cljs",
+      ".cljc",
+      ".edn"
+    ]
   },
   "Clojure:deps.edn:clj -P:clj -M -m main": {
     "language": "Clojure",
     "dependency_file": "deps.edn",
     "install_dependencies": "clj -P",
-    "build_project": "clj -M -m main"
+    "build_project": "clj -M -m main",
+    "source_file_extensions": [
+      ".clj",
+      ".cljs",
+      ".cljc",
+      ".edn"
+    ]
   },
   "Groovy:build.gradle:gradle dependencies:gradle build": {
     "language": "Groovy",
     "dependency_file": "build.gradle",
     "install_dependencies": "gradle dependencies",
-    "build_project": "gradle build"
+    "build_project": "gradle build",
+    "source_file_extensions": [
+      ".groovy",
+      ".gvy",
+      ".gy",
+      ".gsh"
+    ]
   },
   "JRuby:Gemfile:bundle install:jruby -S rake build": {
     "language": "JRuby",
     "dependency_file": "Gemfile",
     "install_dependencies": "bundle install",
-    "build_project": "jruby -S rake build"
+    "build_project": "jruby -S rake build",
+    "source_file_extensions": [
+      ".rb",
+      ".rbw"
+    ]
   },
   "Jython:requirements.txt:pip install -r requirements.txt:jython script.py": {
     "language": "Jython",
     "dependency_file": "requirements.txt",
     "install_dependencies": "pip install -r requirements.txt",
-    "build_project": "jython script.py"
+    "build_project": "jython script.py",
+    "source_file_extensions": [
+      ".py",
+      ".jy"
+    ]
   },
   "C#:*.csproj:dotnet restore:dotnet build": {
     "language": "C#",
     "dependency_file": "*.csproj",
     "install_dependencies": "dotnet restore",
-    "build_project": "dotnet build"
+    "build_project": "dotnet build",
+    "source_file_extensions": [
+      ".cs",
+      ".csx"
+    ]
   },
   "C#:packages.config:nuget restore:msbuild": {
     "language": "C#",
     "dependency_file": "packages.config",
     "install_dependencies": "nuget restore",
-    "build_project": "msbuild"
+    "build_project": "msbuild",
+    "source_file_extensions": [
+      ".cs",
+      ".csx"
+    ]
   },
   "F#:paket.dependencies:dotnet paket install:dotnet build": {
     "language": "F#",
     "dependency_file": "paket.dependencies",
     "install_dependencies": "dotnet paket install",
-    "build_project": "dotnet build"
+    "build_project": "dotnet build",
+    "source_file_extensions": [
+      ".fs",
+      ".fsx",
+      ".fsi"
+    ]
   },
   "F#:paket.references:dotnet paket install:dotnet build": {
     "language": "F#",
     "dependency_file": "paket.references",
     "install_dependencies": "dotnet paket install",
-    "build_project": "dotnet build"
+    "build_project": "dotnet build",
+    "source_file_extensions": [
+      ".fs",
+      ".fsx",
+      ".fsi"
+    ]
   },
   "VB.NET:*.vbproj:dotnet restore:dotnet build": {
     "language": "VB.NET",
     "dependency_file": "*.vbproj",
     "install_dependencies": "dotnet restore",
-    "build_project": "dotnet build"
+    "build_project": "dotnet build",
+    "source_file_extensions": [
+      ".vb",
+      ".vbx"
+    ]
   },
   "C++/CLI:*.vcxproj:nuget restore:msbuild": {
     "language": "C++/CLI",
     "dependency_file": "*.vcxproj",
     "install_dependencies": "nuget restore",
-    "build_project": "msbuild"
+    "build_project": "msbuild",
+    "source_file_extensions": [
+      ".cpp",
+      ".cxx",
+      ".cc",
+      ".c++",
+      ".hpp",
+      ".hxx",
+      ".h++"
+    ]
   },
   "IronPython:requirements.txt:ipy -X:Frames -m pip install -r requirements.txt:ipy script.py": {
     "language": "IronPython",
     "dependency_file": "requirements.txt",
     "install_dependencies": "ipy -X:Frames -m pip install -r requirements.txt",
-    "build_project": "ipy script.py"
+    "build_project": "ipy script.py",
+    "source_file_extensions": [
+      ".py",
+      ".ipy"
+    ]
   },
   "IronRuby:Gemfile:igem install bundler && bundle install:ir script.rb": {
     "language": "IronRuby",
     "dependency_file": "Gemfile",
     "install_dependencies": "igem install bundler && bundle install",
-    "build_project": "ir script.rb"
+    "build_project": "ir script.rb",
+    "source_file_extensions": [
+      ".rb",
+      ".ir"
+    ]
   },
   "C:Makefile:make deps:make": {
     "language": "C",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "make"
+    "build_project": "make",
+    "source_file_extensions": [
+      ".c",
+      ".h",
+      ".i"
+    ]
   },
   "C:CMakeLists.txt:cmake .. && make:make": {
     "language": "C",
     "dependency_file": "CMakeLists.txt",
     "install_dependencies": "cmake .. && make",
-    "build_project": "make"
+    "build_project": "make",
+    "source_file_extensions": [
+      ".c",
+      ".h",
+      ".i"
+    ]
   },
   "C:meson.build:meson setup builddir:ninja -C builddir": {
     "language": "C",
     "dependency_file": "meson.build",
     "install_dependencies": "meson setup builddir",
-    "build_project": "ninja -C builddir"
+    "build_project": "ninja -C builddir",
+    "source_file_extensions": [
+      ".c",
+      ".h",
+      ".i"
+    ]
   },
   "C++:vcpkg.json:vcpkg install:cmake --build build": {
     "language": "C++",
     "dependency_file": "vcpkg.json",
     "install_dependencies": "vcpkg install",
-    "build_project": "cmake --build build"
+    "build_project": "cmake --build build",
+    "source_file_extensions": [
+      ".cpp",
+      ".cxx",
+      ".cc",
+      ".c++",
+      ".hpp",
+      ".hxx",
+      ".h++",
+      ".hh"
+    ]
   },
   "C++:conanfile.txt:conan install .:cmake --build build": {
     "language": "C++",
     "dependency_file": "conanfile.txt",
     "install_dependencies": "conan install .",
-    "build_project": "cmake --build build"
+    "build_project": "cmake --build build",
+    "source_file_extensions": [
+      ".cpp",
+      ".cxx",
+      ".cc",
+      ".c++",
+      ".hpp",
+      ".hxx",
+      ".h++",
+      ".hh"
+    ]
   },
   "C++:conanfile.py:conan install .:cmake --build build": {
     "language": "C++",
     "dependency_file": "conanfile.py",
     "install_dependencies": "conan install .",
-    "build_project": "cmake --build build"
+    "build_project": "cmake --build build",
+    "source_file_extensions": [
+      ".cpp",
+      ".cxx",
+      ".cc",
+      ".c++",
+      ".hpp",
+      ".hxx",
+      ".h++",
+      ".hh"
+    ]
   },
   "C++:CMakeLists.txt:cmake ..:make": {
     "language": "C++",
     "dependency_file": "CMakeLists.txt",
     "install_dependencies": "cmake ..",
-    "build_project": "make"
+    "build_project": "make",
+    "source_file_extensions": [
+      ".cpp",
+      ".cxx",
+      ".cc",
+      ".c++",
+      ".hpp",
+      ".hxx",
+      ".h++",
+      ".hh"
+    ]
   },
   "C++:Makefile:make deps:make": {
     "language": "C++",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "make"
+    "build_project": "make",
+    "source_file_extensions": [
+      ".cpp",
+      ".cxx",
+      ".cc",
+      ".c++",
+      ".hpp",
+      ".hxx",
+      ".h++",
+      ".hh"
+    ]
   },
   "C++:meson.build:meson setup builddir:ninja -C builddir": {
     "language": "C++",
     "dependency_file": "meson.build",
     "install_dependencies": "meson setup builddir",
-    "build_project": "ninja -C builddir"
+    "build_project": "ninja -C builddir",
+    "source_file_extensions": [
+      ".cpp",
+      ".cxx",
+      ".cc",
+      ".c++",
+      ".hpp",
+      ".hxx",
+      ".h++",
+      ".hh"
+    ]
   },
   "C++:BUILD:bazel fetch //...:bazel build //...": {
     "language": "C++",
     "dependency_file": "BUILD",
     "install_dependencies": "bazel fetch //...",
-    "build_project": "bazel build //..."
+    "build_project": "bazel build //...",
+    "source_file_extensions": [
+      ".cpp",
+      ".cxx",
+      ".cc",
+      ".c++",
+      ".hpp",
+      ".hxx",
+      ".h++",
+      ".hh"
+    ]
   },
   "Go:go.mod:go mod tidy:go build": {
     "language": "Go",
     "dependency_file": "go.mod",
     "install_dependencies": "go mod tidy",
-    "build_project": "go build"
+    "build_project": "go build",
+    "source_file_extensions": [
+      ".go"
+    ]
   },
   "Rust:Cargo.toml:cargo fetch:cargo build": {
     "language": "Rust",
     "dependency_file": "Cargo.toml",
     "install_dependencies": "cargo fetch",
-    "build_project": "cargo build"
+    "build_project": "cargo build",
+    "source_file_extensions": [
+      ".rs",
+      ".rlib"
+    ]
   },
   "Zig:build.zig.zon:zig fetch:zig build": {
     "language": "Zig",
     "dependency_file": "build.zig.zon",
     "install_dependencies": "zig fetch",
-    "build_project": "zig build"
+    "build_project": "zig build",
+    "source_file_extensions": [
+      ".zig",
+      ".zon"
+    ]
   },
   "Zig:build.zig:zig fetch:zig build": {
     "language": "Zig",
     "dependency_file": "build.zig",
     "install_dependencies": "zig fetch",
-    "build_project": "zig build"
+    "build_project": "zig build",
+    "source_file_extensions": [
+      ".zig",
+      ".zon"
+    ]
   },
   "Nim:*.nimble:nimble install:nimble build": {
     "language": "Nim",
     "dependency_file": "*.nimble",
     "install_dependencies": "nimble install",
-    "build_project": "nimble build"
+    "build_project": "nimble build",
+    "source_file_extensions": [
+      ".nim",
+      ".nims",
+      ".nimble"
+    ]
   },
   "Crystal:shard.yml:shards install:crystal build": {
     "language": "Crystal",
     "dependency_file": "shard.yml",
     "install_dependencies": "shards install",
-    "build_project": "crystal build"
+    "build_project": "crystal build",
+    "source_file_extensions": [
+      ".cr"
+    ]
   },
   "D:dub.json:dub fetch:dub build": {
     "language": "D",
     "dependency_file": "dub.json",
     "install_dependencies": "dub fetch",
-    "build_project": "dub build"
+    "build_project": "dub build",
+    "source_file_extensions": [
+      ".d",
+      ".di"
+    ]
   },
   "D:dub.sdl:dub fetch:dub build": {
     "language": "D",
     "dependency_file": "dub.sdl",
     "install_dependencies": "dub fetch",
-    "build_project": "dub build"
+    "build_project": "dub build",
+    "source_file_extensions": [
+      ".d",
+      ".di"
+    ]
   },
   "Carbon:BUILD:bazel build //...:bazel build //...": {
     "language": "Carbon",
     "dependency_file": "BUILD",
     "install_dependencies": "bazel build //...",
-    "build_project": "bazel build //..."
+    "build_project": "bazel build //...",
+    "source_file_extensions": [
+      ".carbon"
+    ]
   },
   "V:v.mod:v install:v build": {
     "language": "V",
     "dependency_file": "v.mod",
     "install_dependencies": "v install",
-    "build_project": "v build"
+    "build_project": "v build",
+    "source_file_extensions": [
+      ".v",
+      ".vsh"
+    ]
   },
   "Odin:build.odin:odin build:odin run": {
     "language": "Odin",
     "dependency_file": "build.odin",
     "install_dependencies": "odin build",
-    "build_project": "odin run"
+    "build_project": "odin run",
+    "source_file_extensions": [
+      ".odin"
+    ]
   },
   "Swift:Package.swift:swift package resolve:swift build": {
     "language": "Swift",
     "dependency_file": "Package.swift",
     "install_dependencies": "swift package resolve",
-    "build_project": "swift build"
+    "build_project": "swift build",
+    "source_file_extensions": [
+      ".swift"
+    ]
   },
   "Objective-C:Podfile:pod install:xcodebuild": {
     "language": "Objective-C",
     "dependency_file": "Podfile",
     "install_dependencies": "pod install",
-    "build_project": "xcodebuild"
+    "build_project": "xcodebuild",
+    "source_file_extensions": [
+      ".m",
+      ".mm",
+      ".h"
+    ]
   },
   "Objective-C++:Podfile:pod install:xcodebuild": {
     "language": "Objective-C++",
     "dependency_file": "Podfile",
     "install_dependencies": "pod install",
-    "build_project": "xcodebuild"
+    "build_project": "xcodebuild",
+    "source_file_extensions": [
+      ".mm",
+      ".M"
+    ]
   },
   "Dart:pubspec.yaml:dart pub get:dart compile exe": {
     "language": "Dart",
     "dependency_file": "pubspec.yaml",
     "install_dependencies": "dart pub get",
-    "build_project": "dart compile exe"
+    "build_project": "dart compile exe",
+    "source_file_extensions": [
+      ".dart"
+    ]
   },
   "Flutter:pubspec.yaml:flutter pub get:flutter build": {
     "language": "Flutter",
     "dependency_file": "pubspec.yaml",
     "install_dependencies": "flutter pub get",
-    "build_project": "flutter build"
+    "build_project": "flutter build",
+    "source_file_extensions": [
+      ".dart"
+    ]
   },
   "Xamarin:packages.config:nuget restore:msbuild": {
     "language": "Xamarin",
     "dependency_file": "packages.config",
     "install_dependencies": "nuget restore",
-    "build_project": "msbuild"
+    "build_project": "msbuild",
+    "source_file_extensions": [
+      ".cs",
+      ".fs",
+      ".vb"
+    ]
   },
   "Ruby:Gemfile:bundle install:bundle exec rake build": {
     "language": "Ruby",
     "dependency_file": "Gemfile",
     "install_dependencies": "bundle install",
-    "build_project": "bundle exec rake build"
+    "build_project": "bundle exec rake build",
+    "source_file_extensions": [
+      ".rb",
+      ".rbw",
+      ".rake",
+      ".gemspec"
+    ]
   },
   "Ruby:Gemfile:gem install:ruby script.rb": {
     "language": "Ruby",
     "dependency_file": "Gemfile",
     "install_dependencies": "gem install",
-    "build_project": "ruby script.rb"
+    "build_project": "ruby script.rb",
+    "source_file_extensions": [
+      ".rb",
+      ".rbw",
+      ".rake",
+      ".gemspec"
+    ]
   },
   "JRuby:Gemfile:bundle install:jruby script.rb": {
     "language": "JRuby",
     "dependency_file": "Gemfile",
     "install_dependencies": "bundle install",
-    "build_project": "jruby script.rb"
+    "build_project": "jruby script.rb",
+    "source_file_extensions": [
+      ".rb",
+      ".rbw"
+    ]
   },
   "Rubinius:Gemfile:bundle install:rbx script.rb": {
     "language": "Rubinius",
     "dependency_file": "Gemfile",
     "install_dependencies": "bundle install",
-    "build_project": "rbx script.rb"
+    "build_project": "rbx script.rb",
+    "source_file_extensions": [
+      ".rb",
+      ".rbx"
+    ]
   },
   "mruby:mrbgem.rake:rake:mruby script.rb": {
     "language": "mruby",
     "dependency_file": "mrbgem.rake",
     "install_dependencies": "rake",
-    "build_project": "mruby script.rb"
+    "build_project": "mruby script.rb",
+    "source_file_extensions": [
+      ".rb",
+      ".mrb"
+    ]
   },
   "PHP:composer.json:composer install:php artisan build": {
     "language": "PHP",
     "dependency_file": "composer.json",
     "install_dependencies": "composer install",
-    "build_project": "php artisan build"
+    "build_project": "php artisan build",
+    "source_file_extensions": [
+      ".php",
+      ".phtml",
+      ".php3",
+      ".php4",
+      ".php5",
+      ".phps"
+    ]
   },
   "Hack:composer.json:composer install:hhvm script.hack": {
     "language": "Hack",
     "dependency_file": "composer.json",
     "install_dependencies": "composer install",
-    "build_project": "hhvm script.hack"
+    "build_project": "hhvm script.hack",
+    "source_file_extensions": [
+      ".hack",
+      ".hh"
+    ]
   },
   "Haskell:*.cabal:cabal update:cabal build": {
     "language": "Haskell",
     "dependency_file": "*.cabal",
     "install_dependencies": "cabal update",
-    "build_project": "cabal build"
+    "build_project": "cabal build",
+    "source_file_extensions": [
+      ".hs",
+      ".lhs",
+      ".hsc"
+    ]
   },
   "Haskell:stack.yaml:stack setup:stack build": {
     "language": "Haskell",
     "dependency_file": "stack.yaml",
     "install_dependencies": "stack setup",
-    "build_project": "stack build"
+    "build_project": "stack build",
+    "source_file_extensions": [
+      ".hs",
+      ".lhs",
+      ".hsc"
+    ]
   },
   "Haskell:package.yaml:stack setup:stack build": {
     "language": "Haskell",
     "dependency_file": "package.yaml",
     "install_dependencies": "stack setup",
-    "build_project": "stack build"
+    "build_project": "stack build",
+    "source_file_extensions": [
+      ".hs",
+      ".lhs",
+      ".hsc"
+    ]
   },
   "OCaml:dune-project:opam install --deps-only .:dune build": {
     "language": "OCaml",
     "dependency_file": "dune-project",
     "install_dependencies": "opam install --deps-only .",
-    "build_project": "dune build"
+    "build_project": "dune build",
+    "source_file_extensions": [
+      ".ml",
+      ".mli",
+      ".mll",
+      ".mly"
+    ]
   },
   "OCaml:*.opam:opam install --deps-only .:dune build": {
     "language": "OCaml",
     "dependency_file": "*.opam",
     "install_dependencies": "opam install --deps-only .",
-    "build_project": "dune build"
+    "build_project": "dune build",
+    "source_file_extensions": [
+      ".ml",
+      ".mli",
+      ".mll",
+      ".mly"
+    ]
   },
   "F#:*.fsproj:dotnet restore:dotnet build": {
     "language": "F#",
     "dependency_file": "*.fsproj",
     "install_dependencies": "dotnet restore",
-    "build_project": "dotnet build"
+    "build_project": "dotnet build",
+    "source_file_extensions": [
+      ".fs",
+      ".fsx",
+      ".fsi"
+    ]
   },
   "Erlang:rebar.config:rebar3 deps:rebar3 compile": {
     "language": "Erlang",
     "dependency_file": "rebar.config",
     "install_dependencies": "rebar3 deps",
-    "build_project": "rebar3 compile"
+    "build_project": "rebar3 compile",
+    "source_file_extensions": [
+      ".erl",
+      ".hrl",
+      ".escript"
+    ]
   },
   "Elixir:mix.exs:mix deps.get:mix compile": {
     "language": "Elixir",
     "dependency_file": "mix.exs",
     "install_dependencies": "mix deps.get",
-    "build_project": "mix compile"
+    "build_project": "mix compile",
+    "source_file_extensions": [
+      ".ex",
+      ".exs"
+    ]
   },
   "Elm:elm.json:elm install:elm make src/Main.elm": {
     "language": "Elm",
     "dependency_file": "elm.json",
     "install_dependencies": "elm install",
-    "build_project": "elm make src/Main.elm"
+    "build_project": "elm make src/Main.elm",
+    "source_file_extensions": [
+      ".elm"
+    ]
   },
   "PureScript:spago.dhall:spago install:spago build": {
     "language": "PureScript",
     "dependency_file": "spago.dhall",
     "install_dependencies": "spago install",
-    "build_project": "spago build"
+    "build_project": "spago build",
+    "source_file_extensions": [
+      ".purs"
+    ]
   },
   "Idris:*.ipkg:idris --install:idris --build": {
     "language": "Idris",
     "dependency_file": "*.ipkg",
     "install_dependencies": "idris --install",
-    "build_project": "idris --build"
+    "build_project": "idris --build",
+    "source_file_extensions": [
+      ".idr",
+      ".lidr"
+    ]
   },
   "Agda:*.agda-lib:agda-pkg install:agda --compile": {
     "language": "Agda",
     "dependency_file": "*.agda-lib",
     "install_dependencies": "agda-pkg install",
-    "build_project": "agda --compile"
+    "build_project": "agda --compile",
+    "source_file_extensions": [
+      ".agda",
+      ".lagda"
+    ]
   },
   "Coq:_CoqProject:coq_makefile -f _CoqProject -o Makefile:make": {
     "language": "Coq",
     "dependency_file": "_CoqProject",
     "install_dependencies": "coq_makefile -f _CoqProject -o Makefile",
-    "build_project": "make"
+    "build_project": "make",
+    "source_file_extensions": [
+      ".v",
+      ".coq"
+    ]
   },
   "Lean:leanpkg.toml:leanpkg build:lean --make": {
     "language": "Lean",
     "dependency_file": "leanpkg.toml",
     "install_dependencies": "leanpkg build",
-    "build_project": "lean --make"
+    "build_project": "lean --make",
+    "source_file_extensions": [
+      ".lean",
+      ".hlean"
+    ]
   },
   "SML:MLB:mlb:mlton": {
     "language": "SML",
     "dependency_file": "MLB",
     "install_dependencies": "mlb",
-    "build_project": "mlton"
+    "build_project": "mlton",
+    "source_file_extensions": [
+      ".sml",
+      ".ml",
+      ".sig"
+    ]
   },
   "Common Lisp:*.asd:quicklisp:sbcl --load": {
     "language": "Common Lisp",
     "dependency_file": "*.asd",
     "install_dependencies": "quicklisp",
-    "build_project": "sbcl --load"
+    "build_project": "sbcl --load",
+    "source_file_extensions": [
+      ".lisp",
+      ".lsp",
+      ".l",
+      ".cl",
+      ".fasl"
+    ]
   },
   "Scheme:*.scm:chicken-install:csc": {
     "language": "Scheme",
     "dependency_file": "*.scm",
     "install_dependencies": "chicken-install",
-    "build_project": "csc"
+    "build_project": "csc",
+    "source_file_extensions": [
+      ".scm",
+      ".ss",
+      ".sch",
+      ".rkt"
+    ]
   },
   "Racket:info.rkt:raco pkg install:raco exe": {
     "language": "Racket",
     "dependency_file": "info.rkt",
     "install_dependencies": "raco pkg install",
-    "build_project": "raco exe"
+    "build_project": "raco exe",
+    "source_file_extensions": [
+      ".rkt",
+      ".rktl",
+      ".scrbl"
+    ]
   },
   "ClojureScript:project.clj:lein deps:lein cljsbuild once": {
     "language": "ClojureScript",
     "dependency_file": "project.clj",
     "install_dependencies": "lein deps",
-    "build_project": "lein cljsbuild once"
+    "build_project": "lein cljsbuild once",
+    "source_file_extensions": [
+      ".cljs"
+    ]
   },
   "Emacs Lisp:Cask:cask install:cask build": {
     "language": "Emacs Lisp",
     "dependency_file": "Cask",
     "install_dependencies": "cask install",
-    "build_project": "cask build"
+    "build_project": "cask build",
+    "source_file_extensions": [
+      ".el",
+      ".elc"
+    ]
   },
   "R:DESCRIPTION:install.packages():R CMD build": {
     "language": "R",
     "dependency_file": "DESCRIPTION",
     "install_dependencies": "install.packages()",
-    "build_project": "R CMD build"
+    "build_project": "R CMD build",
+    "source_file_extensions": [
+      ".r",
+      ".R",
+      ".rda",
+      ".rds",
+      ".Rhistory"
+    ]
   },
   "Julia:Project.toml:using Pkg; Pkg.instantiate():julia script.jl": {
     "language": "Julia",
     "dependency_file": "Project.toml",
     "install_dependencies": "using Pkg; Pkg.instantiate()",
-    "build_project": "julia script.jl"
+    "build_project": "julia script.jl",
+    "source_file_extensions": [
+      ".jl"
+    ]
   },
   "Matlab:*.prj:mpm install:mcc -m script.m": {
     "language": "Matlab",
     "dependency_file": "*.prj",
     "install_dependencies": "mpm install",
-    "build_project": "mcc -m script.m"
+    "build_project": "mcc -m script.m",
+    "source_file_extensions": [
+      ".m",
+      ".mat",
+      ".fig",
+      ".mlx"
+    ]
   },
   "Octave:DESCRIPTION:pkg install:octave script.m": {
     "language": "Octave",
     "dependency_file": "DESCRIPTION",
     "install_dependencies": "pkg install",
-    "build_project": "octave script.m"
+    "build_project": "octave script.m",
+    "source_file_extensions": [
+      ".m",
+      ".oct"
+    ]
   },
   "Mathematica:PacletInfo.m:PacletInstall:math -script script.nb": {
     "language": "Mathematica",
     "dependency_file": "PacletInfo.m",
     "install_dependencies": "PacletInstall",
-    "build_project": "math -script script.nb"
+    "build_project": "math -script script.nb",
+    "source_file_extensions": [
+      ".nb",
+      ".m",
+      ".wl",
+      ".wls",
+      ".mx"
+    ]
   },
   "S-Plus:DESCRIPTION:install.packages():Splus BATCH script.s": {
     "language": "S-Plus",
     "dependency_file": "DESCRIPTION",
     "install_dependencies": "install.packages()",
-    "build_project": "Splus BATCH script.s"
+    "build_project": "Splus BATCH script.s",
+    "source_file_extensions": [
+      ".s",
+      ".S",
+      ".q"
+    ]
   },
   "SAS:*.sas:proc install:sas script.sas": {
     "language": "SAS",
     "dependency_file": "*.sas",
     "install_dependencies": "proc install",
-    "build_project": "sas script.sas"
+    "build_project": "sas script.sas",
+    "source_file_extensions": [
+      ".sas",
+      ".sas7bdat",
+      ".sas7bcat"
+    ]
   },
   "SPSS:*.sps:EXTENSION INSTALL:spss -f script.sps": {
     "language": "SPSS",
     "dependency_file": "*.sps",
     "install_dependencies": "EXTENSION INSTALL",
-    "build_project": "spss -f script.sps"
+    "build_project": "spss -f script.sps",
+    "source_file_extensions": [
+      ".sps",
+      ".spv",
+      ".sav"
+    ]
   },
   "Stata:*.pkg:net install:stata -b do script.do": {
     "language": "Stata",
     "dependency_file": "*.pkg",
     "install_dependencies": "net install",
-    "build_project": "stata -b do script.do"
+    "build_project": "stata -b do script.do",
+    "source_file_extensions": [
+      ".do",
+      ".ado",
+      ".dta"
+    ]
   },
   "Fortran:fpm.toml:fpm update:fpm build": {
     "language": "Fortran",
     "dependency_file": "fpm.toml",
     "install_dependencies": "fpm update",
-    "build_project": "fpm build"
+    "build_project": "fpm build",
+    "source_file_extensions": [
+      ".f",
+      ".f77",
+      ".f90",
+      ".f95",
+      ".f03",
+      ".f08",
+      ".for"
+    ]
   },
   "Fortran:Makefile:make deps:gfortran -o program *.f90": {
     "language": "Fortran",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "gfortran -o program *.f90"
+    "build_project": "gfortran -o program *.f90",
+    "source_file_extensions": [
+      ".f",
+      ".f77",
+      ".f90",
+      ".f95",
+      ".f03",
+      ".f08",
+      ".for"
+    ]
   },
   "COBOL:Makefile:make deps:cobc -x program.cob": {
     "language": "COBOL",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "cobc -x program.cob"
+    "build_project": "cobc -x program.cob",
+    "source_file_extensions": [
+      ".cob",
+      ".cbl",
+      ".cpy"
+    ]
   },
   "Ada:*.gpr:gprbuild -p:gprbuild": {
     "language": "Ada",
     "dependency_file": "*.gpr",
     "install_dependencies": "gprbuild -p",
-    "build_project": "gprbuild"
+    "build_project": "gprbuild",
+    "source_file_extensions": [
+      ".ada",
+      ".adb",
+      ".ads"
+    ]
   },
   "Modula-2:Makefile:make deps:gm2 -o program *.mod": {
     "language": "Modula-2",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "gm2 -o program *.mod"
+    "build_project": "gm2 -o program *.mod",
+    "source_file_extensions": [
+      ".mod",
+      ".def",
+      ".mi",
+      ".md"
+    ]
   },
   "Modula-3:m3makefile:m3build:m3build": {
     "language": "Modula-3",
     "dependency_file": "m3makefile",
     "install_dependencies": "m3build",
-    "build_project": "m3build"
+    "build_project": "m3build",
+    "source_file_extensions": [
+      ".m3",
+      ".i3",
+      ".mg",
+      ".ig"
+    ]
   },
   "Pascal:Makefile:make deps:fpc program.pas": {
     "language": "Pascal",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "fpc program.pas"
+    "build_project": "fpc program.pas",
+    "source_file_extensions": [
+      ".pas",
+      ".pp",
+      ".inc",
+      ".dpr",
+      ".dpk"
+    ]
   },
   "Delphi:*.dproj:nuget restore:msbuild": {
     "language": "Delphi",
     "dependency_file": "*.dproj",
     "install_dependencies": "nuget restore",
-    "build_project": "msbuild"
+    "build_project": "msbuild",
+    "source_file_extensions": [
+      ".pas",
+      ".dpr",
+      ".dfm",
+      ".dpk"
+    ]
   },
   "Perl:cpanfile:cpanm --installdeps .:perl script.pl": {
     "language": "Perl",
     "dependency_file": "cpanfile",
     "install_dependencies": "cpanm --installdeps .",
-    "build_project": "perl script.pl"
+    "build_project": "perl script.pl",
+    "source_file_extensions": [
+      ".pl",
+      ".pm",
+      ".t",
+      ".pod",
+      ".cgi"
+    ]
   },
   "Perl:Makefile.PL:perl Makefile.PL && make installdeps:make": {
     "language": "Perl",
     "dependency_file": "Makefile.PL",
     "install_dependencies": "perl Makefile.PL && make installdeps",
-    "build_project": "make"
+    "build_project": "make",
+    "source_file_extensions": [
+      ".pl",
+      ".pm",
+      ".t",
+      ".pod",
+      ".cgi"
+    ]
   },
   "Perl:Build.PL:perl Build.PL && ./Build installdeps:./Build": {
     "language": "Perl",
     "dependency_file": "Build.PL",
     "install_dependencies": "perl Build.PL && ./Build installdeps",
-    "build_project": "./Build"
-  },
-  "Python:requirements.txt:pip install -r requirements.txt:python script.py": {
-    "language": "Python",
-    "dependency_file": "requirements.txt",
-    "install_dependencies": "pip install -r requirements.txt",
-    "build_project": "python script.py"
+    "build_project": "./Build",
+    "source_file_extensions": [
+      ".pl",
+      ".pm",
+      ".t",
+      ".pod",
+      ".cgi"
+    ]
   },
   "Lua:rockspec:luarocks install:lua script.lua": {
     "language": "Lua",
     "dependency_file": "rockspec",
     "install_dependencies": "luarocks install",
-    "build_project": "lua script.lua"
+    "build_project": "lua script.lua",
+    "source_file_extensions": [
+      ".lua",
+      ".luac"
+    ]
   },
   "LuaJIT:rockspec:luarocks install:luajit script.lua": {
     "language": "LuaJIT",
     "dependency_file": "rockspec",
     "install_dependencies": "luarocks install",
-    "build_project": "luajit script.lua"
+    "build_project": "luajit script.lua",
+    "source_file_extensions": [
+      ".lua",
+      ".luac"
+    ]
   },
   "Tcl:pkgIndex.tcl:package require pkg:tclsh script.tcl": {
     "language": "Tcl",
     "dependency_file": "pkgIndex.tcl",
     "install_dependencies": "package require pkg",
-    "build_project": "tclsh script.tcl"
+    "build_project": "tclsh script.tcl",
+    "source_file_extensions": [
+      ".tcl",
+      ".tk",
+      ".itk",
+      ".itcl"
+    ]
   },
   "Tk:pkgIndex.tcl:package require Tk:wish script.tk": {
     "language": "Tk",
     "dependency_file": "pkgIndex.tcl",
     "install_dependencies": "package require Tk",
-    "build_project": "wish script.tk"
+    "build_project": "wish script.tk",
+    "source_file_extensions": [
+      ".tk",
+      ".tcl"
+    ]
   },
   "Bash:requirements.txt:while read req; do apt install $req; done:bash script.sh": {
     "language": "Bash",
     "dependency_file": "requirements.txt",
     "install_dependencies": "while read req; do apt install $req; done",
-    "build_project": "bash script.sh"
+    "build_project": "bash script.sh",
+    "source_file_extensions": [
+      ".sh",
+      ".bash",
+      ".bashrc",
+      ".bash_profile"
+    ]
   },
   "Zsh:requirements.txt:while read req; do apt install $req; done:zsh script.zsh": {
     "language": "Zsh",
     "dependency_file": "requirements.txt",
     "install_dependencies": "while read req; do apt install $req; done",
-    "build_project": "zsh script.zsh"
+    "build_project": "zsh script.zsh",
+    "source_file_extensions": [
+      ".zsh",
+      ".zshrc",
+      ".zprofile"
+    ]
   },
   "Fish:requirements.txt:while read req; do apt install $req; done:fish script.fish": {
     "language": "Fish",
     "dependency_file": "requirements.txt",
     "install_dependencies": "while read req; do apt install $req; done",
-    "build_project": "fish script.fish"
+    "build_project": "fish script.fish",
+    "source_file_extensions": [
+      ".fish"
+    ]
   },
   "PowerShell:requirements.psd1:Install-Module:pwsh script.ps1": {
     "language": "PowerShell",
     "dependency_file": "requirements.psd1",
     "install_dependencies": "Install-Module",
-    "build_project": "pwsh script.ps1"
+    "build_project": "pwsh script.ps1",
+    "source_file_extensions": [
+      ".ps1",
+      ".psm1",
+      ".psd1",
+      ".ps1xml"
+    ]
   },
   "Batch:requirements.txt:for /f %i in (requirements.txt) do choco install %i:script.bat": {
     "language": "Batch",
     "dependency_file": "requirements.txt",
     "install_dependencies": "for /f %i in (requirements.txt) do choco install %i",
-    "build_project": "script.bat"
+    "build_project": "script.bat",
+    "source_file_extensions": [
+      ".bat",
+      ".cmd"
+    ]
   },
   "HTML:package.json:npm install:npm run build": {
     "language": "HTML",
     "dependency_file": "package.json",
     "install_dependencies": "npm install",
-    "build_project": "npm run build"
+    "build_project": "npm run build",
+    "source_file_extensions": [
+      ".html",
+      ".htm",
+      ".xhtml"
+    ]
   },
   "CSS:package.json:npm install:npm run build": {
     "language": "CSS",
     "dependency_file": "package.json",
     "install_dependencies": "npm install",
-    "build_project": "npm run build"
+    "build_project": "npm run build",
+    "source_file_extensions": [
+      ".css"
+    ]
   },
   "SCSS:package.json:npm install:sass src:dist": {
     "language": "SCSS",
     "dependency_file": "package.json",
     "install_dependencies": "npm install",
-    "build_project": "sass src:dist"
+    "build_project": "sass src:dist",
+    "source_file_extensions": [
+      ".scss",
+      ".sass"
+    ]
   },
   "Less:package.json:npm install:lessc styles.less": {
     "language": "Less",
     "dependency_file": "package.json",
     "install_dependencies": "npm install",
-    "build_project": "lessc styles.less"
+    "build_project": "lessc styles.less",
+    "source_file_extensions": [
+      ".less"
+    ]
   },
   "Stylus:package.json:npm install:stylus styles.styl": {
     "language": "Stylus",
     "dependency_file": "package.json",
     "install_dependencies": "npm install",
-    "build_project": "stylus styles.styl"
+    "build_project": "stylus styles.styl",
+    "source_file_extensions": [
+      ".styl",
+      ".stylus"
+    ]
   },
   "CoffeeScript:package.json:npm install:coffee -c *.coffee": {
     "language": "CoffeeScript",
     "dependency_file": "package.json",
     "install_dependencies": "npm install",
-    "build_project": "coffee -c *.coffee"
+    "build_project": "coffee -c *.coffee",
+    "source_file_extensions": [
+      ".coffee",
+      ".litcoffee"
+    ]
   },
   "LiveScript:package.json:npm install:lsc -c *.ls": {
     "language": "LiveScript",
     "dependency_file": "package.json",
     "install_dependencies": "npm install",
-    "build_project": "lsc -c *.ls"
+    "build_project": "lsc -c *.ls",
+    "source_file_extensions": [
+      ".ls"
+    ]
   },
   "Reason:package.json:npm install:bsb -make-world": {
     "language": "Reason",
     "dependency_file": "package.json",
     "install_dependencies": "npm install",
-    "build_project": "bsb -make-world"
+    "build_project": "bsb -make-world",
+    "source_file_extensions": [
+      ".re",
+      ".rei"
+    ]
   },
   "ReScript:bsconfig.json:npm install:rescript build": {
     "language": "ReScript",
     "dependency_file": "bsconfig.json",
     "install_dependencies": "npm install",
-    "build_project": "rescript build"
+    "build_project": "rescript build",
+    "source_file_extensions": [
+      ".res",
+      ".resi"
+    ]
   },
   "SQL:requirements.txt:pip install -r requirements.txt:sqlfluff lint *.sql": {
     "language": "SQL",
     "dependency_file": "requirements.txt",
     "install_dependencies": "pip install -r requirements.txt",
-    "build_project": "sqlfluff lint *.sql"
+    "build_project": "sqlfluff lint *.sql",
+    "source_file_extensions": [
+      ".sql",
+      ".ddl",
+      ".dml"
+    ]
   },
   "PL/SQL:requirements.txt:pip install cx_Oracle:sqlplus @script.sql": {
     "language": "PL/SQL",
     "dependency_file": "requirements.txt",
     "install_dependencies": "pip install cx_Oracle",
-    "build_project": "sqlplus @script.sql"
+    "build_project": "sqlplus @script.sql",
+    "source_file_extensions": [
+      ".sql",
+      ".pls",
+      ".plb",
+      ".pck"
+    ]
   },
   "T-SQL:requirements.txt:pip install pymssql:sqlcmd -i script.sql": {
     "language": "T-SQL",
     "dependency_file": "requirements.txt",
     "install_dependencies": "pip install pymssql",
-    "build_project": "sqlcmd -i script.sql"
+    "build_project": "sqlcmd -i script.sql",
+    "source_file_extensions": [
+      ".sql",
+      ".tsql"
+    ]
   },
   "PostgreSQL:requirements.txt:pip install psycopg2:psql -f script.sql": {
     "language": "PostgreSQL",
     "dependency_file": "requirements.txt",
     "install_dependencies": "pip install psycopg2",
-    "build_project": "psql -f script.sql"
+    "build_project": "psql -f script.sql",
+    "source_file_extensions": [
+      ".sql",
+      ".pgsql"
+    ]
   },
   "MySQL:requirements.txt:pip install mysql-connector:mysql < script.sql": {
     "language": "MySQL",
     "dependency_file": "requirements.txt",
     "install_dependencies": "pip install mysql-connector",
-    "build_project": "mysql < script.sql"
+    "build_project": "mysql < script.sql",
+    "source_file_extensions": [
+      ".sql",
+      ".mysql"
+    ]
   },
   "SQLite:requirements.txt:pip install sqlite3:sqlite3 db.sqlite < script.sql": {
     "language": "SQLite",
     "dependency_file": "requirements.txt",
     "install_dependencies": "pip install sqlite3",
-    "build_project": "sqlite3 db.sqlite < script.sql"
+    "build_project": "sqlite3 db.sqlite < script.sql",
+    "source_file_extensions": [
+      ".sql",
+      ".sqlite",
+      ".db"
+    ]
   },
   "Redis:requirements.txt:pip install redis:redis-cli < script.redis": {
     "language": "Redis",
     "dependency_file": "requirements.txt",
     "install_dependencies": "pip install redis",
-    "build_project": "redis-cli < script.redis"
+    "build_project": "redis-cli < script.redis",
+    "source_file_extensions": [
+      ".redis",
+      ".rdb"
+    ]
   },
   "MongoDB:package.json:npm install mongodb:mongo script.js": {
     "language": "MongoDB",
     "dependency_file": "package.json",
     "install_dependencies": "npm install mongodb",
-    "build_project": "mongo script.js"
+    "build_project": "mongo script.js",
+    "source_file_extensions": [
+      ".js",
+      ".mongodb"
+    ]
   },
   "CQL:requirements.txt:pip install cassandra-driver:cqlsh -f script.cql": {
     "language": "CQL",
     "dependency_file": "requirements.txt",
     "install_dependencies": "pip install cassandra-driver",
-    "build_project": "cqlsh -f script.cql"
+    "build_project": "cqlsh -f script.cql",
+    "source_file_extensions": [
+      ".cql"
+    ]
   },
   "CUDA:Makefile:make deps:nvcc -o program *.cu": {
     "language": "CUDA",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "nvcc -o program *.cu"
+    "build_project": "nvcc -o program *.cu",
+    "source_file_extensions": [
+      ".cu",
+      ".cuh"
+    ]
   },
   "OpenCL:Makefile:make deps:gcc -lOpenCL -o program *.c": {
     "language": "OpenCL",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "gcc -lOpenCL -o program *.c"
+    "build_project": "gcc -lOpenCL -o program *.c",
+    "source_file_extensions": [
+      ".cl",
+      ".ocl"
+    ]
   },
   "HLSL:*.vcxproj:nuget restore:fxc /T ps_5_0 shader.hlsl": {
     "language": "HLSL",
     "dependency_file": "*.vcxproj",
     "install_dependencies": "nuget restore",
-    "build_project": "fxc /T ps_5_0 shader.hlsl"
+    "build_project": "fxc /T ps_5_0 shader.hlsl",
+    "source_file_extensions": [
+      ".hlsl",
+      ".fx",
+      ".fxh"
+    ]
   },
   "GLSL:Makefile:make deps:glslangValidator shader.glsl": {
     "language": "GLSL",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "glslangValidator shader.glsl"
+    "build_project": "glslangValidator shader.glsl",
+    "source_file_extensions": [
+      ".glsl",
+      ".vert",
+      ".frag",
+      ".geom",
+      ".tesc",
+      ".tese",
+      ".comp"
+    ]
   },
   "Cg:Makefile:make deps:cgc -profile gp4fp shader.cg": {
     "language": "Cg",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "cgc -profile gp4fp shader.cg"
+    "build_project": "cgc -profile gp4fp shader.cg",
+    "source_file_extensions": [
+      ".cg",
+      ".cgfx"
+    ]
   },
   "Chapel:Makefile:make deps:chpl program.chpl": {
     "language": "Chapel",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "chpl program.chpl"
+    "build_project": "chpl program.chpl",
+    "source_file_extensions": [
+      ".chpl"
+    ]
   },
   "X10:build.xml:ant resolve:x10c++ program.x10": {
     "language": "X10",
     "dependency_file": "build.xml",
     "install_dependencies": "ant resolve",
-    "build_project": "x10c++ program.x10"
+    "build_project": "x10c++ program.x10",
+    "source_file_extensions": [
+      ".x10"
+    ]
   },
   "UPC:Makefile:make deps:upcc -o program *.upc": {
     "language": "UPC",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "upcc -o program *.upc"
+    "build_project": "upcc -o program *.upc",
+    "source_file_extensions": [
+      ".upc"
+    ]
   },
   "OpenMP:Makefile:make deps:gcc -fopenmp -o program *.c": {
     "language": "OpenMP",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "gcc -fopenmp -o program *.c"
+    "build_project": "gcc -fopenmp -o program *.c",
+    "source_file_extensions": [
+      ".c",
+      ".cpp",
+      ".f90"
+    ]
   },
   "MPI:Makefile:make deps:mpicc -o program *.c": {
     "language": "MPI",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "mpicc -o program *.c"
+    "build_project": "mpicc -o program *.c",
+    "source_file_extensions": [
+      ".c",
+      ".cpp",
+      ".f90"
+    ]
   },
   "Verilog:Makefile:make deps:iverilog -o output *.v": {
     "language": "Verilog",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "iverilog -o output *.v"
+    "build_project": "iverilog -o output *.v",
+    "source_file_extensions": [
+      ".v",
+      ".vh",
+      ".sv"
+    ]
   },
   "VHDL:Makefile:make deps:ghdl -a *.vhd && ghdl -e entity": {
     "language": "VHDL",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "ghdl -a *.vhd && ghdl -e entity"
+    "build_project": "ghdl -a *.vhd && ghdl -e entity",
+    "source_file_extensions": [
+      ".vhd",
+      ".vhdl"
+    ]
   },
   "SystemVerilog:Makefile:make deps:verilator --cc *.sv": {
     "language": "SystemVerilog",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "verilator --cc *.sv"
+    "build_project": "verilator --cc *.sv",
+    "source_file_extensions": [
+      ".sv",
+      ".svh"
+    ]
   },
   "Vala:meson.build:meson setup builddir:ninja -C builddir": {
     "language": "Vala",
     "dependency_file": "meson.build",
     "install_dependencies": "meson setup builddir",
-    "build_project": "ninja -C builddir"
+    "build_project": "ninja -C builddir",
+    "source_file_extensions": [
+      ".vala",
+      ".vapi"
+    ]
   },
   "Genie:meson.build:meson setup builddir:ninja -C builddir": {
     "language": "Genie",
     "dependency_file": "meson.build",
     "install_dependencies": "meson setup builddir",
-    "build_project": "ninja -C builddir"
+    "build_project": "ninja -C builddir",
+    "source_file_extensions": [
+      ".gs"
+    ]
   },
   "QML:*.pro:qmake:make": {
     "language": "QML",
     "dependency_file": "*.pro",
     "install_dependencies": "qmake",
-    "build_project": "make"
+    "build_project": "make",
+    "source_file_extensions": [
+      ".qml",
+      ".qmlproject"
+    ]
   },
   "Arduino:platformio.ini:pio lib install:pio run": {
     "language": "Arduino",
     "dependency_file": "platformio.ini",
     "install_dependencies": "pio lib install",
-    "build_project": "pio run"
+    "build_project": "pio run",
+    "source_file_extensions": [
+      ".ino",
+      ".pde"
+    ]
   },
   "Processing:sketch.properties:processing-java --sketch=. --run:processing-java --sketch=. --export": {
     "language": "Processing",
     "dependency_file": "sketch.properties",
     "install_dependencies": "processing-java --sketch=. --run",
-    "build_project": "processing-java --sketch=. --export"
+    "build_project": "processing-java --sketch=. --export",
+    "source_file_extensions": [
+      ".pde",
+      ".java"
+    ]
   },
   "p5.js:package.json:npm install:npm run build": {
     "language": "p5.js",
     "dependency_file": "package.json",
     "install_dependencies": "npm install",
-    "build_project": "npm run build"
+    "build_project": "npm run build",
+    "source_file_extensions": [
+      ".js",
+      ".p5js"
+    ]
   },
   "Pure Data:Makefile:make externals:pd patch.pd": {
     "language": "Pure Data",
     "dependency_file": "Makefile",
     "install_dependencies": "make externals",
-    "build_project": "pd patch.pd"
+    "build_project": "pd patch.pd",
+    "source_file_extensions": [
+      ".pd",
+      ".pat"
+    ]
   },
   "Max/MSP:package-info.json:max package install:max patch.maxpat": {
     "language": "Max/MSP",
     "dependency_file": "package-info.json",
     "install_dependencies": "max package install",
-    "build_project": "max patch.maxpat"
+    "build_project": "max patch.maxpat",
+    "source_file_extensions": [
+      ".maxpat",
+      ".mxo"
+    ]
   },
   "SuperCollider:Quarks:Quarks.install:sclang script.scd": {
     "language": "SuperCollider",
     "dependency_file": "Quarks",
     "install_dependencies": "Quarks.install",
-    "build_project": "sclang script.scd"
+    "build_project": "sclang script.scd",
+    "source_file_extensions": [
+      ".sc",
+      ".scd"
+    ]
   },
   "ChucK:Makefile:make deps:chuck script.ck": {
     "language": "ChucK",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "chuck script.ck"
+    "build_project": "chuck script.ck",
+    "source_file_extensions": [
+      ".ck"
+    ]
   },
   "GDScript:project.godot:godot --export:godot --main-pack game.pck": {
     "language": "GDScript",
     "dependency_file": "project.godot",
     "install_dependencies": "godot --export",
-    "build_project": "godot --main-pack game.pck"
+    "build_project": "godot --main-pack game.pck",
+    "source_file_extensions": [
+      ".gd",
+      ".cs"
+    ]
   },
   "UnityScript:packages.json:unity package install:unity -batchmode -quit -projectPath .": {
     "language": "UnityScript",
     "dependency_file": "packages.json",
     "install_dependencies": "unity package install",
-    "build_project": "unity -batchmode -quit -projectPath ."
+    "build_project": "unity -batchmode -quit -projectPath .",
+    "source_file_extensions": [
+      ".js",
+      ".cs",
+      ".boo"
+    ]
   },
   "AngelScript:Makefile:make deps:angelscript script.as": {
     "language": "AngelScript",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "angelscript script.as"
+    "build_project": "angelscript script.as",
+    "source_file_extensions": [
+      ".as"
+    ]
   },
   "Squirrel:Makefile:make deps:sq script.nut": {
     "language": "Squirrel",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "sq script.nut"
+    "build_project": "sq script.nut",
+    "source_file_extensions": [
+      ".nut",
+      ".sq"
+    ]
   },
   "Lua:conf.lua:love --fused .:love .": {
     "language": "Lua",
     "dependency_file": "conf.lua",
     "install_dependencies": "love --fused .",
-    "build_project": "love ."
+    "build_project": "love .",
+    "source_file_extensions": [
+      ".lua",
+      ".luac"
+    ]
   },
   "BASIC:Makefile:make deps:basic program.bas": {
     "language": "BASIC",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "basic program.bas"
+    "build_project": "basic program.bas",
+    "source_file_extensions": [
+      ".bas",
+      ".basic"
+    ]
   },
   "QuickBASIC:Makefile:make deps:qb64 program.bas": {
     "language": "QuickBASIC",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "qb64 program.bas"
+    "build_project": "qb64 program.bas",
+    "source_file_extensions": [
+      ".bas",
+      ".bi"
+    ]
   },
   "Visual Basic 6:*.vbp:regsvr32 component.dll:vb6 /make project.vbp": {
     "language": "Visual Basic 6",
     "dependency_file": "*.vbp",
     "install_dependencies": "regsvr32 component.dll",
-    "build_project": "vb6 /make project.vbp"
+    "build_project": "vb6 /make project.vbp",
+    "source_file_extensions": [
+      ".bas",
+      ".frm",
+      ".cls",
+      ".vbp"
+    ]
   },
   "ALGOL:Makefile:make deps:algol program.alg": {
     "language": "ALGOL",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "algol program.alg"
+    "build_project": "algol program.alg",
+    "source_file_extensions": [
+      ".alg",
+      ".a68"
+    ]
   },
   "Smalltalk:package.st:Metacello new load:squeak image.image": {
     "language": "Smalltalk",
     "dependency_file": "package.st",
     "install_dependencies": "Metacello new load",
-    "build_project": "squeak image.image"
+    "build_project": "squeak image.image",
+    "source_file_extensions": [
+      ".st",
+      ".cs"
+    ]
   },
   "Simula:Makefile:make deps:cim program.sim": {
     "language": "Simula",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "cim program.sim"
+    "build_project": "cim program.sim",
+    "source_file_extensions": [
+      ".sim"
+    ]
   },
   "PL/I:Makefile:make deps:pli program.pli": {
     "language": "PL/I",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "pli program.pli"
+    "build_project": "pli program.pli",
+    "source_file_extensions": [
+      ".pl1",
+      ".pli",
+      ".inc"
+    ]
   },
   "APL:workspace.dws:load workspace:apl script.apl": {
     "language": "APL",
     "dependency_file": "workspace.dws",
     "install_dependencies": "load workspace",
-    "build_project": "apl script.apl"
+    "build_project": "apl script.apl",
+    "source_file_extensions": [
+      ".apl",
+      ".dyalog"
+    ]
   },
   "J:script.ijs:) load 'package':jconsole script.ijs": {
     "language": "J",
     "dependency_file": "script.ijs",
     "install_dependencies": ") load 'package'",
-    "build_project": "jconsole script.ijs"
+    "build_project": "jconsole script.ijs",
+    "source_file_extensions": [
+      ".ijs"
+    ]
   },
   "K:script.k:\\l package:k script.k": {
     "language": "K",
     "dependency_file": "script.k",
     "install_dependencies": "\\l package",
-    "build_project": "k script.k"
+    "build_project": "k script.k",
+    "source_file_extensions": [
+      ".k"
+    ]
   },
   "Q:script.q:\\l package:q script.q": {
     "language": "Q",
     "dependency_file": "script.q",
     "install_dependencies": "\\l package",
-    "build_project": "q script.q"
+    "build_project": "q script.q",
+    "source_file_extensions": [
+      ".q"
+    ]
   },
   "YAML:requirements.yml:ansible-galaxy install -r requirements.yml:ansible-playbook playbook.yml": {
     "language": "YAML",
     "dependency_file": "requirements.yml",
     "install_dependencies": "ansible-galaxy install -r requirements.yml",
-    "build_project": "ansible-playbook playbook.yml"
+    "build_project": "ansible-playbook playbook.yml",
+    "source_file_extensions": [
+      ".yaml",
+      ".yml"
+    ]
   },
   "JSON:package.json:npm install:node script.js": {
     "language": "JSON",
     "dependency_file": "package.json",
     "install_dependencies": "npm install",
-    "build_project": "node script.js"
+    "build_project": "node script.js",
+    "source_file_extensions": [
+      ".json",
+      ".jsonc"
+    ]
   },
   "TOML:Cargo.toml:cargo fetch:cargo build": {
     "language": "TOML",
     "dependency_file": "Cargo.toml",
     "install_dependencies": "cargo fetch",
-    "build_project": "cargo build"
+    "build_project": "cargo build",
+    "source_file_extensions": [
+      ".toml"
+    ]
   },
   "HCL:main.tf:terraform init:terraform apply": {
     "language": "HCL",
     "dependency_file": "main.tf",
     "install_dependencies": "terraform init",
-    "build_project": "terraform apply"
+    "build_project": "terraform apply",
+    "source_file_extensions": [
+      ".hcl",
+      ".tf"
+    ]
   },
   "Dhall:package.dhall:dhall freeze:dhall-to-json config.dhall": {
     "language": "Dhall",
     "dependency_file": "package.dhall",
     "install_dependencies": "dhall freeze",
-    "build_project": "dhall-to-json config.dhall"
+    "build_project": "dhall-to-json config.dhall",
+    "source_file_extensions": [
+      ".dhall"
+    ]
   },
   "Jsonnet:jsonnetfile.json:jb install:jsonnet main.jsonnet": {
     "language": "Jsonnet",
     "dependency_file": "jsonnetfile.json",
     "install_dependencies": "jb install",
-    "build_project": "jsonnet main.jsonnet"
+    "build_project": "jsonnet main.jsonnet",
+    "source_file_extensions": [
+      ".jsonnet",
+      ".libsonnet"
+    ]
   },
   "CUE:cue.mod:cue mod get:cue export": {
     "language": "CUE",
     "dependency_file": "cue.mod",
     "install_dependencies": "cue mod get",
-    "build_project": "cue export"
+    "build_project": "cue export",
+    "source_file_extensions": [
+      ".cue"
+    ]
   },
   "Nix:default.nix:nix-shell:nix-build": {
     "language": "Nix",
     "dependency_file": "default.nix",
     "install_dependencies": "nix-shell",
-    "build_project": "nix-build"
+    "build_project": "nix-build",
+    "source_file_extensions": [
+      ".nix"
+    ]
   },
   "Starlark:BUILD:bazel fetch:bazel build //...": {
     "language": "Starlark",
     "dependency_file": "BUILD",
     "install_dependencies": "bazel fetch",
-    "build_project": "bazel build //..."
+    "build_project": "bazel build //...",
+    "source_file_extensions": [
+      ".star",
+      ".bzl"
+    ]
   },
   "Jinja2:requirements.txt:pip install Jinja2:python -c 'import jinja2'": {
     "language": "Jinja2",
     "dependency_file": "requirements.txt",
     "install_dependencies": "pip install Jinja2",
-    "build_project": "python -c 'import jinja2'"
+    "build_project": "python -c 'import jinja2'",
+    "source_file_extensions": [
+      ".j2",
+      ".jinja",
+      ".jinja2"
+    ]
   },
   "Mustache:package.json:npm install mustache:mustache template.mustache data.json": {
     "language": "Mustache",
     "dependency_file": "package.json",
     "install_dependencies": "npm install mustache",
-    "build_project": "mustache template.mustache data.json"
+    "build_project": "mustache template.mustache data.json",
+    "source_file_extensions": [
+      ".mustache",
+      ".mu"
+    ]
   },
   "Handlebars:package.json:npm install handlebars:handlebars template.hbs -f compiled.js": {
     "language": "Handlebars",
     "dependency_file": "package.json",
     "install_dependencies": "npm install handlebars",
-    "build_project": "handlebars template.hbs -f compiled.js"
+    "build_project": "handlebars template.hbs -f compiled.js",
+    "source_file_extensions": [
+      ".hbs",
+      ".handlebars"
+    ]
   },
   "Liquid:Gemfile:bundle install:liquid template.liquid": {
     "language": "Liquid",
     "dependency_file": "Gemfile",
     "install_dependencies": "bundle install",
-    "build_project": "liquid template.liquid"
+    "build_project": "liquid template.liquid",
+    "source_file_extensions": [
+      ".liquid"
+    ]
   },
   "Twig:composer.json:composer install:php render.php": {
     "language": "Twig",
     "dependency_file": "composer.json",
     "install_dependencies": "composer install",
-    "build_project": "php render.php"
+    "build_project": "php render.php",
+    "source_file_extensions": [
+      ".twig"
+    ]
   },
   "Django Templates:requirements.txt:pip install Django:python manage.py collectstatic": {
     "language": "Django Templates",
     "dependency_file": "requirements.txt",
     "install_dependencies": "pip install Django",
-    "build_project": "python manage.py collectstatic"
+    "build_project": "python manage.py collectstatic",
+    "source_file_extensions": [
+      ".html",
+      ".txt",
+      ".xml"
+    ]
   },
   "Smarty:composer.json:composer install:php render.php": {
     "language": "Smarty",
     "dependency_file": "composer.json",
     "install_dependencies": "composer install",
-    "build_project": "php render.php"
+    "build_project": "php render.php",
+    "source_file_extensions": [
+      ".tpl"
+    ]
   },
   "Velocity:pom.xml:mvn install:java -jar velocity.jar": {
     "language": "Velocity",
     "dependency_file": "pom.xml",
     "install_dependencies": "mvn install",
-    "build_project": "java -jar velocity.jar"
+    "build_project": "java -jar velocity.jar",
+    "source_file_extensions": [
+      ".vm",
+      ".vtl"
+    ]
   },
   "FreeMarker:pom.xml:mvn install:java -jar freemarker.jar": {
     "language": "FreeMarker",
     "dependency_file": "pom.xml",
     "install_dependencies": "mvn install",
-    "build_project": "java -jar freemarker.jar"
+    "build_project": "java -jar freemarker.jar",
+    "source_file_extensions": [
+      ".ftl",
+      ".ftlh"
+    ]
   },
   "Brainfuck:Makefile:make deps:bf program.bf": {
     "language": "Brainfuck",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "bf program.bf"
+    "build_project": "bf program.bf",
+    "source_file_extensions": [
+      ".bf",
+      ".b"
+    ]
   },
   "Whitespace:Makefile:make deps:wspace program.ws": {
     "language": "Whitespace",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "wspace program.ws"
+    "build_project": "wspace program.ws",
+    "source_file_extensions": [
+      ".ws"
+    ]
   },
   "Piet:Makefile:make deps:piet program.png": {
     "language": "Piet",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "piet program.png"
+    "build_project": "piet program.png",
+    "source_file_extensions": [
+      ".png",
+      ".gif"
+    ]
   },
   "Malbolge:Makefile:make deps:malbolge program.mal": {
     "language": "Malbolge",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "malbolge program.mal"
+    "build_project": "malbolge program.mal",
+    "source_file_extensions": [
+      ".mal"
+    ]
   },
   "INTERCAL:Makefile:make deps:ick program.i": {
     "language": "INTERCAL",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "ick program.i"
+    "build_project": "ick program.i",
+    "source_file_extensions": [
+      ".i",
+      ".ic"
+    ]
   },
   "x86 Assembly:Makefile:make deps:nasm -f elf64 program.asm && ld program.o": {
     "language": "x86 Assembly",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "nasm -f elf64 program.asm && ld program.o"
+    "build_project": "nasm -f elf64 program.asm && ld program.o",
+    "source_file_extensions": [
+      ".asm",
+      ".s",
+      ".S"
+    ]
   },
   "ARM Assembly:Makefile:make deps:arm-linux-gnueabi-as program.s && arm-linux-gnueabi-ld program.o": {
     "language": "ARM Assembly",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "arm-linux-gnueabi-as program.s && arm-linux-gnueabi-ld program.o"
+    "build_project": "arm-linux-gnueabi-as program.s && arm-linux-gnueabi-ld program.o",
+    "source_file_extensions": [
+      ".s",
+      ".S",
+      ".asm"
+    ]
   },
   "MIPS Assembly:Makefile:make deps:mips-linux-gnu-as program.s && mips-linux-gnu-ld program.o": {
     "language": "MIPS Assembly",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "mips-linux-gnu-as program.s && mips-linux-gnu-ld program.o"
+    "build_project": "mips-linux-gnu-as program.s && mips-linux-gnu-ld program.o",
+    "source_file_extensions": [
+      ".s",
+      ".S",
+      ".asm"
+    ]
   },
   "RISC-V Assembly:Makefile:make deps:riscv64-linux-gnu-as program.s && riscv64-linux-gnu-ld program.o": {
     "language": "RISC-V Assembly",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "riscv64-linux-gnu-as program.s && riscv64-linux-gnu-ld program.o"
+    "build_project": "riscv64-linux-gnu-as program.s && riscv64-linux-gnu-ld program.o",
+    "source_file_extensions": [
+      ".s",
+      ".S",
+      ".asm"
+    ]
   },
   "PowerPC Assembly:Makefile:make deps:powerpc-linux-gnu-as program.s && powerpc-linux-gnu-ld program.o": {
     "language": "PowerPC Assembly",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "powerpc-linux-gnu-as program.s && powerpc-linux-gnu-ld program.o"
+    "build_project": "powerpc-linux-gnu-as program.s && powerpc-linux-gnu-ld program.o",
+    "source_file_extensions": [
+      ".s",
+      ".S",
+      ".asm"
+    ]
   },
   "6502 Assembly:Makefile:make deps:ca65 program.s && ld65 program.o": {
     "language": "6502 Assembly",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "ca65 program.s && ld65 program.o"
+    "build_project": "ca65 program.s && ld65 program.o",
+    "source_file_extensions": [
+      ".s",
+      ".asm",
+      ".a65"
+    ]
   },
   "Z80 Assembly:Makefile:make deps:z80asm program.asm": {
     "language": "Z80 Assembly",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "z80asm program.asm"
+    "build_project": "z80asm program.asm",
+    "source_file_extensions": [
+      ".z80",
+      ".asm"
+    ]
   },
   "8086 Assembly:Makefile:make deps:nasm program.asm && link program.obj": {
     "language": "8086 Assembly",
     "dependency_file": "Makefile",
     "install_dependencies": "make deps",
-    "build_project": "nasm program.asm && link program.obj"
+    "build_project": "nasm program.asm && link program.obj",
+    "source_file_extensions": [
+      ".asm",
+      ".inc"
+    ]
   },
   "AppleScript:Info.plist:osascript -e 'tell application \"Installer\"':osascript script.scpt": {
     "language": "AppleScript",
     "dependency_file": "Info.plist",
     "install_dependencies": "osascript -e 'tell application \"Installer\"'",
-    "build_project": "osascript script.scpt"
+    "build_project": "osascript script.scpt",
+    "source_file_extensions": [
+      ".applescript",
+      ".scpt",
+      ".scptd"
+    ]
   },
   "VBScript:requirements.txt:wmic product install:cscript script.vbs": {
     "language": "VBScript",
     "dependency_file": "requirements.txt",
     "install_dependencies": "wmic product install",
-    "build_project": "cscript script.vbs"
+    "build_project": "cscript script.vbs",
+    "source_file_extensions": [
+      ".vbs",
+      ".vbe",
+      ".wsf"
+    ]
   },
   "JScript:package.json:npm install:cscript script.js": {
     "language": "JScript",
     "dependency_file": "package.json",
     "install_dependencies": "npm install",
-    "build_project": "cscript script.js"
+    "build_project": "cscript script.js",
+    "source_file_extensions": [
+      ".js",
+      ".jse"
+    ]
   },
   "AutoHotkey:requirements.txt:choco install autohotkey:autohotkey script.ahk": {
     "language": "AutoHotkey",
     "dependency_file": "requirements.txt",
     "install_dependencies": "choco install autohotkey",
-    "build_project": "autohotkey script.ahk"
+    "build_project": "autohotkey script.ahk",
+    "source_file_extensions": [
+      ".ahk",
+      ".ahkl"
+    ]
   },
   "AutoIt:requirements.txt:choco install autoit:autoit3 script.au3": {
     "language": "AutoIt",
     "dependency_file": "requirements.txt",
     "install_dependencies": "choco install autoit",
-    "build_project": "autoit3 script.au3"
+    "build_project": "autoit3 script.au3",
+    "source_file_extensions": [
+      ".au3",
+      ".a3x"
+    ]
   },
   "Batch:requirements.txt:choco install packages:script.bat": {
     "language": "Batch",
     "dependency_file": "requirements.txt",
     "install_dependencies": "choco install packages",
-    "build_project": "script.bat"
+    "build_project": "script.bat",
+    "source_file_extensions": [
+      ".bat",
+      ".cmd"
+    ]
   },
   "Shell:requirements.txt:while read req; do apt install $req; done:sh script.sh": {
     "language": "Shell",
     "dependency_file": "requirements.txt",
     "install_dependencies": "while read req; do apt install $req; done",
-    "build_project": "sh script.sh"
+    "build_project": "sh script.sh",
+    "source_file_extensions": [
+      ".sh",
+      ".bash",
+      ".zsh",
+      ".fish"
+    ]
   }
 }
