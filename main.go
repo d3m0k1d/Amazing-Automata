@@ -1,7 +1,7 @@
 package main
 
 import (
-	"amazing-automata/cmd"
+	"github.com/d3m0k1d/Amazing-Automata/cmd"
 	_ "fmt"
 )
 

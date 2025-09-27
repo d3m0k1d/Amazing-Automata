@@ -16,7 +16,7 @@ var (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "amazing-automata [flags] <filename>.yml",
+	Use:   "github.com/d3m0k1d/Amazing-Automata [flags] <filename>.yml",
 	Short: "A universal CI/CD pipeline generator for GitHub Actions",
 	Long: `Amazing-Automata is a universal CI/CD pipeline generator for GitHub Actions
 that lets DevOps engineers create and customize workflows in seconds.`,

@@ -1,4 +1,4 @@
-module amazing-automata
+module github.com/d3m0k1d/Amazing-Automata
 
 go 1.24.6
 
