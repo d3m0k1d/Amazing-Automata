@@ -1,1804 +1,380 @@
-{
-  "ARM Assembly": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "arm-linux-gnueabi-as program.s && arm-linux-gnueabi-ld program.o",
-      "source_extensions": [
-        ".s",
-        ".S",
-        ".asm"
-      ]
-    }
-  ],
-  "Ada": [
-    {
-      "dependency_file": "*.gpr",
-      "install_command": "gprbuild -p",
-      "build_command": "gprbuild",
-      "source_extensions": [
-        ".ada",
-        ".adb",
-        ".ads"
-      ]
-    }
-  ],
-  "AngelScript": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "angelscript script.as",
-      "source_extensions": [
-        ".as"
-      ]
-    }
-  ],
-  "AppleScript": [
-    {
-      "dependency_file": "Info.plist",
-      "install_command": "osascript -e 'tell application \"Installer\"'",
-      "build_command": "osascript script.scpt",
-      "source_extensions": [
-        ".applescript",
-        ".scpt",
-        ".scptd"
-      ]
-    }
-  ],
-  "Arduino": [
-    {
-      "dependency_file": "platformio.ini",
-      "install_command": "pio lib install",
-      "build_command": "pio run",
-      "source_extensions": [
-        ".ino",
-        ".pde"
-      ]
-    }
-  ],
-  "AutoHotkey": [
-    {
-      "dependency_file": "requirements.txt",
-      "install_command": "choco install autohotkey",
-      "build_command": "autohotkey script.ahk",
-      "source_extensions": [
-        ".ahk",
-        ".ahkl"
-      ]
-    }
-  ],
-  "AutoIt": [
-    {
-      "dependency_file": "requirements.txt",
-      "install_command": "choco install autoit",
-      "build_command": "autoit3 script.au3",
-      "source_extensions": [
-        ".au3",
-        ".a3x"
-      ]
-    }
-  ],
-  "Bash": [
-    {
-      "dependency_file": "requirements.txt",
-      "install_command": "while read req; do apt install $req; done",
-      "build_command": "bash script.sh",
-      "source_extensions": [
-        ".sh",
-        ".bash",
-        ".bashrc",
-        ".bash_profile"
-      ]
-    }
-  ],
-  "C": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "make",
-      "source_extensions": [
-        ".c",
-        ".h",
-        ".i"
-      ]
-    },
-    {
-      "dependency_file": "CMakeLists.txt",
-      "install_command": "cmake .. && make",
-      "build_command": "make",
-      "source_extensions": [
-        ".c",
-        ".h",
-        ".i"
-      ]
-    },
-    {
-      "dependency_file": "meson.build",
-      "install_command": "meson setup builddir",
-      "build_command": "ninja -C builddir",
-      "source_extensions": [
-        ".c",
-        ".h",
-        ".i"
-      ]
-    }
-  ],
-  "C#": [
-    {
-      "dependency_file": "*.csproj",
-      "install_command": "dotnet restore",
-      "build_command": "dotnet build",
-      "source_extensions": [
-        ".cs",
-        ".csx"
-      ]
-    },
-    {
-      "dependency_file": "packages.config",
-      "install_command": "nuget restore",
-      "build_command": "msbuild",
-      "source_extensions": [
-        ".cs",
-        ".csx"
-      ]
-    }
-  ],
-  "C++": [
-    {
-      "dependency_file": "vcpkg.json",
-      "install_command": "vcpkg install",
-      "build_command": "cmake --build build",
-      "source_extensions": [
-        ".cpp",
-        ".cxx",
-        ".cc",
-        ".c++",
-        ".hpp",
-        ".hxx",
-        ".h++",
-        ".hh"
-      ]
-    },
-    {
-      "dependency_file": "conanfile.txt",
-      "install_command": "conan install .",
-      "build_command": "cmake --build build",
-      "source_extensions": [
-        ".cpp",
-        ".cxx",
-        ".cc",
-        ".c++",
-        ".hpp",
-        ".hxx",
-        ".h++",
-        ".hh"
-      ]
-    },
-    {
-      "dependency_file": "conanfile.py",
-      "install_command": "conan install .",
-      "build_command": "cmake --build build",
-      "source_extensions": [
-        ".cpp",
-        ".cxx",
-        ".cc",
-        ".c++",
-        ".hpp",
-        ".hxx",
-        ".h++",
-        ".hh"
-      ]
-    },
-    {
-      "dependency_file": "CMakeLists.txt",
-      "install_command": "cmake ..",
-      "build_command": "make",
-      "source_extensions": [
-        ".cpp",
-        ".cxx",
-        ".cc",
-        ".c++",
-        ".hpp",
-        ".hxx",
-        ".h++",
-        ".hh"
-      ]
-    },
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "make",
-      "source_extensions": [
-        ".cpp",
-        ".cxx",
-        ".cc",
-        ".c++",
-        ".hpp",
-        ".hxx",
-        ".h++",
-        ".hh"
-      ]
-    },
-    {
-      "dependency_file": "meson.build",
-      "install_command": "meson setup builddir",
-      "build_command": "ninja -C builddir",
-      "source_extensions": [
-        ".cpp",
-        ".cxx",
-        ".cc",
-        ".c++",
-        ".hpp",
-        ".hxx",
-        ".h++",
-        ".hh"
-      ]
-    },
-    {
-      "dependency_file": "BUILD",
-      "install_command": "bazel fetch //...",
-      "build_command": "bazel build //...",
-      "source_extensions": [
-        ".cpp",
-        ".cxx",
-        ".cc",
-        ".c++",
-        ".hpp",
-        ".hxx",
-        ".h++",
-        ".hh"
-      ]
-    }
-  ],
-  "COBOL": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "cobc -x program.cob",
-      "source_extensions": [
-        ".cob",
-        ".cbl",
-        ".cpy"
-      ]
-    }
-  ],
-  "CQL": [
-    {
-      "dependency_file": "requirements.txt",
-      "install_command": "pip install cassandra-driver",
-      "build_command": "cqlsh -f script.cql",
-      "source_extensions": [
-        ".cql"
-      ]
-    }
-  ],
-  "CSS": [
-    {
-      "dependency_file": "package.json",
-      "install_command": "npm install",
-      "build_command": "npm run build",
-      "source_extensions": [
-        ".css"
-      ]
-    }
-  ],
-  "CUDA": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "nvcc -o program *.cu",
-      "source_extensions": [
-        ".cu",
-        ".cuh"
-      ]
-    }
-  ],
-  "CUE": [
-    {
-      "dependency_file": "cue.mod",
-      "install_command": "cue mod get",
-      "build_command": "cue export",
-      "source_extensions": [
-        ".cue"
-      ]
-    }
-  ],
-  "Carbon": [
-    {
-      "dependency_file": "BUILD",
-      "install_command": "bazel build //...",
-      "build_command": "bazel build //...",
-      "source_extensions": [
-        ".carbon"
-      ]
-    }
-  ],
-  "Cg": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "cgc -profile gp4fp shader.cg",
-      "source_extensions": [
-        ".cg",
-        ".cgfx"
-      ]
-    }
-  ],
-  "Chapel": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "chpl program.chpl",
-      "source_extensions": [
-        ".chpl"
-      ]
-    }
-  ],
-  "CircuitPython": [
-    {
-      "dependency_file": "requirements.txt",
-      "install_command": "circup install",
-      "build_command": "python main.py",
-      "source_extensions": [
-        ".py"
-      ]
-    }
-  ],
-  "Clojure": [
-    {
-      "dependency_file": "project.clj",
-      "install_command": "lein deps",
-      "build_command": "lein compile",
-      "source_extensions": [
-        ".clj",
-        ".cljs",
-        ".cljc",
-        ".edn"
-      ]
-    },
-    {
-      "dependency_file": "build.boot",
-      "install_command": "boot install",
-      "build_command": "boot build",
-      "source_extensions": [
-        ".clj",
-        ".cljs",
-        ".cljc",
-        ".edn"
-      ]
-    },
-    {
-      "dependency_file": "deps.edn",
-      "install_command": "clj -P",
-      "build_command": "clj -M -m main",
-      "source_extensions": [
-        ".clj",
-        ".cljs",
-        ".cljc",
-        ".edn"
-      ]
-    }
-  ],
-  "ClojureScript": [
-    {
-      "dependency_file": "project.clj",
-      "install_command": "lein deps",
-      "build_command": "lein cljsbuild once",
-      "source_extensions": [
-        ".cljs"
-      ]
-    }
-  ],
-  "CoffeeScript": [
-    {
-      "dependency_file": "package.json",
-      "install_command": "npm install",
-      "build_command": "coffee -c *.coffee",
-      "source_extensions": [
-        ".coffee",
-        ".litcoffee"
-      ]
-    }
-  ],
-  "Common Lisp": [
-    {
-      "dependency_file": "*.asd",
-      "install_command": "quicklisp",
-      "build_command": "sbcl --load",
-      "source_extensions": [
-        ".lisp",
-        ".lsp",
-        ".l",
-        ".cl",
-        ".fasl"
-      ]
-    }
-  ],
-  "Crystal": [
-    {
-      "dependency_file": "shard.yml",
-      "install_command": "shards install",
-      "build_command": "crystal build",
-      "source_extensions": [
-        ".cr"
-      ]
-    }
-  ],
-  "D": [
-    {
-      "dependency_file": "dub.json",
-      "install_command": "dub fetch",
-      "build_command": "dub build",
-      "source_extensions": [
-        ".d",
-        ".di"
-      ]
-    },
-    {
-      "dependency_file": "dub.sdl",
-      "install_command": "dub fetch",
-      "build_command": "dub build",
-      "source_extensions": [
-        ".d",
-        ".di"
-      ]
-    }
-  ],
-  "Dart": [
-    {
-      "dependency_file": "pubspec.yaml",
-      "install_command": "dart pub get",
-      "build_command": "dart compile exe",
-      "source_extensions": [
-        ".dart"
-      ]
-    }
-  ],
-  "Delphi": [
-    {
-      "dependency_file": "*.dproj",
-      "install_command": "nuget restore",
-      "build_command": "msbuild",
-      "source_extensions": [
-        ".pas",
-        ".dpr",
-        ".dfm",
-        ".dpk"
-      ]
-    }
-  ],
-  "Dhall": [
-    {
-      "dependency_file": "package.dhall",
-      "install_command": "dhall freeze",
-      "build_command": "dhall-to-json config.dhall",
-      "source_extensions": [
-        ".dhall"
-      ]
-    }
-  ],
-  "Django Templates": [
-    {
-      "dependency_file": "requirements.txt",
-      "install_command": "pip install Django",
-      "build_command": "python manage.py collectstatic",
-      "source_extensions": [
-        ".html",
-        ".txt",
-        ".xml"
-      ]
-    }
-  ],
-  "Elixir": [
-    {
-      "dependency_file": "mix.exs",
-      "install_command": "mix deps.get",
-      "build_command": "mix compile",
-      "source_extensions": [
-        ".ex",
-        ".exs"
-      ]
-    }
-  ],
-  "Elm": [
-    {
-      "dependency_file": "elm.json",
-      "install_command": "elm install",
-      "build_command": "elm make src/Main.elm",
-      "source_extensions": [
-        ".elm"
-      ]
-    }
-  ],
-  "Emacs Lisp": [
-    {
-      "dependency_file": "Cask",
-      "install_command": "cask install",
-      "build_command": "cask build",
-      "source_extensions": [
-        ".el",
-        ".elc"
-      ]
-    }
-  ],
-  "Erlang": [
-    {
-      "dependency_file": "rebar.config",
-      "install_command": "rebar3 deps",
-      "build_command": "rebar3 compile",
-      "source_extensions": [
-        ".erl",
-        ".hrl",
-        ".escript"
-      ]
-    }
-  ],
-  "F#": [
-    {
-      "dependency_file": "paket.dependencies",
-      "install_command": "dotnet paket install",
-      "build_command": "dotnet build",
-      "source_extensions": [
-        ".fs",
-        ".fsx",
-        ".fsi"
-      ]
-    },
-    {
-      "dependency_file": "paket.references",
-      "install_command": "dotnet paket install",
-      "build_command": "dotnet build",
-      "source_extensions": [
-        ".fs",
-        ".fsx",
-        ".fsi"
-      ]
-    },
-    {
-      "dependency_file": "*.fsproj",
-      "install_command": "dotnet restore",
-      "build_command": "dotnet build",
-      "source_extensions": [
-        ".fs",
-        ".fsx",
-        ".fsi"
-      ]
-    }
-  ],
-  "Fish": [
-    {
-      "dependency_file": "requirements.txt",
-      "install_command": "while read req; do apt install $req; done",
-      "build_command": "fish script.fish",
-      "source_extensions": [
-        ".fish"
-      ]
-    }
-  ],
-  "Flutter": [
-    {
-      "dependency_file": "pubspec.yaml",
-      "install_command": "flutter pub get",
-      "build_command": "flutter build",
-      "source_extensions": [
-        ".dart"
-      ]
-    }
-  ],
-  "Fortran": [
-    {
-      "dependency_file": "fpm.toml",
-      "install_command": "fpm update",
-      "build_command": "fpm build",
-      "source_extensions": [
-        ".f",
-        ".f77",
-        ".f90",
-        ".f95",
-        ".f03",
-        ".f08",
-        ".for"
-      ]
-    },
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "gfortran -o program *.f90",
-      "source_extensions": [
-        ".f",
-        ".f77",
-        ".f90",
-        ".f95",
-        ".f03",
-        ".f08",
-        ".for"
-      ]
-    }
-  ],
-  "FreeMarker": [
-    {
-      "dependency_file": "pom.xml",
-      "install_command": "mvn install",
-      "build_command": "java -jar freemarker.jar",
-      "source_extensions": [
-        ".ftl",
-        ".ftlh"
-      ]
-    }
-  ],
-  "GDScript": [
-    {
-      "dependency_file": "project.godot",
-      "install_command": "godot --export",
-      "build_command": "godot --main-pack game.pck",
-      "source_extensions": [
-        ".gd",
-        ".cs"
-      ]
-    }
-  ],
-  "GLSL": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "glslangValidator shader.glsl",
-      "source_extensions": [
-        ".glsl",
-        ".vert",
-        ".frag",
-        ".geom",
-        ".tesc",
-        ".tese",
-        ".comp"
-      ]
-    }
-  ],
-  "Genie": [
-    {
-      "dependency_file": "meson.build",
-      "install_command": "meson setup builddir",
-      "build_command": "ninja -C builddir",
-      "source_extensions": [
-        ".gs"
-      ]
-    }
-  ],
-  "Go": [
-    {
-      "dependency_file": "go.mod",
-      "install_command": "go mod tidy",
-      "build_command": "go build",
-      "source_extensions": [
-        ".go"
-      ]
-    }
-  ],
-  "Groovy": [
-    {
-      "dependency_file": "build.gradle",
-      "install_command": "gradle dependencies",
-      "build_command": "gradle build",
-      "source_extensions": [
-        ".groovy",
-        ".gvy",
-        ".gy",
-        ".gsh"
-      ]
-    }
-  ],
-  "HCL": [
-    {
-      "dependency_file": "main.tf",
-      "install_command": "terraform init",
-      "build_command": "terraform apply",
-      "source_extensions": [
-        ".hcl",
-        ".tf"
-      ]
-    }
-  ],
-  "HLSL": [
-    {
-      "dependency_file": "*.vcxproj",
-      "install_command": "nuget restore",
-      "build_command": "fxc /T ps_5_0 shader.hlsl",
-      "source_extensions": [
-        ".hlsl",
-        ".fx",
-        ".fxh"
-      ]
-    }
-  ],
-  "HTML": [
-    {
-      "dependency_file": "package.json",
-      "install_command": "npm install",
-      "build_command": "npm run build",
-      "source_extensions": [
-        ".html",
-        ".htm",
-        ".xhtml"
-      ]
-    }
-  ],
-  "Hack": [
-    {
-      "dependency_file": "composer.json",
-      "install_command": "composer install",
-      "build_command": "hhvm script.hack",
-      "source_extensions": [
-        ".hack",
-        ".hh"
-      ]
-    }
-  ],
-  "Handlebars": [
-    {
-      "dependency_file": "package.json",
-      "install_command": "npm install handlebars",
-      "build_command": "handlebars template.hbs -f compiled.js",
-      "source_extensions": [
-        ".hbs",
-        ".handlebars"
-      ]
-    }
-  ],
-  "Haskell": [
-    {
-      "dependency_file": "*.cabal",
-      "install_command": "cabal update",
-      "build_command": "cabal build",
-      "source_extensions": [
-        ".hs",
-        ".lhs",
-        ".hsc"
-      ]
-    },
-    {
-      "dependency_file": "stack.yaml",
-      "install_command": "stack setup",
-      "build_command": "stack build",
-      "source_extensions": [
-        ".hs",
-        ".lhs",
-        ".hsc"
-      ]
-    },
-    {
-      "dependency_file": "package.yaml",
-      "install_command": "stack setup",
-      "build_command": "stack build",
-      "source_extensions": [
-        ".hs",
-        ".lhs",
-        ".hsc"
-      ]
-    }
-  ],
-  "JSON": [
-    {
-      "dependency_file": "package.json",
-      "install_command": "npm install",
-      "build_command": "node script.js",
-      "source_extensions": [
-        ".json",
-        ".jsonc"
-      ]
-    }
-  ],
-  "JScript": [
-    {
-      "dependency_file": "package.json",
-      "install_command": "npm install",
-      "build_command": "cscript script.js",
-      "source_extensions": [
-        ".js",
-        ".jse"
-      ]
-    }
-  ],
-  "Java": [
-    {
-      "dependency_file": "pom.xml",
-      "install_command": "mvn install",
-      "build_command": "mvn compile",
-      "source_extensions": [
-        ".java",
-        ".class",
-        ".jar"
-      ]
-    },
-    {
-      "dependency_file": "build.gradle",
-      "install_command": "gradle dependencies",
-      "build_command": "gradle build",
-      "source_extensions": [
-        ".java",
-        ".class",
-        ".jar"
-      ]
-    },
-    {
-      "dependency_file": "build.gradle.kts",
-      "install_command": "gradle dependencies",
-      "build_command": "gradle build",
-      "source_extensions": [
-        ".java",
-        ".class",
-        ".jar"
-      ]
-    },
-    {
-      "dependency_file": "ivy.xml",
-      "install_command": "ant resolve",
-      "build_command": "ant compile",
-      "source_extensions": [
-        ".java",
-        ".class",
-        ".jar"
-      ]
-    }
-  ],
-  "JavaScript": [
-    {
-      "dependency_file": "package.json",
-      "install_command": "npm install",
-      "build_command": "npm run build",
-      "source_extensions": [
-        ".js",
-        ".mjs",
-        ".cjs",
-        ".jsx"
-      ]
-    },
-    {
-      "dependency_file": "package.json",
-      "install_command": "yarn install",
-      "build_command": "yarn build",
-      "source_extensions": [
-        ".js",
-        ".mjs",
-        ".cjs",
-        ".jsx"
-      ]
-    },
-    {
-      "dependency_file": "package.json",
-      "install_command": "pnpm install",
-      "build_command": "pnpm build",
-      "source_extensions": [
-        ".js",
-        ".mjs",
-        ".cjs",
-        ".jsx"
-      ]
-    }
-  ],
-  "Jinja2": [
-    {
-      "dependency_file": "requirements.txt",
-      "install_command": "pip install Jinja2",
-      "build_command": "python -c 'import jinja2'",
-      "source_extensions": [
-        ".j2",
-        ".jinja",
-        ".jinja2"
-      ]
-    }
-  ],
-  "Jsonnet": [
-    {
-      "dependency_file": "jsonnetfile.json",
-      "install_command": "jb install",
-      "build_command": "jsonnet main.jsonnet",
-      "source_extensions": [
-        ".jsonnet",
-        ".libsonnet"
-      ]
-    }
-  ],
-  "Julia": [
-    {
-      "dependency_file": "Project.toml",
-      "install_command": "using Pkg; Pkg.instantiate()",
-      "build_command": "julia script.jl",
-      "source_extensions": [
-        ".jl"
-      ]
-    }
-  ],
-  "Kotlin": [
-    {
-      "dependency_file": "build.gradle.kts",
-      "install_command": "gradle dependencies",
-      "build_command": "gradle build",
-      "source_extensions": [
-        ".kt",
-        ".kts"
-      ]
-    }
-  ],
-  "Less": [
-    {
-      "dependency_file": "package.json",
-      "install_command": "npm install",
-      "build_command": "lessc styles.less",
-      "source_extensions": [
-        ".less"
-      ]
-    }
-  ],
-  "Liquid": [
-    {
-      "dependency_file": "Gemfile",
-      "install_command": "bundle install",
-      "build_command": "liquid template.liquid",
-      "source_extensions": [
-        ".liquid"
-      ]
-    }
-  ],
-  "LiveScript": [
-    {
-      "dependency_file": "package.json",
-      "install_command": "npm install",
-      "build_command": "lsc -c *.ls",
-      "source_extensions": [
-        ".ls"
-      ]
-    }
-  ],
-  "Lua": [
-    {
-      "dependency_file": "rockspec",
-      "install_command": "luarocks install",
-      "build_command": "lua script.lua",
-      "source_extensions": [
-        ".lua",
-        ".luac"
-      ]
-    }
-  ],
-  "LuaJIT": [
-    {
-      "dependency_file": "rockspec",
-      "install_command": "luarocks install",
-      "build_command": "luajit script.lua",
-      "source_extensions": [
-        ".lua",
-        ".luac"
-      ]
-    }
-  ],
-  "MIPS Assembly": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "mips-linux-gnu-as program.s && mips-linux-gnu-ld program.o",
-      "source_extensions": [
-        ".s",
-        ".S",
-        ".asm"
-      ]
-    }
-  ],
-  "MPI": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "mpicc -o program *.c",
-      "source_extensions": [
-        ".c",
-        ".cpp",
-        ".f90"
-      ]
-    }
-  ],
-  "Matlab": [
-    {
-      "dependency_file": "*.prj",
-      "install_command": "mpm install",
-      "build_command": "mcc -m script.m",
-      "source_extensions": [
-        ".m",
-        ".mat",
-        ".fig",
-        ".mlx"
-      ]
-    }
-  ],
-  "MicroPython": [
-    {
-      "dependency_file": "requirements.txt",
-      "install_command": "upip.install",
-      "build_command": "micropython main.py",
-      "source_extensions": [
-        ".py",
-        ".mpy"
-      ]
-    }
-  ],
-  "MongoDB": [
-    {
-      "dependency_file": "package.json",
-      "install_command": "npm install mongodb",
-      "build_command": "mongo script.js",
-      "source_extensions": [
-        ".js",
-        ".mongodb"
-      ]
-    }
-  ],
-  "Mustache": [
-    {
-      "dependency_file": "package.json",
-      "install_command": "npm install mustache",
-      "build_command": "mustache template.mustache data.json",
-      "source_extensions": [
-        ".mustache",
-        ".mu"
-      ]
-    }
-  ],
-  "MySQL": [
-    {
-      "dependency_file": "requirements.txt",
-      "install_command": "pip install mysql-connector",
-      "build_command": "mysql < script.sql",
-      "source_extensions": [
-        ".sql",
-        ".mysql"
-      ]
-    }
-  ],
-  "Nim": [
-    {
-      "dependency_file": "*.nimble",
-      "install_command": "nimble install",
-      "build_command": "nimble build",
-      "source_extensions": [
-        ".nim",
-        ".nims",
-        ".nimble"
-      ]
-    }
-  ],
-  "Nix": [
-    {
-      "dependency_file": "default.nix",
-      "install_command": "nix-shell",
-      "build_command": "nix-build",
-      "source_extensions": [
-        ".nix"
-      ]
-    }
-  ],
-  "OCaml": [
-    {
-      "dependency_file": "dune-project",
-      "install_command": "opam install --deps-only .",
-      "build_command": "dune build",
-      "source_extensions": [
-        ".ml",
-        ".mli",
-        ".mll",
-        ".mly"
-      ]
-    },
-    {
-      "dependency_file": "*.opam",
-      "install_command": "opam install --deps-only .",
-      "build_command": "dune build",
-      "source_extensions": [
-        ".ml",
-        ".mli",
-        ".mll",
-        ".mly"
-      ]
-    }
-  ],
-  "Objective-C": [
-    {
-      "dependency_file": "Podfile",
-      "install_command": "pod install",
-      "build_command": "xcodebuild",
-      "source_extensions": [
-        ".m",
-        ".mm",
-        ".h"
-      ]
-    }
-  ],
-  "Objective-C++": [
-    {
-      "dependency_file": "Podfile",
-      "install_command": "pod install",
-      "build_command": "xcodebuild",
-      "source_extensions": [
-        ".mm",
-        ".M"
-      ]
-    }
-  ],
-  "Octave": [
-    {
-      "dependency_file": "DESCRIPTION",
-      "install_command": "pkg install",
-      "build_command": "octave script.m",
-      "source_extensions": [
-        ".m",
-        ".oct"
-      ]
-    }
-  ],
-  "Odin": [
-    {
-      "dependency_file": "build.odin",
-      "install_command": "odin build",
-      "build_command": "odin run",
-      "source_extensions": [
-        ".odin"
-      ]
-    }
-  ],
-  "OpenCL": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "gcc -lOpenCL -o program *.c",
-      "source_extensions": [
-        ".cl",
-        ".ocl"
-      ]
-    }
-  ],
-  "OpenMP": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "gcc -fopenmp -o program *.c",
-      "source_extensions": [
-        ".c",
-        ".cpp",
-        ".f90"
-      ]
-    }
-  ],
-  "PHP": [
-    {
-      "dependency_file": "composer.json",
-      "install_command": "composer install",
-      "build_command": "php artisan build",
-      "source_extensions": [
-        ".php",
-        ".phtml",
-        ".php3",
-        ".php4",
-        ".php5",
-        ".phps"
-      ]
-    }
-  ],
-  "PL/SQL": [
-    {
-      "dependency_file": "requirements.txt",
-      "install_command": "pip install cx_Oracle",
-      "build_command": "sqlplus @script.sql",
-      "source_extensions": [
-        ".sql",
-        ".pls",
-        ".plb",
-        ".pck"
-      ]
-    }
-  ],
-  "Pascal": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "fpc program.pas",
-      "source_extensions": [
-        ".pas",
-        ".pp",
-        ".inc",
-        ".dpr",
-        ".dpk"
-      ]
-    }
-  ],
-  "Perl": [
-    {
-      "dependency_file": "cpanfile",
-      "install_command": "cpanm --installdeps .",
-      "build_command": "perl script.pl",
-      "source_extensions": [
-        ".pl",
-        ".pm",
-        ".t",
-        ".pod",
-        ".cgi"
-      ]
-    },
-    {
-      "dependency_file": "Makefile.PL",
-      "install_command": "perl Makefile.PL && make installdeps",
-      "build_command": "make",
-      "source_extensions": [
-        ".pl",
-        ".pm",
-        ".t",
-        ".pod",
-        ".cgi"
-      ]
-    },
-    {
-      "dependency_file": "Build.PL",
-      "install_command": "perl Build.PL && ./Build installdeps",
-      "build_command": "./Build",
-      "source_extensions": [
-        ".pl",
-        ".pm",
-        ".t",
-        ".pod",
-        ".cgi"
-      ]
-    }
-  ],
-  "PostgreSQL": [
-    {
-      "dependency_file": "requirements.txt",
-      "install_command": "pip install psycopg2",
-      "build_command": "psql -f script.sql",
-      "source_extensions": [
-        ".sql",
-        ".pgsql"
-      ]
-    }
-  ],
-  "PowerShell": [
-    {
-      "dependency_file": "requirements.psd1",
-      "install_command": "Install-Module",
-      "build_command": "pwsh script.ps1",
-      "source_extensions": [
-        ".ps1",
-        ".psm1",
-        ".psd1",
-        ".ps1xml"
-      ]
-    }
-  ],
-  "Processing": [
-    {
-      "dependency_file": "sketch.properties",
-      "install_command": "processing-java --sketch=. --run",
-      "build_command": "processing-java --sketch=. --export",
-      "source_extensions": [
-        ".pde",
-        ".java"
-      ]
-    }
-  ],
-  "PureScript": [
-    {
-      "dependency_file": "spago.dhall",
-      "install_command": "spago install",
-      "build_command": "spago build",
-      "source_extensions": [
-        ".purs"
-      ]
-    }
-  ],
-  "Python": [
-    {
-      "dependency_file": "requirements.txt",
-      "install_command": "pip install -r requirements.txt",
-      "build_command": "python -m build",
-      "source_extensions": [
-        ".py",
-        ".pyw",
-        ".pyx",
-        ".pyi",
-        ".py3"
-      ]
-    },
-    {
-      "dependency_file": "pyproject.toml",
-      "install_command": "poetry install",
-      "build_command": "poetry build",
-      "source_extensions": [
-        ".py",
-        ".pyw",
-        ".pyx",
-        ".pyi",
-        ".py3"
-      ]
-    },
-    {
-      "dependency_file": "Pipfile",
-      "install_command": "pipenv install",
-      "build_command": "pipenv run python setup.py build",
-      "source_extensions": [
-        ".py",
-        ".pyw",
-        ".pyx",
-        ".pyi",
-        ".py3"
-      ]
-    },
-    {
-      "dependency_file": "setup.py",
-      "install_command": "pip install -e .",
-      "build_command": "python setup.py build",
-      "source_extensions": [
-        ".py",
-        ".pyw",
-        ".pyx",
-        ".pyi",
-        ".py3"
-      ]
-    },
-    {
-      "dependency_file": "conda.yml",
-      "install_command": "conda env create",
-      "build_command": "python -m build",
-      "source_extensions": [
-        ".py",
-        ".pyw",
-        ".pyx",
-        ".pyi",
-        ".py3"
-      ]
-    }
-  ],
-  "QML": [
-    {
-      "dependency_file": "*.pro",
-      "install_command": "qmake",
-      "build_command": "make",
-      "source_extensions": [
-        ".qml",
-        ".qmlproject"
-      ]
-    }
-  ],
-  "R": [
-    {
-      "dependency_file": "DESCRIPTION",
-      "install_command": "install.packages()",
-      "build_command": "R CMD build",
-      "source_extensions": [
-        ".r",
-        ".R",
-        ".rda",
-        ".rds",
-        ".Rhistory"
-      ]
-    }
-  ],
-  "RISC-V Assembly": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "riscv64-linux-gnu-as program.s && riscv64-linux-gnu-ld program.o",
-      "source_extensions": [
-        ".s",
-        ".S",
-        ".asm"
-      ]
-    }
-  ],
-  "Racket": [
-    {
-      "dependency_file": "info.rkt",
-      "install_command": "raco pkg install",
-      "build_command": "raco exe",
-      "source_extensions": [
-        ".rkt",
-        ".rktl",
-        ".scrbl"
-      ]
-    }
-  ],
-  "ReScript": [
-    {
-      "dependency_file": "bsconfig.json",
-      "install_command": "npm install",
-      "build_command": "rescript build",
-      "source_extensions": [
-        ".res",
-        ".resi"
-      ]
-    }
-  ],
-  "Reason": [
-    {
-      "dependency_file": "package.json",
-      "install_command": "npm install",
-      "build_command": "bsb -make-world",
-      "source_extensions": [
-        ".re",
-        ".rei"
-      ]
-    }
-  ],
-  "Redis": [
-    {
-      "dependency_file": "requirements.txt",
-      "install_command": "pip install redis",
-      "build_command": "redis-cli < script.redis",
-      "source_extensions": [
-        ".redis",
-        ".rdb"
-      ]
-    }
-  ],
-  "Ruby": [
-    {
-      "dependency_file": "Gemfile",
-      "install_command": "bundle install",
-      "build_command": "bundle exec rake build",
-      "source_extensions": [
-        ".rb",
-        ".rbw",
-        ".rake",
-        ".gemspec"
-      ]
-    },
-    {
-      "dependency_file": "Gemfile",
-      "install_command": "gem install",
-      "build_command": "ruby script.rb",
-      "source_extensions": [
-        ".rb",
-        ".rbw",
-        ".rake",
-        ".gemspec"
-      ]
-    }
-  ],
-  "Rust": [
-    {
-      "dependency_file": "Cargo.toml",
-      "install_command": "cargo fetch",
-      "build_command": "cargo build",
-      "source_extensions": [
-        ".rs",
-        ".rlib"
-      ]
-    }
-  ],
-  "SCSS": [
-    {
-      "dependency_file": "package.json",
-      "install_command": "npm install",
-      "build_command": "sass src:dist",
-      "source_extensions": [
-        ".scss",
-        ".sass"
-      ]
-    }
-  ],
-  "SQL": [
-    {
-      "dependency_file": "requirements.txt",
-      "install_command": "pip install -r requirements.txt",
-      "build_command": "sqlfluff lint *.sql",
-      "source_extensions": [
-        ".sql",
-        ".ddl",
-        ".dml"
-      ]
-    }
-  ],
-  "SQLite": [
-    {
-      "dependency_file": "requirements.txt",
-      "install_command": "pip install sqlite3",
-      "build_command": "sqlite3 db.sqlite < script.sql",
-      "source_extensions": [
-        ".sql",
-        ".sqlite",
-        ".db"
-      ]
-    }
-  ],
-  "Scala": [
-    {
-      "dependency_file": "build.sbt",
-      "install_command": "sbt update",
-      "build_command": "sbt compile",
-      "source_extensions": [
-        ".scala",
-        ".sc"
-      ]
-    }
-  ],
-  "Scheme": [
-    {
-      "dependency_file": "*.scm",
-      "install_command": "chicken-install",
-      "build_command": "csc",
-      "source_extensions": [
-        ".scm",
-        ".ss",
-        ".sch",
-        ".rkt"
-      ]
-    }
-  ],
-  "Smarty": [
-    {
-      "dependency_file": "composer.json",
-      "install_command": "composer install",
-      "build_command": "php render.php",
-      "source_extensions": [
-        ".tpl"
-      ]
-    }
-  ],
-  "Squirrel": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "sq script.nut",
-      "source_extensions": [
-        ".nut",
-        ".sq"
-      ]
-    }
-  ],
-  "Starlark": [
-    {
-      "dependency_file": "BUILD",
-      "install_command": "bazel fetch",
-      "build_command": "bazel build //...",
-      "source_extensions": [
-        ".star",
-        ".bzl"
-      ]
-    }
-  ],
-  "Stylus": [
-    {
-      "dependency_file": "package.json",
-      "install_command": "npm install",
-      "build_command": "stylus styles.styl",
-      "source_extensions": [
-        ".styl",
-        ".stylus"
-      ]
-    }
-  ],
-  "Swift": [
-    {
-      "dependency_file": "Package.swift",
-      "install_command": "swift package resolve",
-      "build_command": "swift build",
-      "source_extensions": [
-        ".swift"
-      ]
-    }
-  ],
-  "SystemVerilog": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "verilator --cc *.sv",
-      "source_extensions": [
-        ".sv",
-        ".svh"
-      ]
-    }
-  ],
-  "T-SQL": [
-    {
-      "dependency_file": "requirements.txt",
-      "install_command": "pip install pymssql",
-      "build_command": "sqlcmd -i script.sql",
-      "source_extensions": [
-        ".sql",
-        ".tsql"
-      ]
-    }
-  ],
-  "TOML": [
-    {
-      "dependency_file": "Cargo.toml",
-      "install_command": "cargo fetch",
-      "build_command": "cargo build",
-      "source_extensions": [
-        ".toml"
-      ]
-    }
-  ],
-  "Twig": [
-    {
-      "dependency_file": "composer.json",
-      "install_command": "composer install",
-      "build_command": "php render.php",
-      "source_extensions": [
-        ".twig"
-      ]
-    }
-  ],
-  "TypeScript": [
-    {
-      "dependency_file": "package.json",
-      "install_command": "npm install",
-      "build_command": "tsc && npm run build",
-      "source_extensions": [
-        ".ts",
-        ".tsx",
-        ".d.ts"
-      ]
-    },
-    {
-      "dependency_file": "tsconfig.json",
-      "install_command": "npm install",
-      "build_command": "tsc",
-      "source_extensions": [
-        ".ts",
-        ".tsx",
-        ".d.ts"
-      ]
-    }
-  ],
-  "UnityScript": [
-    {
-      "dependency_file": "packages.json",
-      "install_command": "unity package install",
-      "build_command": "unity -batchmode -quit -projectPath .",
-      "source_extensions": [
-        ".js",
-        ".cs",
-        ".boo"
-      ]
-    }
-  ],
-  "V": [
-    {
-      "dependency_file": "v.mod",
-      "install_command": "v install",
-      "build_command": "v build",
-      "source_extensions": [
-        ".v",
-        ".vsh"
-      ]
-    }
-  ],
-  "VB.NET": [
-    {
-      "dependency_file": "*.vbproj",
-      "install_command": "dotnet restore",
-      "build_command": "dotnet build",
-      "source_extensions": [
-        ".vb",
-        ".vbx"
-      ]
-    }
-  ],
-  "VBScript": [
-    {
-      "dependency_file": "requirements.txt",
-      "install_command": "wmic product install",
-      "build_command": "cscript script.vbs",
-      "source_extensions": [
-        ".vbs",
-        ".vbe",
-        ".wsf"
-      ]
-    }
-  ],
-  "VHDL": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "ghdl -a *.vhd && ghdl -e entity",
-      "source_extensions": [
-        ".vhd",
-        ".vhdl"
-      ]
-    }
-  ],
-  "Vala": [
-    {
-      "dependency_file": "meson.build",
-      "install_command": "meson setup builddir",
-      "build_command": "ninja -C builddir",
-      "source_extensions": [
-        ".vala",
-        ".vapi"
-      ]
-    }
-  ],
-  "Velocity": [
-    {
-      "dependency_file": "pom.xml",
-      "install_command": "mvn install",
-      "build_command": "java -jar velocity.jar",
-      "source_extensions": [
-        ".vm",
-        ".vtl"
-      ]
-    }
-  ],
-  "Verilog": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "iverilog -o output *.v",
-      "source_extensions": [
-        ".v",
-        ".vh",
-        ".sv"
-      ]
-    }
-  ],
-  "YAML": [
-    {
-      "dependency_file": "requirements.yml",
-      "install_command": "ansible-galaxy install -r requirements.yml",
-      "build_command": "ansible-playbook playbook.yml",
-      "source_extensions": [
-        ".yaml",
-        ".yml"
-      ]
-    }
-  ],
-  "Zig": [
-    {
-      "dependency_file": "build.zig.zon",
-      "install_command": "zig fetch",
-      "build_command": "zig build",
-      "source_extensions": [
-        ".zig",
-        ".zon"
-      ]
-    },
-    {
-      "dependency_file": "build.zig",
-      "install_command": "zig fetch",
-      "build_command": "zig build",
-      "source_extensions": [
-        ".zig",
-        ".zon"
-      ]
-    }
-  ],
-  "Zsh": [
-    {
-      "dependency_file": "requirements.txt",
-      "install_command": "while read req; do apt install $req; done",
-      "build_command": "zsh script.zsh",
-      "source_extensions": [
-        ".zsh",
-        ".zshrc",
-        ".zprofile"
-      ]
-    }
-  ],
-  "p5.js": [
-    {
-      "dependency_file": "package.json",
-      "install_command": "npm install",
-      "build_command": "npm run build",
-      "source_extensions": [
-        ".js",
-        ".p5js"
-      ]
-    }
-  ],
-  "x86 Assembly": [
-    {
-      "dependency_file": "Makefile",
-      "install_command": "make deps",
-      "build_command": "nasm -f elf64 program.asm && ld program.o",
-      "source_extensions": [
-        ".asm",
-        ".s",
-        ".S"
-      ]
-    }
-  ]
-}
+[
+  {
+    "project_root_file": "*.csproj",
+    "dependency_install_command": "dotnet restore",
+    "build_command": "dotnet build",
+    "name": ".NET"
+  },
+  {
+    "project_root_file": "*.fsproj",
+    "dependency_install_command": "dotnet restore",
+    "build_command": "dotnet build",
+    "name": "F#"
+  },
+  {
+    "project_root_file": "*.vbproj",
+    "dependency_install_command": "dotnet restore",
+    "build_command": "dotnet build",
+    "name": "VB.NET"
+  },
+  {
+    "project_root_file": "packages.config",
+    "dependency_install_command": "nuget restore",
+    "build_command": "msbuild",
+    "name": ".NET Framework"
+  },
+  {
+    "project_root_file": "package.json",
+    "dependency_install_command": "npm install",
+    "build_command": "npm run build",
+    "name": "Node.js (npm)"
+  },
+  {
+    "project_root_file": "package.json",
+    "dependency_install_command": "yarn install",
+    "build_command": "yarn build",
+    "name": "Node.js (Yarn)"
+  },
+  {
+    "project_root_file": "package.json",
+    "dependency_install_command": "pnpm install",
+    "build_command": "pnpm build",
+    "name": "Node.js (pnpm)"
+  },
+  {
+    "project_root_file": "tsconfig.json",
+    "dependency_install_command": "npm install",
+    "build_command": "tsc",
+    "name": "TypeScript"
+  },
+  {
+    "project_root_file": "requirements.txt",
+    "dependency_install_command": "pip install -r requirements.txt",
+    "build_command": "python -m build",
+    "name": "Python (pip)"
+  },
+  {
+    "project_root_file": "pyproject.toml",
+    "dependency_install_command": "poetry install",
+    "build_command": "poetry build",
+    "name": "Python (Poetry)"
+  },
+  {
+    "project_root_file": "Pipfile",
+    "dependency_install_command": "pipenv install",
+    "build_command": "pipenv run python setup.py build",
+    "name": "Python (Pipenv)"
+  },
+  {
+    "project_root_file": "setup.py",
+    "dependency_install_command": "pip install -e .",
+    "build_command": "python setup.py build",
+    "name": "Python (setuptools)"
+  },
+  {
+    "project_root_file": "conda.yml",
+    "dependency_install_command": "conda env create",
+    "build_command": "python -m build",
+    "name": "Python (Conda)"
+  },
+  {
+    "project_root_file": "pom.xml",
+    "dependency_install_command": "mvn install",
+    "build_command": "mvn compile",
+    "name": "Java (Maven)"
+  },
+  {
+    "project_root_file": "build.gradle",
+    "dependency_install_command": "gradle dependencies",
+    "build_command": "gradle build",
+    "name": "Java (Gradle)"
+  },
+  {
+    "project_root_file": "build.gradle.kts",
+    "dependency_install_command": "gradle dependencies",
+    "build_command": "gradle build",
+    "name": "Kotlin (Gradle)"
+  },
+  {
+    "project_root_file": "ivy.xml",
+    "dependency_install_command": "ant resolve",
+    "build_command": "ant compile",
+    "name": "Java (Ivy/Ant)"
+  },
+  {
+    "project_root_file": "build.sbt",
+    "dependency_install_command": "sbt update",
+    "build_command": "sbt compile",
+    "name": "Scala (sbt)"
+  },
+  {
+    "project_root_file": "project.clj",
+    "dependency_install_command": "lein deps",
+    "build_command": "lein compile",
+    "name": "Clojure (Leiningen)"
+  },
+  {
+    "project_root_file": "deps.edn",
+    "dependency_install_command": "clj -P",
+    "build_command": "clj -M -m main",
+    "name": "Clojure (tools.deps)"
+  },
+  {
+    "project_root_file": "build.boot",
+    "dependency_install_command": "boot install",
+    "build_command": "boot build",
+    "name": "Clojure (Boot)"
+  },
+  {
+    "project_root_file": "go.mod",
+    "dependency_install_command": "go mod tidy",
+    "build_command": "go build",
+    "name": "Go"
+  },
+  {
+    "project_root_file": "Cargo.toml",
+    "dependency_install_command": "cargo fetch",
+    "build_command": "cargo build",
+    "name": "Rust"
+  },
+  {
+    "project_root_file": "CMakeLists.txt",
+    "dependency_install_command": "cmake ..",
+    "build_command": "make",
+    "name": "C/C++ (CMake)"
+  },
+  {
+    "project_root_file": "Makefile",
+    "dependency_install_command": "make deps",
+    "build_command": "make",
+    "name": "C/C++ (Make)"
+  },
+  {
+    "project_root_file": "meson.build",
+    "dependency_install_command": "meson setup builddir",
+    "build_command": "ninja -C builddir",
+    "name": "C/C++ (Meson)"
+  },
+  {
+    "project_root_file": "vcpkg.json",
+    "dependency_install_command": "vcpkg install",
+    "build_command": "cmake --build build",
+    "name": "C++ (vcpkg)"
+  },
+  {
+    "project_root_file": "conanfile.txt",
+    "dependency_install_command": "conan install .",
+    "build_command": "cmake --build build",
+    "name": "C++ (Conan)"
+  },
+  {
+    "project_root_file": "conanfile.py",
+    "dependency_install_command": "conan install .",
+    "build_command": "cmake --build build",
+    "name": "C++ (Conan Python)"
+  },
+  {
+    "project_root_file": "BUILD",
+    "dependency_install_command": "bazel fetch //...",
+    "build_command": "bazel build //...",
+    "name": "Bazel"
+  },
+  {
+    "project_root_file": "Package.swift",
+    "dependency_install_command": "swift package resolve",
+    "build_command": "swift build",
+    "name": "Swift"
+  },
+  {
+    "project_root_file": "Podfile",
+    "dependency_install_command": "pod install",
+    "build_command": "xcodebuild",
+    "name": "iOS/macOS (CocoaPods)"
+  },
+  {
+    "project_root_file": "pubspec.yaml",
+    "dependency_install_command": "dart pub get",
+    "build_command": "dart compile exe",
+    "name": "Dart"
+  },
+  {
+    "project_root_file": "pubspec.yaml",
+    "dependency_install_command": "flutter pub get",
+    "build_command": "flutter build",
+    "name": "Flutter"
+  },
+  {
+    "project_root_file": "Gemfile",
+    "dependency_install_command": "bundle install",
+    "build_command": "bundle exec rake build",
+    "name": "Ruby (Bundler)"
+  },
+  {
+    "project_root_file": "composer.json",
+    "dependency_install_command": "composer install",
+    "build_command": "php artisan build",
+    "name": "PHP (Composer)"
+  },
+  {
+    "project_root_file": "*.cabal",
+    "dependency_install_command": "cabal update",
+    "build_command": "cabal build",
+    "name": "Haskell (Cabal)"
+  },
+  {
+    "project_root_file": "stack.yaml",
+    "dependency_install_command": "stack setup",
+    "build_command": "stack build",
+    "name": "Haskell (Stack)"
+  },
+  {
+    "project_root_file": "rebar.config",
+    "dependency_install_command": "rebar3 deps",
+    "build_command": "rebar3 compile",
+    "name": "Erlang"
+  },
+  {
+    "project_root_file": "mix.exs",
+    "dependency_install_command": "mix deps.get",
+    "build_command": "mix compile",
+    "name": "Elixir"
+  },
+  {
+    "project_root_file": "elm.json",
+    "dependency_install_command": "elm install",
+    "build_command": "elm make src/Main.elm",
+    "name": "Elm"
+  },
+  {
+    "project_root_file": "dune-project",
+    "dependency_install_command": "opam install --deps-only .",
+    "build_command": "dune build",
+    "name": "OCaml (Dune)"
+  },
+  {
+    "project_root_file": "DESCRIPTION",
+    "dependency_install_command": "install.packages()",
+    "build_command": "R CMD build",
+    "name": "R"
+  },
+  {
+    "project_root_file": "Project.toml",
+    "dependency_install_command": "using Pkg; Pkg.instantiate()",
+    "build_command": "julia script.jl",
+    "name": "Julia"
+  },
+  {
+    "project_root_file": "fpm.toml",
+    "dependency_install_command": "fpm update",
+    "build_command": "fpm build",
+    "name": "Fortran (fpm)"
+  },
+  {
+    "project_root_file": "build.zig",
+    "dependency_install_command": "zig fetch",
+    "build_command": "zig build",
+    "name": "Zig"
+  },
+  {
+    "project_root_file": "build.zig.zon",
+    "dependency_install_command": "zig fetch",
+    "build_command": "zig build",
+    "name": "Zig (package manager)"
+  },
+  {
+    "project_root_file": "*.nimble",
+    "dependency_install_command": "nimble install",
+    "build_command": "nimble build",
+    "name": "Nim"
+  },
+  {
+    "project_root_file": "shard.yml",
+    "dependency_install_command": "shards install",
+    "build_command": "crystal build",
+    "name": "Crystal"
+  },
+  {
+    "project_root_file": "dub.json",
+    "dependency_install_command": "dub fetch",
+    "build_command": "dub build",
+    "name": "D (JSON)"
+  },
+  {
+    "project_root_file": "dub.sdl",
+    "dependency_install_command": "dub fetch",
+    "build_command": "dub build",
+    "name": "D (SDL)"
+  },
+  {
+    "project_root_file": "rockspec",
+    "dependency_install_command": "luarocks install",
+    "build_command": "lua script.lua",
+    "name": "Lua"
+  },
+  {
+    "project_root_file": "cpanfile",
+    "dependency_install_command": "cpanm --installdeps .",
+    "build_command": "perl script.pl",
+    "name": "Perl (cpanm)"
+  },
+  {
+    "project_root_file": "main.tf",
+    "dependency_install_command": "terraform init",
+    "build_command": "terraform apply",
+    "name": "Terraform"
+  },
+  {
+    "project_root_file": "default.nix",
+    "dependency_install_command": "nix-shell",
+    "build_command": "nix-build",
+    "name": "Nix"
+  },
+  {
+    "project_root_file": "requirements.yml",
+    "dependency_install_command": "ansible-galaxy install -r requirements.yml",
+    "build_command": "ansible-playbook playbook.yml",
+    "name": "Ansible"
+  },
+  {
+    "project_root_file": "project.godot",
+    "dependency_install_command": "godot --export",
+    "build_command": "godot --main-pack game.pck",
+    "name": "Godot (GDScript)"
+  },
+  {
+    "project_root_file": "*.pro",
+    "dependency_install_command": "qmake",
+    "build_command": "make",
+    "name": "Qt (QML)"
+  },
+  {
+    "project_root_file": "platformio.ini",
+    "dependency_install_command": "pio lib install",
+    "build_command": "pio run",
+    "name": "Arduino (PlatformIO)"
+  },
+  {
+    "project_root_file": "webpack.config.js",
+    "dependency_install_command": "npm install",
+    "build_command": "webpack build",
+    "name": "Webpack"
+  },
+  {
+    "project_root_file": "vite.config.js",
+    "dependency_install_command": "npm install",
+    "build_command": "vite build",
+    "name": "Vite"
+  },
+  {
+    "project_root_file": "rollup.config.js",
+    "dependency_install_command": "npm install",
+    "build_command": "rollup -c",
+    "name": "Rollup"
+  },
+  {
+    "project_root_file": "parcel.json",
+    "dependency_install_command": "npm install",
+    "build_command": "parcel build",
+    "name": "Parcel"
+  }
+]
