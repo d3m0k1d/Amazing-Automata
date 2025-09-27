@@ -100,7 +100,6 @@ func walkproj(dir string, types []ProjectType) ([]Project, error) {
 }
 
 func YamlGenerator(filename, projectPath string, ci, cd, dryRun, appendM bool) error {
-	// Открытие файла или stdout
 	var f *os.File
 	var err error
 	if dryRun {
@@ -128,12 +127,10 @@ func YamlGenerator(filename, projectPath string, ci, cd, dryRun, appendM bool) e
 		return fmt.Errorf("failed to scan projects: %w", err)
 	}
 
-	// По умолчанию оба блока
 	if !ci && !cd {
 		ci, cd = true, true
 	}
 
-	// Базовый шаблон
 	baseTmpl, err := template.New("base").Parse(baseTpl)
 	if err != nil {
 		return fmt.Errorf("parse base template: %w", err)
@@ -166,12 +163,7 @@ func YamlGenerator(filename, projectPath string, ci, cd, dryRun, appendM bool) e
 	}
 
 	if dryRun {
-		if cd {
-
-		}
-		if ci {
-
-		}
+		fmt.Fprintln(os.Stdout, "\n# Dry-run complete: pipeline preview above")
 	}
 
 	return nil
