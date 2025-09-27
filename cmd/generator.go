@@ -44,7 +44,7 @@ const cdTpl = `  build:
   release:
     needs: build
     runs-on: ubuntu-latest
-        steps:
+	steps:
           - name: Download artifacts
             uses: actions/download-artifact@v4
             with:
