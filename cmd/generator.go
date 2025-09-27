@@ -100,6 +100,7 @@ func walkproj(dir string, types []ProjectType) ([]Project, error) {
 }
 
 func YamlGenerator(filename, projectPath string, ci, cd, dryRun, appendM bool) error {
+	// Открытие файла или stdout
 	var f *os.File
 	var err error
 	if dryRun {
@@ -127,16 +128,19 @@ func YamlGenerator(filename, projectPath string, ci, cd, dryRun, appendM bool) e
 		return fmt.Errorf("failed to scan projects: %w", err)
 	}
 
+	// По умолчанию оба блока, если ни ci ни cd не заданы
 	if !ci && !cd {
 		ci, cd = true, true
 	}
 
-	baseTmpl, err := template.New("base").Parse(baseTpl)
-	if err != nil {
-		return fmt.Errorf("parse base template: %w", err)
-	}
-	if err := baseTmpl.Execute(f, map[string]string{"WorkflowName": "Amazing-Automata CI/CD"}); err != nil {
-		return fmt.Errorf("execute base template: %w", err)
+	if !appendM {
+		baseTmpl, err := template.New("base").Parse(baseTpl)
+		if err != nil {
+			return fmt.Errorf("parse base template: %w", err)
+		}
+		if err := baseTmpl.Execute(f, map[string]string{"WorkflowName": "Amazing-Automata CI/CD"}); err != nil {
+			return fmt.Errorf("execute base template: %w", err)
+		}
 	}
 
 	// Общий шаблон с именованными частями
