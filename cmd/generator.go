@@ -95,8 +95,6 @@ func walkproj(dir string, types []ProjectType) ([]Project, error) {
 				// projects = append(projects, projects2...)
 				// f.Name()
 			} else {
-					println(dir)
-					println(f.Name())
 				for _, m := range types {
 					if m.DependencyFileGlob.Match(f.Name()) {
 						// r, err := filepath.Rel(root, dir)
@@ -104,9 +102,6 @@ func walkproj(dir string, types []ProjectType) ([]Project, error) {
 						// 	return err
 						// }
 						r := dir
-						// println("a")
-						// println(root)
-						// println(dir)
 						projects_curr = append(projects_curr, Project{Type: m, Root: r})
 					}
 				}
@@ -138,7 +133,7 @@ func walkproj(dir string, types []ProjectType) ([]Project, error) {
 func YamlGenerator(filename, projectPath string, ci, cd, dryRun, appendM bool) error {
 	// Открытие файла или stdout
 	var f *os.File
-	var err error
+	var err erro
 	if dryRun {
 		f = os.Stdout
 	} else {
@@ -163,7 +158,6 @@ func YamlGenerator(filename, projectPath string, ci, cd, dryRun, appendM bool) e
 	if err != nil {
 		return fmt.Errorf("failed to scan projects: %w", err)
 	}
-	println(len(projects))
 
 	// По умолчанию оба блока, если ни ci ни cd не заданы
 	// if !ci && !cd {
