@@ -7,18 +7,16 @@ import (
 	"text/template"
 )
 
-const baseTpl = `name: {{ .WorkflowName }}
+const baseTpl = `{{define "base"}}name: {{ .WorkflowName }}
 on:
   push:
     branches:
       - master
 
 jobs:
-`
+{{end}}`
 
-const ciTpl = `  build:
-    runs-on: ubuntu-latest
-{{define "build_steps"}}    steps:
+const ciTpl = `{{define "build_steps"}}    steps:
       - name: Clone repository
         uses: actions/checkout@v4{{ range .Projects }}
       - name: setup env
@@ -26,9 +24,12 @@ const ciTpl = `  build:
       - name: Install project dependencies {{.Root}}
         run: {{.Type.InstallCommand}}
       - name: Build project {{.Root}}
-        run: {{.Type.BuildCommand}}{{ end }}{{ end }}`
+        run: {{.Type.BuildCommand}}{{ end }}{{ end }}{{define "ci"}}{{template "base"}}  build:
+    runs-on: ubuntu-latest
+{{template "build_steps" .}}
+{{ end }}`
 
-const cdTpl = `  build:
+const cdTpl = `{{define "cd"}}{{template "base"}}  build:
     strategy: 
             matrix:
                 os: [ubuntu-latest, windows-latest, macos-latest]
@@ -45,7 +46,7 @@ const cdTpl = `  build:
   release:
     needs: build
     runs-on: ubuntu-latest
-	steps:
+    steps:
           - name: Download artifacts
             uses: actions/download-artifact@v4
             with:
@@ -58,7 +59,7 @@ const cdTpl = `  build:
                 draft: false
                 prerelease: false
             env:
-                GITHUB_TOKEN: ${{"{{"}} secrets.GITHUB_TOKEN {{"}}"}}
+                GITHUB_TOKEN: ${{"{{"}} secrets.GITHUB_TOKEN {{"}}"}}{{ end }}
 `
 
 type Project struct {
@@ -127,30 +128,28 @@ func YamlGenerator(filename, projectPath string, ci, cd, dryRun, appendM bool) e
 	if err != nil {
 		return fmt.Errorf("failed to scan projects: %w", err)
 	}
+	println(len(projects))
 
 	// По умолчанию оба блока, если ни ci ни cd не заданы
-	if !ci && !cd {
-		ci, cd = true, true
-	}
+	// if !ci && !cd {
+	// 	ci, cd = true, true
+	// }
 
-	if !appendM {
-		baseTmpl, err := template.New("base").Parse(baseTpl)
-		if err != nil {
-			return fmt.Errorf("parse base template: %w", err)
-		}
-		if err := baseTmpl.Execute(f, map[string]string{"WorkflowName": "Amazing-Automata CI/CD"}); err != nil {
-			return fmt.Errorf("execute base template: %w", err)
-		}
-	}
+	// if !appendM {
+	// 	baseTmpl, err := template.New("base").Parse(baseTpl)
+	// 	if err != nil {
+	// 		return fmt.Errorf("parse base template: %w", err)
+	// 	}
+	// 	if err := baseTmpl.Execute(f, map[string]string{"WorkflowName": "Amazing-Automata CI/CD"}); err != nil {
+	// 		return fmt.Errorf("execute base template: %w", err)
+	// 	}
+	// }
 
 	// Общий шаблон с именованными частями
 	t := template.New("pipeline")
-	if _, err := t.New("ci").Parse(ciTpl); err != nil {
-		return fmt.Errorf("parse ci template: %w", err)
-	}
-	if _, err := t.New("cd").Parse(cdTpl); err != nil {
-		return fmt.Errorf("parse cd template: %w", err)
-	}
+	t = template.Must(t.Parse(ciTpl))
+	t = template.Must(t.Parse(cdTpl))
+	t = template.Must(t.Parse(baseTpl))
 
 	data := map[string]interface{}{"Projects": projects}
 
@@ -167,7 +166,7 @@ func YamlGenerator(filename, projectPath string, ci, cd, dryRun, appendM bool) e
 	}
 
 	if dryRun {
-		fmt.Fprintln(os.Stdout, "\n# Dry-run complete: pipeline preview above")
+		fmt.Fprintln(os.Stderr, "\n# Dry-run complete: pipeline preview above")
 	}
 
 	return nil
