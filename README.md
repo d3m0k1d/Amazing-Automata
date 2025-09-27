@@ -3,11 +3,10 @@ A universal pipeline generator for Github Actions
 
 # Table of contents
 1. [Overview](#overview)
-2. [Features](#features)
-3. [Requirements](#requirements)
-4. [Installation](#installation)
-5. [Usage](#usage)
-6. [License](#license)
+2. [Requirements](#requirements)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [License](#license)
 
 ## Overview
 Amazing-Automata is a universal CI/CD pipeline generator for GitHub Actions that empowers DevOps engineers to create, customize, and maintain workflows in seconds.
