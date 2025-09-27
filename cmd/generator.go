@@ -20,15 +20,17 @@ jobs:
 const buildTpl = `  build:
     runs-on: ubuntu-latest
     steps:
+	  - name: setup env
+        uses: actions/setup-* # actions/setup-node@v5 actions/setup-python@v6 actions/setup-java@v5 actions/setup-go@v6 actions/setup-dotnet@v5 ruby/setup-ruby@v1
       - name: Clone repository
         uses: actions/checkout@v4
       {{ range .Projects }}
       - name: setup
-        with:
-      - name: Install deps for project {{.Root}}
-        run: {{.Type.InstallCommand}}
-      - name: Build project {{.Root}}
-        run: {{.Type.BuildCommand}}{{ end }}`
+        with: {{.setup}}
+      - name: Build project {{.name}}
+        run: {{.cmd}}
+      {{ end }}
+`
 
 type Project struct {
 	Type ProjectType
