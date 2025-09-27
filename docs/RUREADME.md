@@ -28,10 +28,10 @@ amazing-automata <filename>.yml
 ```
 3. Генерация только CI или CD пайпайна
 ```bash
-amazing-automata <filename>.yml --ci
+amazing-automat --ci <filename>.yml 
 ```
 ```bash
-amazing-automata <name.yml> --cd
+amazing-automata --cd <name.yml> 
 ```
 4. Изменение существующего пайплайна
 ```bash
@@ -40,10 +40,6 @@ amazing-automata --append <path/to/workflow.yml>
 5. Просмотр в stdout изменений пайплана
 ```bash
 amazing-automata --dry-run 
-```
-6. Использование Matrix
-```bash
-amazing-automata my-workflow.yml --matrix go=1.24,1.25 os=ubuntu-latest,macos-latest
 ```
 ## Лицензия
 Этот проект лицензируются MIT

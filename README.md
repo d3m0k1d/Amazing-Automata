@@ -28,10 +28,10 @@ amazing-automata <filename>.yml
 ```
 3. Generate only a CI or CD pipeline
 ```bash
-amazing-automata <filename>.yml --ci
+amazing-automata --ci <filename>.yml
 ```
 ```bash
-amazing-automata <name.yml> --cd
+amazing-automata --cd <name.yml> 
 ```
 4. Edit an existing pipeline
 ```bash
@@ -40,10 +40,6 @@ amazing-automata --append <path/to/workflow.yml>
 5. Dry-run review
 ```bash
 amazing-automata --dry-run 
-```
-6. Matrix usage
-```bash
-amazing-automata my-workflow.yml --matrix go=1.24,1.25 os=ubuntu-latest,macos-latest
 ```
 ## License
 This project is licensed under the MIT License. 
