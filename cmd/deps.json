@@ -1,0 +1,400 @@
+[
+  {
+    "project_root_file": "*.csproj",
+    "dependency_install_command": "dotnet restore",
+    "build_command": "dotnet build",
+    "name": ".NET",
+    "setup_action": "actions/setup-dotnet@v5"
+  },
+  {
+    "project_root_file": "*.fsproj",
+    "dependency_install_command": "dotnet restore",
+    "build_command": "dotnet build",
+    "name": "F#",
+    "setup_action": "actions/setup-dotnet@v5"
+  },
+  {
+    "project_root_file": "*.vbproj",
+    "dependency_install_command": "dotnet restore",
+    "build_command": "dotnet build",
+    "name": "VB.NET",
+    "setup_action": "actions/setup-dotnet@v5"
+  },
+  {
+    "project_root_file": "packages.config",
+    "dependency_install_command": "nuget restore",
+    "build_command": "msbuild",
+    "name": ".NET Framework",
+    "setup_action": "actions/setup-dotnet@v5"
+  },
+  {
+    "project_root_file": "package-lock.json",
+    "dependency_install_command": "npm install",
+    "build_command": "npm run build",
+    "name": "Node.js (npm)",
+    "setup_action": "actions/setup-node@v5"
+  },
+  {
+    "project_root_file": "package.json",
+    "dependency_install_command": "npm install",
+    "build_command": "npm run build",
+    "name": "Node.js (npm)",
+    "setup_action": "actions/setup-node@v5"
+  },
+  {
+    "project_root_file": "yarn.lock",
+    "dependency_install_command": "yarn install",
+    "build_command": "yarn build",
+    "name": "Node.js (Yarn)",
+    "setup_action": "actions/setup-node@v5"
+  },
+  {
+    "project_root_file": "pnpm-lock.yaml",
+    "dependency_install_command": "pnpm install",
+    "build_command": "pnpm build",
+    "name": "Node.js (pnpm)",
+    "setup_action": "actions/setup-node@v5"
+  },
+  {
+    "project_root_file": "requirements.txt",
+    "dependency_install_command": "pip install -r requirements.txt",
+    "build_command": "python -m build",
+    "name": "Python (pip)",
+    "setup_action": "actions/setup-python@v6"
+  },
+  {
+    "project_root_file": "pyproject.toml",
+    "dependency_install_command": "poetry install",
+    "build_command": "poetry build",
+    "name": "Python (Poetry)",
+    "setup_action": "actions/setup-python@v6"
+  },
+  {
+    "project_root_file": "Pipfile",
+    "dependency_install_command": "pipenv install",
+    "build_command": "pipenv run python setup.py build",
+    "name": "Python (Pipenv)",
+    "setup_action": "actions/setup-python@v6"
+  },
+  {
+    "project_root_file": "setup.py",
+    "dependency_install_command": "pip install -e .",
+    "build_command": "python setup.py build",
+    "name": "Python (setuptools)",
+    "setup_action": "actions/setup-python@v6"
+  },
+  {
+    "project_root_file": "conda.yml",
+    "dependency_install_command": "conda env create",
+    "build_command": "python -m build",
+    "name": "Python (Conda)",
+    "setup_action": "actions/setup-python@v6"
+  },
+  {
+    "project_root_file": "pom.xml",
+    "dependency_install_command": "mvn install",
+    "build_command": "mvn compile",
+    "name": "Java (Maven)",
+    "setup_action": "actions/setup-java@v5"
+  },
+  {
+    "project_root_file": "build.gradle",
+    "dependency_install_command": "gradle dependencies",
+    "build_command": "gradle build",
+    "name": "Java (Gradle)",
+    "setup_action": "actions/setup-java@v5"
+  },
+  {
+    "project_root_file": "build.gradle.kts",
+    "dependency_install_command": "gradle dependencies",
+    "build_command": "gradle build",
+    "name": "Kotlin (Gradle)",
+    "setup_action": "actions/setup-java@v5"
+  },
+  {
+    "project_root_file": "ivy.xml",
+    "dependency_install_command": "ant resolve",
+    "build_command": "ant compile",
+    "name": "Java (Ivy/Ant)",
+    "setup_action": "actions/setup-java@v5"
+  },
+  {
+    "project_root_file": "build.sbt",
+    "dependency_install_command": "sbt update",
+    "build_command": "sbt compile",
+    "name": "Scala (sbt)"
+  },
+  {
+    "project_root_file": "project.clj",
+    "dependency_install_command": "lein deps",
+    "build_command": "lein compile",
+    "name": "Clojure (Leiningen)"
+  },
+  {
+    "project_root_file": "deps.edn",
+    "dependency_install_command": "clj -P",
+    "build_command": "clj -M -m main",
+    "name": "Clojure (tools.deps)"
+  },
+  {
+    "project_root_file": "build.boot",
+    "dependency_install_command": "boot install",
+    "build_command": "boot build",
+    "name": "Clojure (Boot)"
+  },
+  {
+    "project_root_file": "go.mod",
+    "dependency_install_command": "go mod tidy",
+    "build_command": "go build",
+    "name": "Go",
+    "setup_action": "actions/setup-go@v6"
+  },
+  {
+    "project_root_file": "Cargo.toml",
+    "dependency_install_command": "cargo fetch",
+    "build_command": "cargo build",
+    "name": "Rust",
+    "setup_action": "actions-rust-lang/setup-rust-toolchain@v1"
+  },
+  {
+    "project_root_file": "CMakeLists.txt",
+    "dependency_install_command": "cmake --build build",
+    "build_command": "make",
+    "name": "C/C++ (CMake)"
+  },
+  {
+    "project_root_file": "Makefile",
+    "dependency_install_command": "make deps",
+    "build_command": "make",
+    "name": "C/C++ (Make)"
+  },
+  {
+    "project_root_file": "meson.build",
+    "dependency_install_command": "meson setup builddir",
+    "build_command": "ninja -C builddir",
+    "name": "C/C++ (Meson)"
+  },
+  {
+    "project_root_file": "vcpkg.json",
+    "dependency_install_command": "vcpkg install",
+    "build_command": "cmake --build build",
+    "name": "C++ (vcpkg)"
+  },
+  {
+    "project_root_file": "conanfile.txt",
+    "dependency_install_command": "conan install .",
+    "build_command": "cmake --build build",
+    "name": "C++ (Conan)"
+  },
+  {
+    "project_root_file": "conanfile.py",
+    "dependency_install_command": "conan install .",
+    "build_command": "cmake --build build",
+    "name": "C++ (Conan Python)"
+  },
+  {
+    "project_root_file": "BUILD",
+    "dependency_install_command": "bazel fetch //...",
+    "build_command": "bazel build //...",
+    "name": "Bazel"
+  },
+  {
+    "project_root_file": "Package.swift",
+    "dependency_install_command": "swift package resolve",
+    "build_command": "swift build",
+    "name": "Swift"
+  },
+  {
+    "project_root_file": "Podfile",
+    "dependency_install_command": "pod install",
+    "build_command": "xcodebuild",
+    "name": "iOS/macOS (CocoaPods)"
+  },
+  {
+    "project_root_file": "pubspec.yaml",
+    "dependency_install_command": "dart pub get",
+    "build_command": "dart compile exe",
+    "name": "Dart"
+  },
+  {
+    "project_root_file": "pubspec.yaml",
+    "dependency_install_command": "flutter pub get",
+    "build_command": "flutter build",
+    "name": "Flutter"
+  },
+  {
+    "project_root_file": "Gemfile",
+    "dependency_install_command": "bundle install",
+    "build_command": "bundle exec rake build",
+    "name": "Ruby (Bundler)",
+    "setup_action": "ruby/setup-ruby@v1"
+  },
+  {
+    "project_root_file": "composer.json",
+    "dependency_install_command": "composer install",
+    "build_command": "php artisan build",
+    "name": "PHP (Composer)"
+  },
+  {
+    "project_root_file": "*.cabal",
+    "dependency_install_command": "cabal update",
+    "build_command": "cabal build",
+    "name": "Haskell (Cabal)"
+  },
+  {
+    "project_root_file": "stack.yaml",
+    "dependency_install_command": "stack setup",
+    "build_command": "stack build",
+    "name": "Haskell (Stack)"
+  },
+  {
+    "project_root_file": "rebar.config",
+    "dependency_install_command": "rebar3 deps",
+    "build_command": "rebar3 compile",
+    "name": "Erlang"
+  },
+  {
+    "project_root_file": "mix.exs",
+    "dependency_install_command": "mix deps.get",
+    "build_command": "mix compile",
+    "name": "Elixir"
+  },
+  {
+    "project_root_file": "elm.json",
+    "dependency_install_command": "elm install",
+    "build_command": "elm make src/Main.elm",
+    "name": "Elm"
+  },
+  {
+    "project_root_file": "dune-project",
+    "dependency_install_command": "opam install --deps-only .",
+    "build_command": "dune build",
+    "name": "OCaml (Dune)"
+  },
+  {
+    "project_root_file": "DESCRIPTION",
+    "dependency_install_command": "install.packages()",
+    "build_command": "R CMD build",
+    "name": "R"
+  },
+  {
+    "project_root_file": "Project.toml",
+    "dependency_install_command": "using Pkg; Pkg.instantiate()",
+    "build_command": "julia script.jl",
+    "name": "Julia"
+  },
+  {
+    "project_root_file": "fpm.toml",
+    "dependency_install_command": "fpm update",
+    "build_command": "fpm build",
+    "name": "Fortran (fpm)"
+  },
+  {
+    "project_root_file": "build.zig",
+    "dependency_install_command": "zig fetch",
+    "build_command": "zig build",
+    "name": "Zig"
+  },
+  {
+    "project_root_file": "build.zig.zon",
+    "dependency_install_command": "zig fetch",
+    "build_command": "zig build",
+    "name": "Zig (package manager)"
+  },
+  {
+    "project_root_file": "*.nimble",
+    "dependency_install_command": "nimble install",
+    "build_command": "nimble build",
+    "name": "Nim"
+  },
+  {
+    "project_root_file": "shard.yml",
+    "dependency_install_command": "shards install",
+    "build_command": "crystal build",
+    "name": "Crystal"
+  },
+  {
+    "project_root_file": "dub.json",
+    "dependency_install_command": "dub fetch",
+    "build_command": "dub build",
+    "name": "D (JSON)"
+  },
+  {
+    "project_root_file": "dub.sdl",
+    "dependency_install_command": "dub fetch",
+    "build_command": "dub build",
+    "name": "D (SDL)"
+  },
+  {
+    "project_root_file": "rockspec",
+    "dependency_install_command": "luarocks install",
+    "build_command": "lua script.lua",
+    "name": "Lua"
+  },
+  {
+    "project_root_file": "cpanfile",
+    "dependency_install_command": "cpanm --installdeps .",
+    "build_command": "perl script.pl",
+    "name": "Perl (cpanm)"
+  },
+  {
+    "project_root_file": "main.tf",
+    "dependency_install_command": "terraform init",
+    "build_command": "terraform apply",
+    "name": "Terraform"
+  },
+  {
+    "project_root_file": "default.nix",
+    "dependency_install_command": "nix-shell",
+    "build_command": "nix-build",
+    "name": "Nix"
+  },
+  {
+    "project_root_file": "requirements.yml",
+    "dependency_install_command": "ansible-galaxy install -r requirements.yml",
+    "build_command": "ansible-playbook playbook.yml",
+    "name": "Ansible"
+  },
+  {
+    "project_root_file": "project.godot",
+    "dependency_install_command": "godot --export",
+    "build_command": "godot --main-pack game.pck",
+    "name": "Godot (GDScript)"
+  },
+  {
+    "project_root_file": "*.pro",
+    "dependency_install_command": "qmake",
+    "build_command": "make",
+    "name": "Qt (QML)"
+  },
+  {
+    "project_root_file": "platformio.ini",
+    "dependency_install_command": "pio lib install",
+    "build_command": "pio run",
+    "name": "Arduino (PlatformIO)"
+  },
+  {
+    "project_root_file": "webpack.config.js",
+    "dependency_install_command": "npm install",
+    "build_command": "webpack build",
+    "name": "Webpack"
+  },
+  {
+    "project_root_file": "vite.config.js",
+    "dependency_install_command": "npm install",
+    "build_command": "vite build",
+    "name": "Vite"
+  },
+  {
+    "project_root_file": "rollup.config.js",
+    "dependency_install_command": "npm install",
+    "build_command": "rollup -c",
+    "name": "Rollup"
+  },
+  {
+    "project_root_file": "parcel.json",
+    "dependency_install_command": "npm install",
+    "build_command": "parcel build",
+    "name": "Parcel"
+  }
+]
