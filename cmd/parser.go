@@ -14,6 +14,7 @@ type ProjectTypeDTO struct {
 	InstallCommand string `json:"dependency_install_command"`
 	BuildCommand   string `json:"build_command"`
 	Name           string `json:"name"`
+	Setup          string `json:"setup_action"`
 }
 type ProjectType struct {
 	ProjectTypeDTO

@@ -3,97 +3,113 @@
     "project_root_file": "*.csproj",
     "dependency_install_command": "dotnet restore",
     "build_command": "dotnet build",
-    "name": ".NET"
+    "name": ".NET",
+    "setup_action": "actions/setup-dotnet@v5"
   },
   {
     "project_root_file": "*.fsproj",
     "dependency_install_command": "dotnet restore",
     "build_command": "dotnet build",
-    "name": "F#"
+    "name": "F#",
+    "setup_action": "actions/setup-dotnet@v5"
   },
   {
     "project_root_file": "*.vbproj",
     "dependency_install_command": "dotnet restore",
     "build_command": "dotnet build",
-    "name": "VB.NET"
+    "name": "VB.NET",
+    "setup_action": "actions/setup-dotnet@v5"
   },
   {
     "project_root_file": "packages.config",
     "dependency_install_command": "nuget restore",
     "build_command": "msbuild",
-    "name": ".NET Framework"
+    "name": ".NET Framework",
+    "setup_action": "actions/setup-dotnet@v5"
   },
   {
     "project_root_file": "package-lock.json",
     "dependency_install_command": "npm install",
     "build_command": "npm run build",
-    "name": "Node.js (npm)"
+    "name": "Node.js (npm)",
+    "setup_action": "actions/setup-node@v5"
   },
   {
     "project_root_file": "yarn.lock",
     "dependency_install_command": "yarn install",
     "build_command": "yarn build",
-    "name": "Node.js (Yarn)"
+    "name": "Node.js (Yarn)",
+    "setup_action": "actions/setup-node@v5"
   },
   {
     "project_root_file": "pnpm-lock.yaml",
     "dependency_install_command": "pnpm install",
     "build_command": "pnpm build",
-    "name": "Node.js (pnpm)"
+    "name": "Node.js (pnpm)",
+    "setup_action": "actions/setup-node@v5"
   },
   {
     "project_root_file": "requirements.txt",
     "dependency_install_command": "pip install -r requirements.txt",
     "build_command": "python -m build",
-    "name": "Python (pip)"
+    "name": "Python (pip)",
+    "setup_action": "actions/setup-python@v6"
   },
   {
     "project_root_file": "pyproject.toml",
     "dependency_install_command": "poetry install",
     "build_command": "poetry build",
-    "name": "Python (Poetry)"
+    "name": "Python (Poetry)",
+    "setup_action": "actions/setup-python@v6"
   },
   {
     "project_root_file": "Pipfile",
     "dependency_install_command": "pipenv install",
     "build_command": "pipenv run python setup.py build",
-    "name": "Python (Pipenv)"
+    "name": "Python (Pipenv)",
+    "setup_action": "actions/setup-python@v6"
   },
   {
     "project_root_file": "setup.py",
     "dependency_install_command": "pip install -e .",
     "build_command": "python setup.py build",
-    "name": "Python (setuptools)"
+    "name": "Python (setuptools)",
+    "setup_action": "actions/setup-python@v6"
   },
   {
     "project_root_file": "conda.yml",
     "dependency_install_command": "conda env create",
     "build_command": "python -m build",
-    "name": "Python (Conda)"
+    "name": "Python (Conda)",
+    "setup_action": "actions/setup-python@v6"
   },
   {
     "project_root_file": "pom.xml",
     "dependency_install_command": "mvn install",
     "build_command": "mvn compile",
-    "name": "Java (Maven)"
+    "name": "Java (Maven)",
+    "setup_action": "actions/setup-java@v5"
   },
   {
     "project_root_file": "build.gradle",
     "dependency_install_command": "gradle dependencies",
     "build_command": "gradle build",
-    "name": "Java (Gradle)"
+    "name": "Java (Gradle)",
+    "setup_action": "actions/setup-java@v5"
   },
   {
     "project_root_file": "build.gradle.kts",
     "dependency_install_command": "gradle dependencies",
     "build_command": "gradle build",
-    "name": "Kotlin (Gradle)"
+    "name": "Kotlin (Gradle)",
+    "setup_action": "actions/setup-java@v5"
   },
   {
     "project_root_file": "ivy.xml",
     "dependency_install_command": "ant resolve",
     "build_command": "ant compile",
-    "name": "Java (Ivy/Ant)"
+    "name": "Java (Ivy/Ant)",
+    "setup_action": "actions/setup-java@v5"
   },
   {
     "project_root_file": "build.sbt",
@@ -123,17 +139,19 @@
     "project_root_file": "go.mod",
     "dependency_install_command": "go mod tidy",
     "build_command": "go build",
-    "name": "Go"
+    "name": "Go",
+    "setup_action": "actions/setup-go@v6"
   },
   {
     "project_root_file": "Cargo.toml",
     "dependency_install_command": "cargo fetch",
     "build_command": "cargo build",
-    "name": "Rust"
+    "name": "Rust",
+    "setup_action": "actions-rust-lang/setup-rust-toolchain@v1"
   },
   {
     "project_root_file": "CMakeLists.txt",
-    "dependency_install_command": "cmake ..",
+    "dependency_install_command": "cmake --build build",
     "build_command": "make",
     "name": "C/C++ (CMake)"
   },
@@ -201,7 +219,8 @@
     "project_root_file": "Gemfile",
     "dependency_install_command": "bundle install",
     "build_command": "bundle exec rake build",
-    "name": "Ruby (Bundler)"
+    "name": "Ruby (Bundler)",
+    "setup_action": "ruby/setup-ruby@v1"
   },
   {
     "project_root_file": "composer.json",
