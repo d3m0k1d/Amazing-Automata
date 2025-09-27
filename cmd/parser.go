@@ -9,17 +9,13 @@ import (
 	_ "embed"
 )
 
-type Dependency struct {
-	DependencyFile   string   `json:"dependency_file"`
-	InstallCommand   string   `json:"install_command"`
+type Project struct {
+	DependencyFile   string   `json:"project_root_file"`
+	InstallCommand   string   `json:"dependency_install_command"`
 	BuildCommand     string   `json:"build_command"`
-	SourceExtensions []string `json:"source_extensions"`
+	Name string `json:"name"`
 }
 
-type LangDeps struct {
-	Name         string
-	Dependencies []Dependency
-}
 
 func CollectFiles() ([]string, error) {
 	root, err := os.Getwd()
@@ -68,23 +64,11 @@ func PathCollectFiles() ([]string, error) {
 
 //go:embed deps.json
 var depfilesjson []byte
-func ParseLangDeps() ([]LangDeps, error) {
-	// rawData, err := ioutil.ReadFile(path)
-	// if err != nil {
-	// 	return nil, fmt.Errorf("read file: %w", err)
-	// }
+func ParseLangDeps() ([]Project, error) {
 
-	var tmp map[string][]Dependency
-	if err := json.Unmarshal(depfilesjson, &tmp); err != nil {
+	var result []Project
+	if err := json.Unmarshal(depfilesjson, &result); err != nil {
 		return nil, fmt.Errorf("unmarshal JSON: %w", err)
-	}
-
-	result := make([]LangDeps, 0, len(tmp))
-	for name, deps := range tmp {
-		result = append(result, LangDeps{
-			Name:         name,
-			Dependencies: deps,
-		})
 	}
 
 	return result, nil
