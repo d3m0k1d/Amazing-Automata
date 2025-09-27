@@ -1,11 +1,9 @@
 package cmd
 
 import (
-	"fmt"
 	"os"
 	"path/filepath"
 	"text/template"
-
 )
 
 const baseTpl = `name: {{ .WorkflowName }}
@@ -17,7 +15,7 @@ on:
 jobs:
 `
 
-const buildTpl = `  build:
+const ciTpl = `  build:
     runs-on: ubuntu-latest
     steps:
 	  - name: setup env
@@ -31,6 +29,21 @@ const buildTpl = `  build:
         run: {{.cmd}}
       {{ end }}
 `
+
+const cdTpl = `  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+      {{ range .Projects }}
+      - name: setup
+        with:
+      - name: Install deps for project {{.Root}}
+        run: {{.Type.InstallCommand}}
+      - name: Build project {{.Root}}
+        run: {{.Type.BuildCommand}}
+      - name: Build project {{.Root}}
+        run: {{.Type.BuildCommand}}{{ end }}`
 
 type Project struct {
 	Type ProjectType
@@ -105,13 +118,14 @@ func YamlGenerator(filename string, projectPath string, ci, cd, dryRun, appendM 
 		return err
 	}
 
-	fmt.Print(len(projects)) 
+	// fmt.Print(len(projects))
 	if ci {
-		checkoutTmpl, err := template.New("build").Parse(buildTpl)
-		if err != nil {
+		if err := template.Must(template.New("ci").Parse(ciTpl)).Execute(f, map[string]interface{}{"Projects": projects}); err != nil {
 			return err
 		}
-		if err := checkoutTmpl.Execute(f, map[string]interface{}{"Projects": projects}); err != nil {
+	}
+	if cd {
+		if err := template.Must(template.New("cd").Parse(cdTpl)).Execute(f, map[string]interface{}{"Projects": projects}); err != nil {
 			return err
 		}
 	}
