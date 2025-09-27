@@ -5,6 +5,8 @@ import (
 	"os"
 	"path/filepath"
 	"text/template"
+	// "github.com/alperdrsnn/clime"
+	// "github.com/samber/lo"
 )
 
 const baseTpl = `{{define "base"}}name: {{ .WorkflowName }}
@@ -23,8 +25,10 @@ const ciTpl = `{{define "build_steps"}}    steps:
         uses: {{ or .Type.Setup "actions/setup-* # actions/setup-node@v5 actions/setup-python@v6 actions/setup-java@v5 actions/setup-go@v6 actions/setup-dotnet@v5 ruby/setup-ruby@v1"}}
       - name: Install project dependencies {{.Root}}
         run: {{.Type.InstallCommand}}
+        working-directory: {{.Root}}
       - name: Build project {{.Root}}
-        run: {{.Type.BuildCommand}}{{ end }}{{ end }}{{define "ci"}}{{template "base"}}  build:
+        run: {{.Type.BuildCommand}}
+        working-directory: {{.Root}}{{ end }}{{ end }}{{define "ci"}}{{template "base"}}  build:
     runs-on: ubuntu-latest
 {{template "build_steps" .}}
 {{ end }}`
@@ -70,32 +74,63 @@ type Project struct {
 func walkproj(dir string, types []ProjectType) ([]Project, error) {
 	// var err error
 	projects := make([]Project, 0)
-	matchfurther := true
-	fs, err := os.ReadDir(dir)
-	if err != nil {
-		return nil, err
-	}
-	for _, f := range fs {
-		if f.IsDir() {
-			projects2, err := walkproj(filepath.Join(dir, f.Name()), types)
-			if err != nil {
-				return nil, err
-			}
-			projects = append(projects, projects2...)
-			// f.Name()
-		} else {
-			if matchfurther {
+	var rec func(dir string) error
+	// root := dir
+	rec = func(dir string) error {
+
+		projects_curr := make([]Project, 0)
+		fs, err := os.ReadDir(dir)
+		if err != nil {
+			return err
+		}
+		for _, f := range fs {
+			// if f.Name() == "." || f.Name() == ".." {
+			// 	continue
+			// }
+			if f.IsDir() {
+				err := rec(filepath.Join(dir, f.Name()))
+				if err != nil {
+					return err
+				}
+				// projects = append(projects, projects2...)
+				// f.Name()
+			} else {
+					println(dir)
+					println(f.Name())
 				for _, m := range types {
 					if m.DependencyFileGlob.Match(f.Name()) {
-						// println("yea")
+						// r, err := filepath.Rel(root, dir)
+						// if err != nil {
+						// 	return err
+						// }
+						r := dir
+						// println("a")
+						// println(root)
 						// println(dir)
-						projects = append(projects, Project{Type: m, Root: dir})
-						matchfurther = false
-						// break
+						projects_curr = append(projects_curr, Project{Type: m, Root: r})
 					}
 				}
 			}
 		}
+		if len(projects_curr) > 1 {
+			// choices, err := clime.AskMultiChoice(fmt.Sprintf("Multiple project lockfiles found in %s:", dir), lo.Map(projects_curr, func(item Project, index int) string { return item.Type.Name })...)
+			// if err != nil {
+			// 	return err
+			// }
+			// choosen_projects := make([]Project, 0)
+			// for _, k := range choices {
+			// 	choosen_projects = append(choosen_projects, projects_curr[k])
+			// }
+
+			projects = append(projects, projects_curr...)
+		} else {
+			projects = append(projects, projects_curr...)
+		}
+
+		return nil
+	}
+	if err := rec(dir); err != nil {
+		return nil, err
 	}
 	return projects, nil
 }

@@ -35,6 +35,13 @@
     "setup_action": "actions/setup-node@v5"
   },
   {
+    "project_root_file": "package.json",
+    "dependency_install_command": "npm install",
+    "build_command": "npm run build",
+    "name": "Node.js (npm)",
+    "setup_action": "actions/setup-node@v5"
+  },
+  {
     "project_root_file": "yarn.lock",
     "dependency_install_command": "yarn install",
     "build_command": "yarn build",
