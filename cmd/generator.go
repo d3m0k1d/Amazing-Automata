@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"fmt"
 	"os"
 	"path/filepath"
 	"text/template"
@@ -98,53 +99,78 @@ func walkproj(dir string, types []ProjectType) ([]Project, error) {
 	return projects, nil
 }
 
-// YamlGenerator создаёт YAML и условно добавляет шаг Checkout для CI
-func YamlGenerator(filename string, projectPath string, ci, cd, dryRun, appendM bool) error {
-	// 1. Открываем или создаём файл, перезаписываем содержимое
-	f, err := os.OpenFile(filename,
-		os.O_CREATE|os.O_WRONLY|os.O_TRUNC,
-		0o644,
-	)
-	if err != nil {
-		return err
+func YamlGenerator(filename, projectPath string, ci, cd, dryRun, appendM bool) error {
+	// Открытие файла или stdout
+	var f *os.File
+	var err error
+	if dryRun {
+		f = os.Stdout
+	} else {
+		flags := os.O_CREATE | os.O_WRONLY
+		if appendM {
+			flags |= os.O_APPEND
+		} else {
+			flags |= os.O_TRUNC
+		}
+		f, err = os.OpenFile(filename, flags, 0o644)
+		if err != nil {
+			return fmt.Errorf("failed to open file: %w", err)
+		}
+		defer f.Close()
 	}
-	defer f.Close()
 
-	// root, err := os.Getwd()
-	// if err != nil {
-	// 	return nil, err
-	// }
 	types, err := ParseLangDeps()
 	if err != nil {
-		return err
+		return fmt.Errorf("failed to parse language deps: %w", err)
 	}
 	projects, err := walkproj(projectPath, types)
 	if err != nil {
-		return err
-	}
-	// 2. Парсим и рендерим базовый шаблон
-	baseTmpl, err := template.New("base").Parse(baseTpl)
-	if err != nil {
-		return err
-	}
-	if err := baseTmpl.Execute(f, map[string]string{
-		"WorkflowName": "Amazing-Automata CI/CD",
-	}); err != nil {
-		return err
+		return fmt.Errorf("failed to scan projects: %w", err)
 	}
 
-	// fmt.Print(len(projects))
-	t := template.New("whocares")
-	t = template.Must(t.Parse(ciTpl))
-	t = template.Must(t.Parse(cdTpl))
+	// По умолчанию оба блока
+	if !ci && !cd {
+		ci, cd = true, true
+	}
+
+	// Базовый шаблон
+	baseTmpl, err := template.New("base").Parse(baseTpl)
+	if err != nil {
+		return fmt.Errorf("parse base template: %w", err)
+	}
+	if err := baseTmpl.Execute(f, map[string]string{"WorkflowName": "Amazing-Automata CI/CD"}); err != nil {
+		return fmt.Errorf("execute base template: %w", err)
+	}
+
+	// Общий шаблон с именованными частями
+	t := template.New("pipeline")
+	if _, err := t.New("ci").Parse(ciTpl); err != nil {
+		return fmt.Errorf("parse ci template: %w", err)
+	}
+	if _, err := t.New("cd").Parse(cdTpl); err != nil {
+		return fmt.Errorf("parse cd template: %w", err)
+	}
+
+	data := map[string]interface{}{"Projects": projects}
+
 	if ci {
-		if err := t.Execute(f, map[string]interface{}{"Projects": projects}); err != nil {
-			return err
+		if err := t.ExecuteTemplate(f, "ci", data); err != nil {
+			return fmt.Errorf("execute ci template: %w", err)
 		}
 	}
+
 	if cd {
-		if err := t.Execute(f, map[string]interface{}{"Projects": projects}); err != nil {
-			return err
+		if err := t.ExecuteTemplate(f, "cd", data); err != nil {
+			return fmt.Errorf("execute cd template: %w", err)
+		}
+	}
+
+	if dryRun {
+		if cd {
+
+		}
+		if ci {
+
 		}
 	}
 
