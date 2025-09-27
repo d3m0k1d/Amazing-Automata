@@ -30,20 +30,48 @@ const ciTpl = `  build:
       {{ end }}
 `
 
-const cdTpl = `  build:
+const cdTpl = ` build:
+	strategy: 
+			matrix:
+				os: [ubuntu-latest, windows-latest, macos-latest]
+				include:
+					- os: ubuntu-latest
+					artifacts-path: artifacts/linux
+					- os: windows-latest
+					artifacts-path: artifacts/windows
+					-os: macos-latest
+					artifacts-path: artifacts/macos
+				
     runs-on: ubuntu-latest
     steps:
+	  - name: setup env
+        uses: actions/setup-* # actions/setup-node@v5 actions/setup-python@v6 actions/setup-java@v5 actions/setup-go@v6 actions/setup-dotnet@v5 ruby/setup-ruby@v1
       - name: Clone repository
         uses: actions/checkout@v4
       {{ range .Projects }}
       - name: setup
-        with:
-      - name: Install deps for project {{.Root}}
-        run: {{.Type.InstallCommand}}
-      - name: Build project {{.Root}}
-        run: {{.Type.BuildCommand}}
-      - name: Build project {{.Root}}
-        run: {{.Type.BuildCommand}}{{ end }}`
+        with: {{.setup}}
+      - name: Build project {{.name}}
+        run: {{.cmd}}
+      {{ end }}
+  release:
+	needs: build
+	runs-on: ubuntu-latest
+		steps:
+			- name: Download artifacts
+			uses: actions/download-artifact@v4
+        	with:
+          		path: release-artifacts
+			- name: Create Github release
+			uses: actions/create-github-release@v4
+			with: 
+				files: |
+					release-artifacts/**/*
+				draft: false
+				prerelease: false
+			env:
+				GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+`
 
 type Project struct {
 	Type ProjectType
