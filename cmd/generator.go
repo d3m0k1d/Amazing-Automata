@@ -133,7 +133,7 @@ func walkproj(dir string, types []ProjectType) ([]Project, error) {
 func YamlGenerator(filename, projectPath string, ci, cd, dryRun, appendM bool) error {
 	// Открытие файла или stdout
 	var f *os.File
-	var err erro
+	var err error
 	if dryRun {
 		f = os.Stdout
 	} else {
