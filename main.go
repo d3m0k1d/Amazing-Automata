@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	cmd.YamlGenerator("workflow.yml", true, false, false, false)
+	cmd.YamlGenerator("workflow.yml", ".", true, false, false, false)
 }
