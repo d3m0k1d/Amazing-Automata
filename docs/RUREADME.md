@@ -22,24 +22,16 @@ Amazing-Automata это универсальная утилита которая
 ```bash
 amazing-automata -h
 ```
-2. Создание простого CI/CD пайплайна
+2. Генерация только CI или CD пайпайна
 ```bash
-amazing-automata <filename>.yml
-```
-3. Генерация только CI или CD пайпайна
-```bash
-amazing-automat --ci <filename>.yml 
+amazing-automat --ci -o <filename>.yml 
 ```
 ```bash
-amazing-automata --cd <name.yml> 
+amazing-automata --cd -o <filename.yml> 
 ```
-4. Изменение существующего пайплайна
+3. Просмотр в stdout изменений пайплана
 ```bash
-amazing-automata --append <path/to/workflow.yml>
-```
-5. Просмотр в stdout изменений пайплана
-```bash
-amazing-automata --dry-run 
+amazing-automata --dry-run  --ci
 ```
 ## Лицензия
 Этот проект лицензируются MIT
