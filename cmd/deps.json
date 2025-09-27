@@ -24,28 +24,22 @@
     "name": ".NET Framework"
   },
   {
-    "project_root_file": "package.json",
+    "project_root_file": "package-lock.json",
     "dependency_install_command": "npm install",
     "build_command": "npm run build",
     "name": "Node.js (npm)"
   },
   {
-    "project_root_file": "package.json",
+    "project_root_file": "yarn.lock",
     "dependency_install_command": "yarn install",
     "build_command": "yarn build",
     "name": "Node.js (Yarn)"
   },
   {
-    "project_root_file": "package.json",
+    "project_root_file": "pnpm-lock.yaml",
     "dependency_install_command": "pnpm install",
     "build_command": "pnpm build",
     "name": "Node.js (pnpm)"
-  },
-  {
-    "project_root_file": "tsconfig.json",
-    "dependency_install_command": "npm install",
-    "build_command": "tsc",
-    "name": "TypeScript"
   },
   {
     "project_root_file": "requirements.txt",
