@@ -38,7 +38,7 @@ const cdTpl = `{{define "cd"}}{{template "base"}}  build:
                     artifacts-path: artifacts/linux
                     - os: windows-latest
                     artifacts-path: artifacts/windows
-                    -os: macos-latest
+                    - os: macos-latest
                     artifacts-path: artifacts/macos
                 
     runs-on: ubuntu-latest
