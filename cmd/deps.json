@@ -4,62 +4,80 @@
     "dependency_install_command": "dotnet restore",
     "build_command": "dotnet build",
     "name": ".NET",
-    "setup_action": "actions/setup-dotnet@v5"
+    "setup_action": "actions/setup-dotnet@v5",
+    "using_test_framework": "xUnit",
+    "test_command": "dotnet test"
   },
   {
     "project_root_file": "*.fsproj",
     "dependency_install_command": "dotnet restore",
     "build_command": "dotnet build",
     "name": "F#",
-    "setup_action": "actions/setup-dotnet@v5"
+    "setup_action": "actions/setup-dotnet@v5",
+    "using_test_framework": "xUnit",
+    "test_command": "dotnet test"
   },
   {
     "project_root_file": "*.vbproj",
     "dependency_install_command": "dotnet restore",
     "build_command": "dotnet build",
     "name": "VB.NET",
-    "setup_action": "actions/setup-dotnet@v5"
+    "setup_action": "actions/setup-dotnet@v5",
+    "using_test_framework": "xUnit",
+    "test_command": "dotnet test"
   },
   {
     "project_root_file": "packages.config",
     "dependency_install_command": "nuget restore",
     "build_command": "msbuild",
     "name": ".NET Framework",
-    "setup_action": "actions/setup-dotnet@v5"
+    "setup_action": "actions/setup-dotnet@v5",
+    "using_test_framework": "MSTest",
+    "test_command": "dotnet test"
   },
   {
     "project_root_file": "package-lock.json",
     "dependency_install_command": "npm install",
     "build_command": "npm run build",
     "name": "Node.js (npm)",
-    "setup_action": "actions/setup-node@v5"
+    "setup_action": "actions/setup-node@v5",
+    "using_test_framework": "Jest",
+    "test_command": "npm test"
   },
   {
     "project_root_file": "package.json",
     "dependency_install_command": "npm install",
     "build_command": "npm run build",
     "name": "Node.js (npm)",
-    "setup_action": "actions/setup-node@v5"
+    "setup_action": "actions/setup-node@v5",
+    "using_test_framework": "Jest",
+    "test_command": "npm test"
   },
   {
     "project_root_file": "yarn.lock",
     "dependency_install_command": "yarn install",
     "build_command": "yarn build",
     "name": "Node.js (Yarn)",
-    "setup_action": "actions/setup-node@v5"
+    "setup_action": "actions/setup-node@v5",
+    "using_test_framework": "Jest",
+    "test_command": "yarn test"
   },
   {
     "project_root_file": "pnpm-lock.yaml",
     "dependency_install_command": "pnpm install",
     "build_command": "pnpm build",
     "name": "Node.js (pnpm)",
-    "setup_action": "actions/setup-node@v5"
+    "setup_action": "actions/setup-node@v5",
+    "using_test_framework": "Jest",
+    "test_command": "pnpm test"
   },
   {
     "project_root_file": "requirements.txt",
     "dependency_install_command": "pip install -r requirements.txt",
     "build_command": "python -m build",
     "name": "Python (pip)",
+    "using_test_framework": "pytest",
+    "test_command": "python -m pytest",
     "setup_action": "actions/setup-python@v6"
   },
   {
@@ -67,334 +85,442 @@
     "dependency_install_command": "poetry install",
     "build_command": "poetry build",
     "name": "Python (Poetry)",
-    "setup_action": "actions/setup-python@v6"
+    "setup_action": "actions/setup-python@v6",
+    "using_test_framework": "pytest",
+    "test_command": "poetry run pytest"
   },
   {
     "project_root_file": "Pipfile",
     "dependency_install_command": "pipenv install",
     "build_command": "pipenv run python setup.py build",
     "name": "Python (Pipenv)",
-    "setup_action": "actions/setup-python@v6"
+    "setup_action": "actions/setup-python@v6",
+    "using_test_framework": "pytest",
+    "test_command": "pipenv run pytest"
   },
   {
     "project_root_file": "setup.py",
     "dependency_install_command": "pip install -e .",
     "build_command": "python setup.py build",
     "name": "Python (setuptools)",
-    "setup_action": "actions/setup-python@v6"
+    "setup_action": "actions/setup-python@v6",
+    "using_test_framework": "pytest",
+    "test_command": "python -m pytest"
   },
   {
     "project_root_file": "conda.yml",
     "dependency_install_command": "conda env create",
     "build_command": "python -m build",
     "name": "Python (Conda)",
-    "setup_action": "actions/setup-python@v6"
+    "setup_action": "actions/setup-python@v6",
+    "using_test_framework": "pytest",
+    "test_command": "pytest"
   },
   {
     "project_root_file": "pom.xml",
     "dependency_install_command": "mvn install",
     "build_command": "mvn compile",
     "name": "Java (Maven)",
-    "setup_action": "actions/setup-java@v5"
+    "setup_action": "actions/setup-java@v5",
+    "using_test_framework": "JUnit",
+    "test_command": "mvn test"
   },
   {
     "project_root_file": "build.gradle",
     "dependency_install_command": "gradle dependencies",
     "build_command": "gradle build",
     "name": "Java (Gradle)",
-    "setup_action": "actions/setup-java@v5"
+    "setup_action": "actions/setup-java@v5",
+    "using_test_framework": "JUnit",
+    "test_command": "gradle test"
   },
   {
     "project_root_file": "build.gradle.kts",
     "dependency_install_command": "gradle dependencies",
     "build_command": "gradle build",
     "name": "Kotlin (Gradle)",
-    "setup_action": "actions/setup-java@v5"
+    "setup_action": "actions/setup-java@v5",
+    "using_test_framework": "JUnit",
+    "test_command": "gradle test"
   },
   {
     "project_root_file": "ivy.xml",
     "dependency_install_command": "ant resolve",
     "build_command": "ant compile",
     "name": "Java (Ivy/Ant)",
-    "setup_action": "actions/setup-java@v5"
+    "setup_action": "actions/setup-java@v5",
+    "using_test_framework": "JUnit",
+    "test_command": "ant test"
   },
   {
     "project_root_file": "build.sbt",
     "dependency_install_command": "sbt update",
     "build_command": "sbt compile",
-    "name": "Scala (sbt)"
+    "name": "Scala (sbt)",
+    "using_test_framework": "ScalaTest",
+    "test_command": "sbt test"
   },
   {
     "project_root_file": "project.clj",
     "dependency_install_command": "lein deps",
     "build_command": "lein compile",
-    "name": "Clojure (Leiningen)"
+    "name": "Clojure (Leiningen)",
+    "using_test_framework": "clojure.test",
+    "test_command": "lein test"
   },
   {
     "project_root_file": "deps.edn",
     "dependency_install_command": "clj -P",
     "build_command": "clj -M -m main",
-    "name": "Clojure (tools.deps)"
+    "name": "Clojure (tools.deps)",
+    "using_test_framework": "clojure.test",
+    "test_command": "clj -X:test"
   },
   {
     "project_root_file": "build.boot",
     "dependency_install_command": "boot install",
     "build_command": "boot build",
-    "name": "Clojure (Boot)"
+    "name": "Clojure (Boot)",
+    "using_test_framework": "clojure.test",
+    "test_command": "boot test"
   },
   {
     "project_root_file": "go.mod",
     "dependency_install_command": "go mod tidy",
     "build_command": "go build",
     "name": "Go",
-    "setup_action": "actions/setup-go@v6"
+    "setup_action": "actions/setup-go@v6",
+    "using_test_framework": "testing",
+    "test_command": "go test ./..."
   },
   {
     "project_root_file": "Cargo.toml",
     "dependency_install_command": "cargo fetch",
     "build_command": "cargo build",
     "name": "Rust",
-    "setup_action": "actions-rust-lang/setup-rust-toolchain@v1"
+    "setup_action": "actions-rust-lang/setup-rust-toolchain@v1",
+    "using_test_framework": "cargo test",
+    "test_command": "cargo test"
   },
   {
     "project_root_file": "CMakeLists.txt",
     "dependency_install_command": "cmake --build build",
     "build_command": "make",
-    "name": "C/C++ (CMake)"
+    "name": "C/C++ (CMake)",
+    "using_test_framework": "GoogleTest",
+    "test_command": "ctest"
   },
   {
     "project_root_file": "Makefile",
     "dependency_install_command": "make deps",
     "build_command": "make",
-    "name": "C/C++ (Make)"
+    "name": "C/C++ (Make)",
+    "using_test_framework": "Check",
+    "test_command": "make test"
   },
   {
     "project_root_file": "meson.build",
     "dependency_install_command": "meson setup builddir",
     "build_command": "ninja -C builddir",
-    "name": "C/C++ (Meson)"
+    "name": "C/C++ (Meson)",
+    "using_test_framework": "GoogleTest",
+    "test_command": "ninja -C builddir test"
   },
   {
     "project_root_file": "vcpkg.json",
     "dependency_install_command": "vcpkg install",
     "build_command": "cmake --build build",
-    "name": "C++ (vcpkg)"
+    "name": "C++ (vcpkg)",
+    "using_test_framework": "GoogleTest",
+    "test_command": "ctest"
   },
   {
     "project_root_file": "conanfile.txt",
     "dependency_install_command": "conan install .",
     "build_command": "cmake --build build",
-    "name": "C++ (Conan)"
+    "name": "C++ (Conan)",
+    "using_test_framework": "GoogleTest",
+    "test_command": "ctest"
   },
   {
     "project_root_file": "conanfile.py",
     "dependency_install_command": "conan install .",
     "build_command": "cmake --build build",
-    "name": "C++ (Conan Python)"
+    "name": "C++ (Conan Python)",
+    "using_test_framework": "GoogleTest",
+    "test_command": "ctest"
   },
   {
     "project_root_file": "BUILD",
     "dependency_install_command": "bazel fetch //...",
     "build_command": "bazel build //...",
-    "name": "Bazel"
+    "name": "Bazel",
+    "using_test_framework": "Bazel test",
+    "test_command": "bazel test //..."
   },
   {
     "project_root_file": "Package.swift",
     "dependency_install_command": "swift package resolve",
     "build_command": "swift build",
-    "name": "Swift"
+    "name": "Swift",
+    "using_test_framework": "XCTest",
+    "test_command": "swift test"
   },
   {
     "project_root_file": "Podfile",
     "dependency_install_command": "pod install",
     "build_command": "xcodebuild",
-    "name": "iOS/macOS (CocoaPods)"
+    "name": "iOS/macOS (CocoaPods)",
+    "using_test_framework": "XCTest",
+    "test_command": "xcodebuild test"
   },
   {
     "project_root_file": "pubspec.yaml",
     "dependency_install_command": "dart pub get",
     "build_command": "dart compile exe",
-    "name": "Dart"
+    "name": "Dart",
+    "using_test_framework": "dart test",
+    "test_command": "dart test"
   },
   {
     "project_root_file": "pubspec.yaml",
     "dependency_install_command": "flutter pub get",
     "build_command": "flutter build",
-    "name": "Flutter"
+    "name": "Flutter",
+    "using_test_framework": "flutter test",
+    "test_command": "flutter test"
   },
   {
     "project_root_file": "Gemfile",
     "dependency_install_command": "bundle install",
     "build_command": "bundle exec rake build",
     "name": "Ruby (Bundler)",
-    "setup_action": "ruby/setup-ruby@v1"
+    "setup_action": "ruby/setup-ruby@v1",
+    "using_test_framework": "RSpec",
+    "test_command": "bundle exec rspec"
   },
   {
     "project_root_file": "composer.json",
     "dependency_install_command": "composer install",
     "build_command": "php artisan build",
-    "name": "PHP (Composer)"
+    "name": "PHP (Composer)",
+    "using_test_framework": "PHPUnit",
+    "test_command": "vendor/bin/phpunit"
   },
   {
     "project_root_file": "*.cabal",
     "dependency_install_command": "cabal update",
     "build_command": "cabal build",
-    "name": "Haskell (Cabal)"
+    "name": "Haskell (Cabal)",
+    "using_test_framework": "Hspec",
+    "test_command": "cabal test"
   },
   {
     "project_root_file": "stack.yaml",
     "dependency_install_command": "stack setup",
     "build_command": "stack build",
-    "name": "Haskell (Stack)"
+    "name": "Haskell (Stack)",
+    "using_test_framework": "Hspec",
+    "test_command": "stack test"
   },
   {
     "project_root_file": "rebar.config",
     "dependency_install_command": "rebar3 deps",
     "build_command": "rebar3 compile",
-    "name": "Erlang"
+    "name": "Erlang",
+    "using_test_framework": "EUnit",
+    "test_command": "rebar3 eunit"
   },
   {
     "project_root_file": "mix.exs",
     "dependency_install_command": "mix deps.get",
     "build_command": "mix compile",
-    "name": "Elixir"
+    "name": "Elixir",
+    "using_test_framework": "ExUnit",
+    "test_command": "mix test"
   },
   {
     "project_root_file": "elm.json",
     "dependency_install_command": "elm install",
     "build_command": "elm make src/Main.elm",
-    "name": "Elm"
+    "name": "Elm",
+    "using_test_framework": "elm-test",
+    "test_command": "elm-test"
   },
   {
     "project_root_file": "dune-project",
     "dependency_install_command": "opam install --deps-only .",
     "build_command": "dune build",
-    "name": "OCaml (Dune)"
+    "name": "OCaml (Dune)",
+    "using_test_framework": "Alcotest",
+    "test_command": "dune runtest"
   },
   {
     "project_root_file": "DESCRIPTION",
     "dependency_install_command": "install.packages()",
     "build_command": "R CMD build",
-    "name": "R"
+    "name": "R",
+    "using_test_framework": "testthat",
+    "test_command": "R CMD check"
   },
   {
     "project_root_file": "Project.toml",
     "dependency_install_command": "using Pkg; Pkg.instantiate()",
     "build_command": "julia script.jl",
-    "name": "Julia"
+    "name": "Julia",
+    "using_test_framework": "Pkg.test",
+    "test_command": "julia -e 'using Pkg; Pkg.test()'"
   },
   {
     "project_root_file": "fpm.toml",
     "dependency_install_command": "fpm update",
     "build_command": "fpm build",
-    "name": "Fortran (fpm)"
+    "name": "Fortran (fpm)",
+    "using_test_framework": "fpm test",
+    "test_command": "fpm test"
   },
   {
     "project_root_file": "build.zig",
     "dependency_install_command": "zig fetch",
     "build_command": "zig build",
-    "name": "Zig"
+    "name": "Zig",
+    "using_test_framework": "zig test",
+    "test_command": "zig test"
   },
   {
     "project_root_file": "build.zig.zon",
     "dependency_install_command": "zig fetch",
     "build_command": "zig build",
-    "name": "Zig (package manager)"
+    "name": "Zig (package manager)",
+    "using_test_framework": "zig test",
+    "test_command": "zig test"
   },
   {
     "project_root_file": "*.nimble",
     "dependency_install_command": "nimble install",
     "build_command": "nimble build",
-    "name": "Nim"
+    "name": "Nim",
+    "using_test_framework": "unittest",
+    "test_command": "nimble test"
   },
   {
     "project_root_file": "shard.yml",
     "dependency_install_command": "shards install",
     "build_command": "crystal build",
-    "name": "Crystal"
+    "name": "Crystal",
+    "using_test_framework": "spec",
+    "test_command": "crystal spec"
   },
   {
     "project_root_file": "dub.json",
     "dependency_install_command": "dub fetch",
     "build_command": "dub build",
-    "name": "D (JSON)"
+    "name": "D (JSON)",
+    "using_test_framework": "unit-threaded",
+    "test_command": "dub test"
   },
   {
     "project_root_file": "dub.sdl",
     "dependency_install_command": "dub fetch",
     "build_command": "dub build",
-    "name": "D (SDL)"
+    "name": "D (SDL)",
+    "using_test_framework": "unit-threaded",
+    "test_command": "dub test"
   },
   {
     "project_root_file": "rockspec",
     "dependency_install_command": "luarocks install",
     "build_command": "lua script.lua",
-    "name": "Lua"
+    "name": "Lua",
+    "using_test_framework": "busted",
+    "test_command": "busted"
   },
   {
     "project_root_file": "cpanfile",
     "dependency_install_command": "cpanm --installdeps .",
     "build_command": "perl script.pl",
-    "name": "Perl (cpanm)"
+    "name": "Perl (cpanm)",
+    "using_test_framework": "Test::More",
+    "test_command": "prove -l t/"
   },
   {
     "project_root_file": "main.tf",
     "dependency_install_command": "terraform init",
     "build_command": "terraform apply",
-    "name": "Terraform"
+    "name": "Terraform",
+    "using_test_framework": "Terratest",
+    "test_command": "terraform plan"
   },
   {
     "project_root_file": "default.nix",
     "dependency_install_command": "nix-shell",
     "build_command": "nix-build",
-    "name": "Nix"
+    "name": "Nix",
+    "using_test_framework": "nix-build",
+    "test_command": "nix-build -A tests"
   },
   {
     "project_root_file": "requirements.yml",
     "dependency_install_command": "ansible-galaxy install -r requirements.yml",
     "build_command": "ansible-playbook playbook.yml",
-    "name": "Ansible"
+    "name": "Ansible",
+    "using_test_framework": "molecule",
+    "test_command": "molecule test"
   },
   {
     "project_root_file": "project.godot",
     "dependency_install_command": "godot --export",
     "build_command": "godot --main-pack game.pck",
-    "name": "Godot (GDScript)"
+    "name": "Godot (GDScript)",
+    "using_test_framework": "GdUnit",
+    "test_command": "godot --run-tests"
   },
   {
     "project_root_file": "*.pro",
     "dependency_install_command": "qmake",
     "build_command": "make",
-    "name": "Qt (QML)"
+    "name": "Qt (QML)",
+    "using_test_framework": "QtTest",
+    "test_command": "make test"
   },
   {
     "project_root_file": "platformio.ini",
     "dependency_install_command": "pio lib install",
     "build_command": "pio run",
-    "name": "Arduino (PlatformIO)"
+    "name": "Arduino (PlatformIO)",
+    "using_test_framework": "unity",
+    "test_command": "pio test"
   },
   {
     "project_root_file": "webpack.config.js",
     "dependency_install_command": "npm install",
     "build_command": "webpack build",
-    "name": "Webpack"
+    "name": "Webpack",
+    "using_test_framework": "Jest",
+    "test_command": "npm test"
   },
   {
     "project_root_file": "vite.config.js",
     "dependency_install_command": "npm install",
     "build_command": "vite build",
-    "name": "Vite"
+    "name": "Vite",
+    "using_test_framework": "Vitest",
+    "test_command": "npm test"
   },
   {
     "project_root_file": "rollup.config.js",
     "dependency_install_command": "npm install",
     "build_command": "rollup -c",
-    "name": "Rollup"
+    "name": "Rollup",
+    "using_test_framework": "Jest",
+    "test_command": "npm test"
   },
   {
     "project_root_file": "parcel.json",
     "dependency_install_command": "npm install",
     "build_command": "parcel build",
-    "name": "Parcel"
+    "name": "Parcel",
+    "using_test_framework": "Jest",
+    "test_command": "npm test"
   }
 ]
